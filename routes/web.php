@@ -13,8 +13,7 @@
 
 Route::group([
     'middleware' => ['web'],
-    'namespace' => 'App\Http\Controllers',
     'prefix' => '/',
 ], function () {
-    Route::post('', 'HomeController@index')->name('home');
+    Route::get('', 'HomeController@index')->name('home');
 });

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class ApiController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
