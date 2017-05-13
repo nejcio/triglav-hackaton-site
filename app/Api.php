@@ -17,4 +17,5 @@ class Api extends Model
     ];
 
     protected $table = 'api';
+
 }
