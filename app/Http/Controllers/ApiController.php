@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class ApiController extends Controller
 {
-    function list($hash) {
-        $items = Api::all();
+    function list() {
+        $items = Api::get();
         if ($items->isEmpty()) {
 
             return $this->createResponse('no_content');
