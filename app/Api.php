@@ -12,10 +12,7 @@ class Api extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'hash', 'content', 'type',
-    ];
+    public $fillable = ['hash', 'content', 'type'];
 
     protected $table = 'api';
-
 }

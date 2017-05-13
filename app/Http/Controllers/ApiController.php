@@ -30,9 +30,13 @@ class ApiController extends Controller
 
     public function store(Request $request)
     {
-
         try {
-            $item = Api::create($request->all());
+            $data = $request->all();
+
+            if (array_key_exists('content', $data)) {
+                $data['content'] = json_encode($data['content']);
+            }
+            $item = Api::create($data);
         } catch (\Exception $e) {
             return $this->createResponse('err', $e->getMessage());
         }
@@ -48,7 +52,11 @@ class ApiController extends Controller
 
                 return $this->createResponse('not_found');
             }
-            $item->update($request->all());
+            $data = $request->all();
+            if (array_key_exists('content', $data)) {
+                $data['content'] = json_encode($data['content']);
+            }
+            $item->update($data);
         } catch (\Exception $e) {
             return $this->createResponse('err', $e->getMessage());
         }
