@@ -139,7 +139,7 @@
                 <div class="container">
                     <div class="section-head text-center">
                         <h2><span class="frist"> </span>WE HAVE <span class="bold">YOUR BACK</span><span class="second"></span></h2>
-                        <p>Insure your<span class="bold"> active payments, your gear and get paid sick leave</span> simple&fast. Insurance premium'll be on your account <span class="bold">next day</span> after end of your sickleave</p>
+                        <p>Insure your<span class="bold"> active payments, your gear and get paid sick leave</span> simple&fast. Insurance payout'll be on your account <span class="bold">next day</span> after end of your sickleave</p>
                     </div>
 
                     <div class="features-grids">
@@ -222,7 +222,7 @@
                 <div class="container">
                     <div class="section-head text-center">
                         <h2><span class="frist"> </span><span class="bold">PAID SICK</span> LEAVE INSURANCE<span class="second"></span></h2>
-                        <p>Insure your<span class="bold"> acitve payments, your gear and get paid sick leave</span> simple&fast. Insurance premium'll be on your account next day after end of your sickleave</p>
+                        <p>Insure your<span class="bold"> acitve payments, your gear and get paid sick leave</span> simple&fast. Insurance payout'll be on your account next day after end of your sickleave</p>
                     </div>
 
                     <div class="features-grids">
@@ -233,7 +233,7 @@
                                 </div>
                                 <div class="col-md-10 features-info">
                                     <h3><li><span class="bold">NO REPORT</span> FIRST DAY</li></h3>
-                                    <p>You don't have to do nothing on the first day of sick leave, just click the app button I'SICK</p>
+                                    <p>You don't have to do anything on the first day of sick leave, just click the app button I'M SICK</p>
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
@@ -261,7 +261,7 @@
                         </div><!---end-features-grid-->
                         <div class="col-md-4 features-grid">
                             <div class="big-divice">
-                                <img src="images/device.png" title="features-demo" />
+                                <img src="images/device3.png" title="features-demo" />
                             </div>
                         </div><!---end-features-grid-->
 

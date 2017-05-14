@@ -30473,7 +30473,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../~/css-loader/lib/
 
 
 // module
-exports.push([module.i, "\n.my-video{\r\n\twidth: 100%;\r\n\tdisplay: none;\n}\n.show{\r\n\tdisplay: initial;\n}\n.hide{\r\n\tdisplay: initial;\n}\n#camera_wrap{\n}\n.frame{\r\n  height: 100%;\r\n  width: 100%;\r\n  padding: 20px;\r\n  position: absolute;\r\n  top: 0;\n}\n.frame_inner{\r\n  height: calc(100% - 100px);\r\n  width: 100%;\r\n  border: 1px solid white;\n}\n.cameraWrap{\r\n\tdisplay: flex;\n}\n.cameraButton{\r\n    border-radius: 300px;\r\n    background-color: white;\r\n    height: 100px;\r\n    width: 100px;\r\n    position: absolute;\r\n    border: 1px solid rgb(67, 205, 188);\r\n\t\tbox-shadow: 0px 1px 3px rgba(0,0,0,0.75);\n}\n.cameraButton_inner{\r\n    border-radius: 300px;\r\n    background-color: rgb(67, 205, 188);\r\n    height: 100%;\r\n    width: 100%;\r\n    border: 8px solid white;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.my-video{\r\n\twidth: 100%;\r\n\tdisplay: none;\n}\n.show{\r\n\tdisplay: initial;\n}\n.hide{\r\n\tdisplay: initial;\n}\n#camera_wrap{\n}\n.frame{\r\n  height: 100%;\r\n  width: 100%;\r\n  padding: 20px;\r\n  position: absolute;\r\n  top: 0;\n}\n.frame_inner{\r\n  height: calc(100% - 100px);\r\n  width: 100%;\r\n  border: 1px solid white;\n}\n.cameraWrap{\r\n\tdisplay: flex;\r\n\tjustify-content: center;\n}\n.cameraButton{\r\n    border-radius: 300px;\r\n    background-color: white;\r\n    height: 100px;\r\n    width: 100px;\r\n    position: absolute;\r\n    border: 1px solid rgb(67, 205, 188);\r\n\t\tbox-shadow: 0px 1px 3px rgba(0,0,0,0.75);\n}\n.cameraButton_inner{\r\n    border-radius: 300px;\r\n    background-color: rgb(67, 205, 188);\r\n    height: 100%;\r\n    width: 100%;\r\n    border: 8px solid white;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -34140,7 +34140,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "text",
       "name": "fullname",
       "placeholder": "Firstname",
-      "value": "Bogdan Novak"
+      "value": "David Bojanovič"
     }
   })]), _vm._v(" "), _c('div', {
     staticClass: "form-group"
@@ -34170,7 +34170,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "text",
       "name": "date",
       "placeholder": "Date of birth",
-      "value": "12. 2. 1982"
+      "value": "12. 2. 1985"
     }
   })])]), _vm._v(" "), _c('div', {
     staticClass: "main-content-center"
@@ -34489,7 +34489,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "btn-price"
   }, [_c('b', [_vm._v("70€")])]), _vm._v(" /day")])]), _vm._v(" "), _c('div', {
     staticClass: "col-xs-8 custom-left flex flex center"
-  }, [_vm._v("\n                    Record a video\n                ")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n                    Start a live video call\n                ")]), _vm._v(" "), _c('div', {
     staticClass: "clearfix"
   })]), _vm._v(" "), _c('f7-link', {
     staticClass: "btn-custom btn-width btn-margin",
