@@ -39,4 +39,4 @@ function myFunction() {
 <script src=https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/quickblox/2.3.4/quickblox.min.js></script>
 {{-- MAIN JS --}}
-<script src=/js/e516af91da2ffdd61c1d.main.js></script></body></html>
+<script src=/js/8bc6148d75a5d76beb82.main.js></script></body></html>
