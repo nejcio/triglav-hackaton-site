@@ -16,4 +16,5 @@ Route::group([
     'prefix' => '/',
 ], function () {
     Route::get('', 'HomeController@index')->name('home');
+    Route::get('app', 'HomeController@app')->name('app');
 });

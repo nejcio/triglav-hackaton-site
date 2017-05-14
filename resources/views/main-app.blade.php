@@ -118,7 +118,7 @@
                             </div>
                             <div class="clearfix"> </div>
                             <div class="big-btns">
-                                <a class="download" href="/app"><i class="fa fa-umbrella" aria-hidden="true"></i>Get Insured</a>
+                                <a class="download" href="#"><i class="fa fa-umbrella" aria-hidden="true"></i>Get Insured</a>
 
                             </div>
                         </div>
