@@ -525,13 +525,13 @@ module.exports = g;
  * Framework7 Vue 0.8.5
  * Build full featured iOS & Android apps using Framework7 & Vue
  * http://www.framework7.io/vue/
- * 
+ *
  * Copyright 2017, Vladimir Kharlampidi
  * The iDangero.us
  * http://www.idangero.us/
- * 
+ *
  * Licensed under MIT
- * 
+ *
  * Released on: March 2, 2017
  */
 !function(e,t){ true?module.exports=t():"function"==typeof define&&define.amd?define(t):e.Framework7Vue=t()}(this,function(){function e(e,t,o){if(!e.allowPageChange)return!1;var n=t.url,a=t.pageElement;if(n&&a||!n||"#"===n)return!0;var i=e.history.indexOf(n)>=0,r=e.pagesCache[n];return!(!i||!r)||o(n,e,t)}var t={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"statusbar-overlay"})},staticRenderFns:[]},o={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"panel",class:e.classesObject,on:{"panel:open":e.onOpen,"panel:opened":e.onOpened,"panel:close":e.onClose,"panel:closed":e.onClosed,"panel:overlay-click":e.onOverlayClick,"panel:swipe":e.onPanelSwipe}},[e._t("default")],2)},staticRenderFns:[],props:{side:String,effect:String,cover:Boolean,reveal:Boolean,left:Boolean,right:Boolean,theme:String,layout:String,opened:Boolean},computed:{classesObject:function(){var e=this,t=e.side||(e.left?"left":"right"),o=e.effect||(e.reveal?"reveal":"cover"),n={};return n["panel-"+t]=!0,n["panel-"+o]=!0,e.layout&&(n["layout-"+e.layout]=!0),e.theme&&(n["theme-"+e.theme]=!0),n.active=e.opened,n}},watch:{opened:function(e){var t=this;if(t.$f7){var o=t.side||(t.left?"left":"right");e?t.$f7.openPanel(o):t.$f7.closePanel(o)}}},mounted:function(){var e=this;e.opened&&(e.$el.style.display="block");var t=e.$$;if(t){var o=e.side||(e.left?"left":"right"),n=e.effect||(e.reveal?"reveal":"cover");e.opened&&t("body").addClass("with-panel-"+o+"-"+n)}},methods:{onOpen:function(e){this.$emit("panel:open",e)},onOpened:function(e){this.$emit("panel:opened",e)},onClose:function(e){this.$emit("panel:open",e)},onClosed:function(e){this.$emit("panel:closed",e)},onOverlayClick:function(e){this.$emit("panel:overlay-click",e)},onPanelSwipe:function(e){this.$emit("panel:swipe",e)},onF7Init:function(){var e=this.$$;e&&0===e(".panel-overlay").length&&e('<div class="panel-overlay"></div>').insertBefore(this.$el)},open:function(e){var t=this;if(t.$f7){var o=t.side||(t.left?"left":"right");t.$f7.openPanel(o,e)}},close:function(e){var t=this;t.$f7&&t.$f7.closePanel(e)}}},n={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"views",class:e.classObject},[e._t("default")],2)},staticRenderFns:[],props:{"navbar-fixed":Boolean,"navbar-through":Boolean,"toolbar-fixed":Boolean,"toolbar-through":Boolean,"tabbar-fixed":Boolean,"tabbar-through":Boolean,"tabbar-labels-fixed":Boolean,"tabbar-labels-through":Boolean,tabs:Boolean,theme:String,layout:String},computed:{classObject:function(){var e={tabs:this.tabs,"navbar-fixed":this.navbarFixed||this.navbarThrough&&this.$theme.material,"navbar-through":this.navbarThrough,"toolbar-fixed":this.toolbarFixed,"toolbar-through":this.toolbarThrough,"tabbar-fixed":this.tabbarFixed,"tabbar-through":this.tabbarThrough,"tabbar-labels-fixed":this.tabbarLabelsFixed,"tabbar-labels-through":this.tabbarLabelsThrough};return this.theme&&(e["theme-"+this.theme]=!0),this.layout&&(e["layout-"+this.layout]=!0),e}}},a={render:function(e){var t,o,n,a,i=this;if(i.$slots.default)for(var r=0;r<i.$slots.default.length;r++){var s=i.$slots.default[r];s.tag&&s.tag.indexOf("navbar")>=0&&(t=!0),s.tag&&s.tag.indexOf("pages")>=0&&(o=!0)}return o||(n=e("f7-pages")),!t&&i.$theme.ios&&(i.dynamicNavbar||i.navbarThrough)&&(a=e("f7-navbar")),e("div",{class:i.classesObject,on:{"swipeback:move":i.onSwipeBackMove,"swipeback:beforechange":i.onSwipeBackBeforeChange,"swipeback:afterchange":i.onSwipeBackAfterChange,"swipeback:beforereset":i.onSwipeBackBeforeReset,"swipeback:afterreset":i.onSwipeBackAfterReset,"tab:show":i.onTabShow,"tab:hide":i.onTabHide}},[a,n,i.$slots.default])},beforeDestroy:function(){var e=this;e.f7View&&e.f7View.destroy&&e.f7View.destroy()},props:{main:Boolean,"navbar-fixed":Boolean,"navbar-through":Boolean,"toolbar-fixed":Boolean,"toolbar-through":Boolean,"tabbar-fixed":Boolean,"tabbar-through":Boolean,"tabbar-labels-fixed":Boolean,"tabbar-labels-through":Boolean,tab:Boolean,active:Boolean,"dynamic-navbar":Boolean,"dom-cache":Boolean,"links-view":[String,Object],"reload-pages":Boolean,"unique-history":Boolean,"unique-history-ignore-get-parameters":Boolean,"allow-duplicate-urls":Boolean,"swipe-back-page":Boolean,"swipe-back-page-animate-shadow":Boolean,"swipe-back-page-animate-opacity":Boolean,"swipe-back-page-active-area":Boolean,"swipe-back-page-threshold":Boolean,"animate-pages":Boolean,"preload-previous-page":Boolean,name:String,params:Object,url:String,init:{type:Boolean,default:!0},theme:String,layout:String},computed:{classesObject:function(){var e={view:!0,"view-main":this.main,active:this.active,tab:this.tab,"navbar-fixed":this.navbarFixed||this.navbarThrough&&this.$theme.material,"navbar-through":this.navbarThrough,"toolbar-fixed":this.toolbarFixed,"toolbar-through":this.toolbarThrough,"tabbar-fixed":this.tabbarFixed,"tabbar-through":this.tabbarThrough,"tabbar-labels-fixed":this.tabbarLabelsFixed,"tabbar-labels-through":this.tabbarLabesThrough};return this.theme&&(e["theme-"+this.theme]=!0),this.layout&&(e["layout-"+this.layout]=!0),e}},methods:{onF7Init:function(e){var t=this;if(t.init){var o=t.$options.propsData,n=t.params||{name:t.name,url:t.url,dynamicNavbar:o.dynamicNavbar,domCache:"undefined"==typeof o.domCache||o.domCache,linksView:o.linksView,reloadPages:o.reloadPages,uniqueHistory:o.uniqueHistory,uniqueHistoryIgnoreGetParameters:o.uniqueHistoryIgnoreGetParameters,allowDuplicateUrls:o.allowDuplicateUrls,swipeBackPage:o.swipeBackPage,swipeBackPageAnimateShadow:o.swipeBackPageAnimateShadow,swipeBackPageAnimateOpacity:o.swipeBackPageAnimateOpacity,swipeBackPageActiveArea:o.swipeBackPageActiveArea,swipeBackPageThreshold:o.swipeBackPageThreshold,animatePages:o.animatePages,preloadPreviousPage:o.preloadPreviousPage};t.f7View=e.addView(t.$el,n),t.f7View&&0===t.f7View.pagesContainer.querySelectorAll(".page").length&&t.f7View.router.load({url:t.url,reload:!0})}},onSwipeBackMove:function(e){this.$emit("swipeback:move",e,e.detail)},onSwipeBackBeforeChange:function(e){this.$emit("swipeback:beforechange",e,e.detail)},onSwipeBackAfterChange:function(e){this.$emit("swipeback:afterchange",e,e.detail)},onSwipeBackBeforeReset:function(e){this.$emit("swipeback:beforereset",e,e.detail)},onSwipeBackAfterReset:function(e){this.$emit("swipeback:afterreset",e,e.detail)},onTabShow:function(e){this.$emit("tab:show",e)},onTabHide:function(e){this.$emit("tab:hide",e)}}},i={render:function(e){var t=this,o=[];for(var n in t.pages){var a=t.pages[n];o.push(e(a.component,{tag:"component",props:t.$route.params,key:n}))}return e("div",{staticClass:"pages",ref:"pages",class:t.classesObject,on:{"page:beforeremove":t.onPageBeforeRemove}},[t.$slots.default,o])},props:{"navbar-fixed":Boolean,"navbar-through":Boolean,"toolbar-fixed":Boolean,"toolbar-through":Boolean,"tabbar-fixed":Boolean,"tabbar-through":Boolean,"tabbar-labels-fixed":Boolean,"tabbar-labels-through":Boolean,theme:String,layout:String},data:function(){return{pages:{}}},computed:{classesObject:function(){var e={"navbar-fixed":this.navbarFixed||this.navbarThrough&&this.$theme.material,"navbar-through":this.navbarThrough,"toolbar-fixed":this.toolbarFixed,"toolbar-through":this.toolbarThrough,"tabbar-fixed":this.tabbarFixed,"tabbar-through":this.tabbarThrough,"tabbar-labels-fixed":this.tabbarLabelsFixed,"tabbar-labels-through":this.tabbarLabesThrough};return this.theme&&(e["theme-"+this.theme]=!0),this.layout&&(e["layout-"+this.layout]=!0),e}},methods:{onPageBeforeRemove:function(e){var t,o=this;for(var n in o.pages)if(e.target===o.pages[n].pageElement){t=n;break}t&&this.$delete(this.pages,t)},onRouteChange:function(e){var t=this,o=e.route.component,n=e.view,a=t.$parent.f7View||t.$parent.$el.f7View;if(n===a){var i=t.$route.router.findMatchingRoute(n.url)||{route:{path:"/",pagePath:"/"}},r=i.route.pagePath!==e.route.pagePath,s=!r&&i.route.path!==e.route.path,l=r||!s&&(e.options.reload||n.params.allowDuplicateUrls);if(l){var c=(new Date).getTime();t.$set(t.pages,c,{component:o}),n.allowPageChange=!1,t.$nextTick(function(){var o=n.pagesContainer.querySelector(".page:last-child");t.pages[c].pageElement=o,n.allowPageChange=!0;var a=Object.assign(e.options,{pageElement:o});a.isBack?n.router.back(a):n.router.load(a)})}}}}},r={render:function(e){var t,o,n,a,i=[],r=[],s=this;s.pullToRefresh&&s.ptrLayer&&s.pullToRefreshLayer&&(n=e("div",{class:{"pull-to-refresh-layer":!0}},[e("div",{class:{preloader:!0}}),e("div",{class:{"pull-to-refresh-arrow":!0}})])),(s.infiniteScroll||""===s.infiniteScroll)&&s.infiniteScrollPreloader&&(a=e("div",{class:{"infinite-scroll-preloader":!0}},[e("div",{class:{preloader:!0}})]));var l,c,u,d,p,f,h,m="navbar toolbar tabbar subnavbar searchbar messagebar fab speed-dial floating-button".split(" ");if(s.$slots.default)for(f=0;f<s.$slots.default.length;f++)if(c=s.$slots.default[f],l=c.tag){var b=!1;for(l.indexOf("messages")>=0&&(d=!0),l.indexOf("subnavbar")>=0&&(u=!0),l.indexOf("searchbar")>=0&&(p=!0),h=0;h<m.length;h++)l.indexOf(m[h])>=0&&(b=!0);b?i.push(c):r.push(c)}else r.push(c);if(i.length>0&&p&&i.push(e("div",{class:{"searchbar-overlay":!0}})),d&&(s.classesObjectPageContent["messages-content"]=!0),s.noPageContent)if(o=[],s.$slots.default&&i.length>0)for(f=0;f<s.$slots.default.length;f++)i.indexOf(s.$slots.default[f])<0&&o.push(s.$slots.default[f]);else o=[s.$slots.default];else o=e("div",{staticClass:"page-content",class:s.classesObjectPageContent,attrs:{"data-ptr-distance":s.pullToRefreshDistance||s.ptrDistance,"data-distance":s.infiniteScrollDistance},on:{"ptr:pullstart":s.onPtrPullstart,"ptr:pullmove":s.onPtrPullmove,"ptr:pullend":s.onPtrPullend,"ptr:refresh":s.onPtrRefresh,"ptr:done":s.onPtrRefreshdone,infinite:s.onInfinite}},"top"===s.infiniteScroll?[n,a,s.$slots.static,r]:[n,s.$slots.static,r,a]);return i.push(s.$slots.fixed),u&&(s.classesObjectPage["with-subnavbar"]=!0),t=e("div",{staticClass:"page",class:s.classesObjectPage,attrs:{"data-page":s.name},on:{"page:beforeinit":s.onPageBeforeInit,"page:init":s.onPageInit,"page:reinit":s.onPageReinit,"page:beforeanimation":s.onPageBeforeAnimation,"page:afteranimation":s.onPageAfterAnimation,"page:beforeremove":s.onPageBeforeRemove,"page:back":s.onPageBack,"page:afterback":s.onPageAfterBack}},[i,o])},props:{name:String,cached:Boolean,"navbar-fixed":Boolean,"navbar-through":Boolean,"toolbar-fixed":Boolean,"toolbar-through":Boolean,"tabbar-fixed":Boolean,"tabbar-through":Boolean,"tabbar-labels-fixed":Boolean,"tabbar-labels-through":Boolean,"with-subnavbar":Boolean,subnavbar:Boolean,"no-navbar":Boolean,"no-toolbar":Boolean,"no-tabbar":Boolean,"pull-to-refresh":Boolean,"pull-to-refresh-distance":Number,"ptr-distance":Number,"pull-to-refresh-layer":{type:Boolean,default:!0},"ptr-layer":{type:Boolean,default:!0},"infinite-scroll":[Boolean,String],"infinite-scroll-distance":Number,"infinite-scroll-preloader":{type:Boolean,default:!0},"hide-bars-on-scroll":Boolean,"hide-navbar-on-scroll":Boolean,"hide-toolbar-on-scroll":Boolean,"hide-tabbar-on-scroll":Boolean,messages:Boolean,tabs:Boolean,"no-page-content":Boolean,"login-screen":Boolean,theme:String,layout:String,"no-swipeback":Boolean},computed:{classesObjectPage:function(){var e={cached:this.cached,"navbar-fixed":this.navbarFixed||this.navbarThrough&&this.$theme.material,"navbar-through":this.navbarThrough,"toolbar-fixed":this.toolbarFixed,"toolbar-through":this.toolbarThrough,"tabbar-fixed":this.tabbarFixed,"tabbar-through":this.tabbarThrough,"tabbar-labels-fixed":this.tabbarLabelsFixed,"tabbar-labels-through":this.tabbarLabelsThrough,"with-subnavbar":this.subnavbar||this.withSubnavbar,"no-navbar":this.noNavbar,"no-toolbar":this.noToolbar,"no-tabbar":this.noTabbar,tabs:this.tabs,"no-swipeback":this.noSwipeBack};return this.theme&&(e["theme-"+this.theme]=!0),this.layout&&(e["layout-"+this.layout]=!0),e},classesObjectPageContent:function(){return{"pull-to-refresh-content":this.pullToRefresh,"infinite-scroll":this.infiniteScroll||""===this.infiniteScroll,"infinite-scroll-top":"top"===this.infiniteScroll,"hide-bars-on-scroll":this.hideBarsOnScroll,"hide-navbar-on-scroll":this.hideNavbarOnScroll,"hide-toolbar-on-scroll":this.hideToolbarOnScroll,"hide-tabbar-on-scroll":this.hideTabbarOnScroll,"messages-content":this.messages,"login-screen-content":this.loginScreen}}},methods:{onPtrPullstart:function(e){this.$emit("ptr:pullstart",e)},onPtrPullmove:function(e){this.$emit("ptr:pullmove",e)},onPtrPullend:function(e){this.$emit("ptr:pullend",e)},onPtrRefresh:function(e){this.$emit("ptr:refresh",e,e.detail.done)},onPtrRefreshdone:function(e){this.$emit("ptr:done",e)},onInfinite:function(e){this.$emit("infinite",e)},onPageBeforeInit:function(e){this.f7PageData=e.detail.page,this.$emit("page:beforeinit",e,e.detail.page)},onPageInit:function(e){this.$emit("page:init",e,e.detail.page)},onPageReinit:function(e){this.$emit("page:reinit",e,e.detail.page)},onPageBeforeAnimation:function(e){this.$emit("page:beforeanimation",e,e.detail.page)},onPageAfterAnimation:function(e){this.$emit("page:afteranimation",e,e.detail.page)},onPageBeforeRemove:function(e){this.$emit("page:beforeremove",e,e.detail.page)},onPageBack:function(e){this.$emit("page:back",e,e.detail.page)},onPageAfterBack:function(e){this.$emit("page:afterback",e,e.detail.page)}}},s={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"page-content",class:e.classesObject,on:{"tab:show":e.onTabShow,"tab:hide":e.onTabHide}},[e._t("default")],2)},staticRenderFns:[],props:{tab:Boolean,active:Boolean},computed:{classesObject:function(){var e=this;return{tab:e.tab,active:e.active}}},methods:{onTabShow:function(e){this.$emit("tab:show",e)},onTabHide:function(e){this.$emit("tab:hide",e)}}},l={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"navbar",class:e.classesObject,on:{"navbar:beforeinit":e.onBeforeInit,"navbar:init":e.onInit,"navbar:reinit":e.onReinit,"navbar:beforeremove":e.onBeforeRemove}},[e._t("before-inner"),e._v(" "),o("div",{staticClass:"navbar-inner"},[e.backLink?o("f7-nav-left",{attrs:{"back-link":e.backLink,sliding:e.sliding,"back-link-href":e.backLinkUrl||e.backLinkHref},on:{"back-click":e.onBackClick}}):e._e(),e._v(" "),e.title?o("f7-nav-center",{attrs:{title:e.title,sliding:e.sliding}}):e._e(),e._v(" "),e._t("default")],2),e._v(" "),e._t("after-inner")],2)},staticRenderFns:[],updated:function(){var e=this;e.$nextTick(function(){e.$f7.sizeNavbars()})},props:{backLink:[Boolean,String],backLinkUrl:String,backLinkHref:String,sliding:Boolean,title:String,theme:String,layout:String,hidden:Boolean},computed:{classesObject:function(){var e={"navbar-hidden":this.hidden};return this.theme&&(e["theme-"+this.theme]=!0),this.layout&&(e["layout-"+this.layout]=!0),e}},methods:{hide:function(e){if(this.$f7)return this.$f7.hideNavbar(this.$el,e)},show:function(e){if(this.$f7)return this.$f7.showNavbar(this.$el,e)},size:function(){if(this.$f7&&!this.$theme.material)return this.$f7.sizeNavbars()},onBeforeInit:function(e){this.$emit("navbar:beforeinit",e)},onInit:function(e){this.$emit("navbar:init",e)},onReinit:function(e){this.$emit("navbar:reinit",e)},onBeforeRemove:function(e){this.$emit("navbar:beforeremove",e)},onBackClick:function(e){this.$emit("back-click",e),this.$emit("click:back",e)}}},c={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"center",class:{sliding:e.sliding}},[e._t("default",[e._v(e._s(e.title))])],2)},staticRenderFns:[],props:{sliding:Boolean,title:String}},u={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"left",class:{sliding:e.sliding}},[e.backLink?o("f7-link",{class:{"icon-only":e.backLink===!0||e.backLink&&e.$theme.material},attrs:{href:e.backLinkUrl||e.backLinkHref||"#",back:"",icon:"icon-back",text:e.backLink===!0||e.$theme.material?void 0:e.backLink},on:{click:e.onBackClick}}):e._e(),e._v(" "),e._t("default")],2)},staticRenderFns:[],props:{backLink:[Boolean,String],backLinkUrl:String,backLinkHref:String,sliding:Boolean},methods:{onBackClick:function(e){this.$emit("back-click",e),this.$emit("click:back",e)}}},d={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"right",class:{sliding:e.sliding}},[e._t("default")],2)},staticRenderFns:[],props:{sliding:Boolean}},p={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"subnavbar",class:!!e.sliding&&"sliding"},[e._t("default")],2)},staticRenderFns:[],props:{sliding:Boolean}},f={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"toolbar",class:e.classesObject},[e._t("before-inner"),e._v(" "),o("div",{staticClass:"toolbar-inner"},[e._t("default")],2),e._v(" "),e._t("after-inner")],2)},staticRenderFns:[],props:{bottom:Boolean,tabbar:Boolean,labels:Boolean,scrollable:Boolean,theme:String,layout:String,hidden:Boolean},computed:{classesObject:function(){var e={"toolbar-bottom":this.bottom,tabbar:this.tabbar,"tabbar-labels":this.labels,"tabbar-scrollable":this.scrollable,"toolbar-hidden":this.hidden};return this.theme&&(e["theme-"+this.theme]=!0),this.layout&&(e["layout-"+this.layout]=!0),e}},methods:{hide:function(e){if(this.$f7)return this.$f7.hideToolbar(this.$el,e)},show:function(e){if(this.$f7)return this.$f7.showToolbar(this.$el,e)}}},h={render:function(e){var t,o,n,a,i=this;return i.title&&(t=e("f7-card-header",{domProps:{innerHTML:i.title}})),i.content&&(n=e("div",{domProps:{innerHTML:i.content}}),o=e("f7-card-content",{props:{inner:i.inner}},[n])),i.footer&&(a=e("f7-card-footer",{domProps:{innerHTML:i.footer}})),e("div",{staticClass:"card"},[t,o,a,i.$slots.default])},props:{title:[String,Number],content:[String,Number],footer:[String,Number],inner:{type:Boolean,default:!0}}},m={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"card-header"},[e._t("default")],2)},staticRenderFns:[]},b={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"card-footer"},[e._t("default")],2)},staticRenderFns:[]},g={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"card-content"},[e.inner?o("div",{staticClass:"card-content-inner"},[e._t("default")],2):e._t("default")],2)},staticRenderFns:[],props:{inner:{type:Boolean,default:!0}}},v={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"content-block",class:e.classesObject,on:{"tab:show":e.onTabShow,"tab:hide":e.onTabHide}},[e.inner?o("div",{staticClass:"content-block-inner"},[e._t("default")],2):e._t("default")],2)},staticRenderFns:[],props:{inset:Boolean,"tablet-inset":Boolean,inner:Boolean,tabs:Boolean,tab:Boolean,active:Boolean,"no-hairlines":Boolean,"no-hairlines-between":Boolean},computed:{classesObject:function(){var e=this;return{inset:e.inset,"tablet-inset":e.tabletInset,tabs:e.tabs,tab:e.tab,active:e.active,"no-hairlines":e.noHairlines,"no-hairlines-between":e.noHairlinesBetween}}},methods:{onTabShow:function(e){this.$emit("tab:show",e)},onTabHide:function(e){this.$emit("tab:hide",e)}}},$={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"content-block-title"},[e._t("default")],2)},staticRenderFns:[]},k={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("span",{staticClass:"badge",class:e.color?"color-"+e.color:""},[e._t("default")],2)},staticRenderFns:[],props:{color:String}},S={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("i",{staticClass:"icon",class:e.classesObject,style:{"font-size":e.sizeComputed}},[e._v(e._s(e.iconTextComputed)),e._t("default")],2)},staticRenderFns:[],props:{color:String,material:String,f7:String,ion:String,fa:String,icon:String,"if-material":String,"if-ios":String,size:[String,Number]},computed:{sizeComputed:function(){var e=this,t=e.size;return"number"!=typeof t&&parseFloat(t)!==1*t||(t+="px"),t},iconTextComputed:function(){var e=this,t=e.material||e.f7;return e.ifMaterial&&e.$theme.material&&(e.ifMaterial.indexOf("material:")>=0||e.ifMaterial.indexOf("f7:")>=0)?t=e.ifMaterial.split(":")[1]:e.ifIos&&e.$theme.ios&&(e.ifIos.indexOf("material:")>=0||e.ifIos.indexOf("f7:")>=0)&&(t=e.ifIos.split(":")[1]),t},classesObject:function(){var e={},t=this;if(t.ifMaterial||t.ifIos){var o=t[t.$theme.material?"ifMaterial":"ifIos"].split(":"),n=o[0],a=o[1];"material"!==n&&"fa"!==n&&"f7"!==n||(e.fa="fa"===n,e["material-icons"]="material"===n,e["f7-icons"]="f7"===n),"fa"!==n&&"ion"!==n||(e[n+"-"+a]=!0),"icon"===n&&(e[a]=!0)}else e={"material-icons":this.material,"f7-icons":this.f7,fa:this.fa},this.ion&&(e["ion-"+this.ion]=!0),this.fa&&(e["fa-"+this.fa]=!0),this.icon&&(e[this.icon]=!0);return this.color&&(e["color-"+this.color]=!0),e}}},B={beforeDestroy:function(){var e=this;e.virtual&&e.virtualInit&&e.f7VirtualList&&e.f7VirtualList.destroy&&e.f7VirtualList.destroy()},watch:{virtualItems:function(){var e=this;e.virtual&&e.virtualInit&&e.f7VirtualList&&e.f7VirtualList.replaceAllItems(e.virtualItems)}},render:function(e){var t,o,n=this;o=n.grouped?n.$slots.default:e("ul",{},n.$slots.default);var a=[],i=[];if(n.$slots.default)for(var r=0;r<n.$slots.default.length;r++){var s=n.$slots.default[r].tag;s&&!("li"==s||s.indexOf("list-item")>=0||s.indexOf("list-button")>=0)?a.push(n.$slots.default[r]):i.push(n.$slots.default[r])}return t=e(n.form?"form":"div",{staticClass:"list-block",class:{inset:n.inset,"tablet-inset":n.tabletInset,"media-list":n.mediaList,sortable:n.sortable,"accordion-list":n.accordion,"contacts-block":n.contacts,"virtual-list":n.virtual,tab:n.tab,active:n.active,"no-hairlines":n.noHairlines,"no-hairlines-between":n.noHairlinesBetween,"store-data":n.storeData},on:{"sortable:open":n.onSortableOpen,"sortable:close":n.onSortableClose,"sortable:sort":n.onSortableSort,"tab:show":n.onTabShow,"tab:hide":n.onTabHide}},[i.length>0?[e("ul",{},i),a]:a])},props:{inset:Boolean,"tablet-inset":Boolean,"media-list":Boolean,grouped:Boolean,sortable:Boolean,label:String,accordion:Boolean,contacts:Boolean,"no-hairlines":Boolean,"no-hairlines-between":Boolean,tab:Boolean,active:Boolean,form:Boolean,"store-data":Boolean,virtual:Boolean,"virtual-init":{type:Boolean,default:!0},"virtual-items":[Array,Object],"virtual-height":[Number,Function],"virtual-rows-before":Number,"virtual-rows-after":Number,"virtual-cols":{type:Number,default:1},"virtual-cache":{type:Boolean,default:!0},"virtual-filtered-only":{type:Boolean,default:!1},"virtual-search-by-item":Function,"virtual-search-all":Function,"virtual-render-item":Function,"virtual-empty-template":String},methods:{onSortableOpen:function(e){this.$emit("sortable:open",e)},onSortableClose:function(e){this.$emit("sortable:close",e)},onSortableSort:function(e){this.$emit("sortable:sort",e,e.detail)},onTabShow:function(e){this.$emit("tab:show",e)},onTabHide:function(e){this.$emit("tab:hide",e)},onF7Init:function(e){var t=this;if(t.virtual&&t.virtualInit){var o=t.$$,n=o(t.$el).find("script").html();(n||t.virtualRenderItem)&&(n&&(n=t.$t7.compile(n)),t.f7VirtualList=e.virtualList(t.$el,{items:t.virtualItems||[],template:n,height:t.virtualHeight||void 0,cols:t.virtualCols,rowsBefore:t.virtualRowsBefore||void 0,rowsAfter:t.virtualRowsAfter||void 0,showFilteredItemsOnly:t.virtualFilteredOnly,searchByItem:t.virtualSearchByItem,searchAll:t.virtualSearchAll,renderItem:t.virtualRenderItem,emptyTemplate:t.virtualEmptyTemplate,onItemBeforeInsert:function(e,o){t.$emit("virtual:itembeforeinsert",e,o)},onBeforeClear:function(e,o){t.$emit("virtual:beforeclear",e,o)},onItemsBeforeInsert:function(e,o){t.$emit("virtual:itemsbeforeinsert",e,o)},onItemsAfterInsert:function(e,o){t.$emit("virtual:itemsafterinsert",e,o)}}))}}}},C={render:function(){var e=this,t=e.$createElement,o=e._self._c||t;return o("div",{staticClass:"list-block-group"},[o("ul",[e._t("default")],2)])},staticRenderFns:[],props:{"media-list":Boolean,sortable:Boolean},computed:{sortableComputed:function(){return this.sortable||this.$parent.sortable},mediaListComputed:function(){return this.mediaList||this.$parent.mediaList}},data:function(){return{}}},y={render:function(e){function t(e){return!(!e&&""!==e)}function o(e){return"string"==typeof e&&""!==e}var n,a,i,r=this;if(i=e("f7-list-item-content",{props:{title:r.title,text:r.text,media:r.media,subtitle:r.subtitle,after:r.after,badge:r.badge,"badge-color":r.badgeColor,"media-list":r.mediaListComputed,"accordion-item":r.accordionItem,checkbox:r.checkbox,checked:r.checkedComputed,radio:r.radio,name:r.name,value:r.valueComputed,readonly:r.readonly,required:r.required,disabled:r.disabled},on:r.link||r.accordionItem||r.smartSelect?{}:{click:r.onClick,change:r.onChange}},[r.$slots["content-start"],r.$slots.content,r.$slots["media-start"],r.$slots.media,r.$slots["inner-start"],r.$slots.inner,r.$slots["after-start"],r.$slots.after,r.swipeout||r.accordionItem?[]:r.$slots.default]),(r.link||r.accordionItem||r.smartSelect)&&(a=e("a",{attrs:{href:r.link===!0||r.accordionItem||r.smartSelect?"#":r.link,target:r.linkTarget,"data-searchbar":r.smartSelectSearchbar,"data-searchbar-placeholder":r.smartSelectSearchbarPlaceholder,"data-searchbar-cancel":r.smartSelectSearchbarCancel,"data-page-title":r.smartSelectPageTitle,"data-back-text":r.smartSelectBackText,"data-back-on-select":r.smartSelectBackOnSelect,"data-virtual-list":r.smartSelectVirtualList,"data-virtual-list-height":r.smartSelectVirtualListHeight,"data-open-in":r.smartSelectOpenIn,"data-navbar-theme":r.smartSelectNavbarTheme,"data-form-theme":r.smartSelectFormTheme,"data-view":!!o(r.linkView)&&r.linkView,"data-panel":!!o(r.linkOpenPanel)&&r.linkOpenPanel,"data-popup":!!o(r.linkOpenPopup)&&r.linkOpenPopup,"data-popover":!!o(r.linkOpenPopover)&&r.linkOpenPopover,"data-picker":!!o(r.linkOpenPicker)&&r.linkOpenPicker,"data-login-screen":!!o(r.linkOpenLoginScreen)&&r.linkOpenLoginScreen,"data-sortable":o(r.linkOpenSortable)?r.linkOpenSortable:!!o(r.linkToggleSortable)&&r.linkToggleSortable,"data-force":r.linkForce,"data-reload":r.linkReload,"data-animate-pages":"linkAnimatePages"in r.$options.propsData?r.linkAnimatePages.toString():void 0,"data-ignore-cache":r.linkIgnoreCache,"data-page-name":"string"==typeof r.linkPageName&&r.linkPageName,"data-template":"string"==typeof r.linkTemplate&&r.linkTemplate},class:{"item-link":!0,external:r.linkExternal,back:r.linkBack,"no-fastclick":r.linkNoFastclick,"smart-select":r.smartSelect,"close-panel":t(r.linkClosePanel),"open-panel":r.linkOpenPanel||""===r.linkOpenPanel,"close-popup":t(r.linkClosePopup),"open-popup":r.linkOpenPopup||""===r.linkOpenPopup,"close-popover":t(r.linkClosePopover),"open-popover":r.linkOpenPopover||""===r.linkOpenPopover,"close-picker":t(r.linkClosePicker),"open-picker":r.linkOpenPicker||""===r.linkOpenPicker,"close-login-screen":t(r.linkCloseLoginScreen),"open-login-screen":r.linkOpenLoginScreen||""===r.linkOpenLoginScreen,"close-sortable":t(r.linkCloseSortable),"open-sortable":r.linkOpenSortable||""===r.linkOpenSortable,"toggle-sortable":r.linkToggleSortable||""===r.linkToggleSortable},on:{click:r.onClick}},[i])),r.dividerOrGroupTitle)n=[e("span",r.$slots.default||r.title)];else{var s=r.link||r.smartSelect||r.accordionItem?a:i;n=r.swipeout?[e("div",{class:{"swipeout-content":!0}},[s])]:[s],r.sortableComputed&&n.push(e("div",{class:{"sortable-handler":!0}})),(r.swipeout||r.accordionItem)&&n.push(r.$slots.default),n.unshift(r.$slots["root-start"]),n.push(r.$slots.root)}return e("li",{class:{"item-divider":r.divider,"list-group-title":r.groupTitle,swipeout:r.swipeout,"accordion-item":r.accordionItem},on:{"swipeout:open":r.onSwipeoutOpen,"swipeout:opened":r.onSwipeoutOpened,"swipeout:close":r.onSwipeoutClose,"swipeout:closed":r.onSwipeoutClosed,"swipeout:delete":r.onSwipeoutDelete,"swipeout:deleted":r.onSwipeoutDeleted,swipeout:r.onSwipeout,"accordion:open":r.onAccOpen,"accordion:opened":r.onAccOpened,"accordion:close":r.onAccClose,"accordion:closed":r.onAccClosed}},n)},props:{title:[String,Number],text:[String,Number],media:String,subtitle:[String,Number],link:[Boolean,String],"link-external":Boolean,"link-back":Boolean,"link-no-fastclick":Boolean,"link-force":Boolean,"link-reload":Boolean,"link-animate-pages":Boolean,"link-ignore-cache":Boolean,"link-page-name":String,"link-template":String,"link-target":String,"link-view":String,"link-open-panel":[Boolean,String],"link-close-panel":[Boolean,String],"link-open-popup":[Boolean,String],"link-close-popup":[Boolean,String],"link-open-popover":[Boolean,String],"link-close-popover":[Boolean,String],"link-open-login-screen":[Boolean,String],"link-close-login-screen":[Boolean,String],"link-open-picker":[Boolean,String],"link-close-picker":[Boolean,String],after:[String,Number],badge:[String,Number],"badge-color":String,"media-item":Boolean,"media-list-item":Boolean,"media-list":Boolean,divider:Boolean,"group-title":Boolean,swipeout:Boolean,sortable:Boolean,"accordion-item":Boolean,"smart-select":Boolean,"smart-select-searchbar":Boolean,"smart-select-searchbar-placeholder":String,"smart-select-searchbar-cancel":String,"smart-select-page-title":String,"smart-select-back-text":String,"smart-select-back-on-select":Boolean,"smart-select-virtual-list":Boolean,"smart-select-virtual-list-height":Number,"smart-select-open-in":String,"smart-select-navbar-theme":String,"smart-select-form-theme":String,checkbox:Boolean,checked:Boolean,radio:Boolean,name:String,value:[String,Number,Boolean,Array],"input-value":[String,Number],readonly:Boolean,required:Boolean,disabled:Boolean},computed:{dividerOrGroupTitle:function(){return this.divider||this.groupTitle},sortableComputed:function(){return this.sortable||this.$parent.sortable||this.$parent.sortableComputed},mediaListComputed:function(){return this.mediaList||this.mediaItem||this.$parent.mediaList||this.$parent.mediaListComputed},hasCheckboxModel:function(){var e=this;return e.checkbox&&("undefined"!=typeof e.$options.propsData.value&&"boolean"==typeof e.value||Array.isArray(e.value))},hasRadioModel:function(){var e=this;return e.radio&&"undefined"!=typeof e.inputValue},valueComputed:function(){var e=this;return e.inputValue?e.inputValue:e.hasCheckboxModel?void 0:e.value},checkedComputed:function(){var e=this;return e.hasCheckboxModel?e.inputValue&&Array.isArray(e.value)?e.value.indexOf(e.inputValue)>=0:e.value:e.hasRadioModel?typeof e.value!=typeof e.inputValue?e.value.toString()===e.inputValue.toString():e.value===e.inputValue:e.checked}},methods:{onClick:function(e){"input"!==e.target.tagName.toLowerCase()&&this.$emit("click",e)},onSwipeoutDeleted:function(e){this.$emit("swipeout:deleted",e)},onSwipeoutDelete:function(e){this.$emit("swipeout:delete",e)},onSwipeoutClose:function(e){this.$emit("swipeout:close",e)},onSwipeoutClosed:function(e){this.$emit("swipeout:closed",e)},onSwipeoutOpen:function(e){this.$emit("swipeout:open",e)},onSwipeoutOpened:function(e){this.$emit("swipeout:opened",e)},onSwipeout:function(e){this.$emit("swipeout",e)},onAccClose:function(e){this.$emit("accordion:close",e)},onAccClosed:function(e){this.$emit("accordion:closed",e)},onAccOpen:function(e){this.$emit("accordion:open",e)},onAccOpened:function(e){this.$emit("accordion:opened",e)},onChange:function(e){var t=this;t.hasCheckboxModel?(Array.isArray(t.value)?e.target.checked?t.value.push(e.target.value):t.value.splice(t.value.indexOf(e.target.value),1):t.$emit("input",e.target.checked),t.$emit("change",e)):t.hasRadioModel?t.$emit("input",e.target.value):t.$emit("change",e)}}},w={render:function(e){var t,o,n,a,i,r,s,l,c,u,d,p=this,f=[],h=[],m=[],b=[],g=[],v=[],$=[],k=[];if(p.$slots.default&&p.$slots.default.length>0)for(var S=0;S<p.$slots.default.length;S++){var B=p.$slots.default[S].data?p.$slots.default[S].data.slot:void 0;B&&"content-start"===B&&f.push(p.$slots.default[S]),B&&"content"===B&&h.push(p.$slots.default[S]),
@@ -551,15 +551,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
 /**
  * Framework7 1.5.4
  * Full featured mobile HTML framework for building iOS & Android apps
- * 
+ *
  * http://framework7.io/
- * 
+ *
  * Copyright 2017, Vladimir Kharlampidi
  * The iDangero.us
  * http://www.idangero.us/
- * 
+ *
  * Licensed under MIT
- * 
+ *
  * Released on: March 13, 2017
  */
 (function () {
@@ -571,10 +571,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
     window.Framework7 = function (params) {
         // App
         var app = this;
-    
+
         // Version
         app.version = '1.5.4';
-    
+
         // Default Parameters
         app.params = {
             //
@@ -704,37 +704,37 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             // Auto init
             init: true,
         };
-    
+
         // Extend defaults with parameters
         for (var param in params) {
             app.params[param] = params[param];
         }
-    
+
         // DOM lib
         var $ = Dom7;
-    
+
         // Template7 lib
         var t7 = Template7;
         app._compiledTemplates = {};
-    
+
         // App Root
         app.root = $(app.params.root);
         app.root.eq(0).addClass('framework7-root');
-    
+
         // Touch events
         app.touchEvents = {
             start: app.support.touch ? 'touchstart' : 'mousedown',
             move: app.support.touch ? 'touchmove' : 'mousemove',
             end: app.support.touch ? 'touchend' : 'mouseup'
         };
-    
+
         // Link to local storage
         app.ls = window.localStorage;
-    
+
         // RTL
         app.rtl = $('body').css('direction') === 'rtl';
         if (app.rtl) $('html').attr('dir', 'rtl');
-    
+
         // Overwrite statusbar overlay
         if (typeof app.params.statusbarOverlay !== 'undefined') {
             if (app.params.statusbarOverlay) $('html').addClass('with-statusbar-overlay');
@@ -747,7 +747,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }, false);
         }
-    
+
 
         /*======================================================
         ************   Views   ************
@@ -771,13 +771,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 preloadPreviousPage: app.params.preloadPreviousPage
             };
             var i;
-        
+
             // Params
             params = params || {};
-        
+
             // Disable dynamic navbar for material theme
             if (params.dynamicNavbar && app.params.material) params.dynamicNavbar = false;
-        
+
             // Extend params with defaults
             for (var def in defaults) {
                 if (typeof params[def] === 'undefined') {
@@ -787,38 +787,38 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             // View
             var view = this;
             view.params = params;
-        
+
             // Selector
             view.selector = selector;
-        
+
             // Container
             var container = $(selector);
             view.container = container[0];
-        
+
             // Fix Selector
-        
+
             if (typeof selector !== 'string') {
                 // Supposed to be HTMLElement or Dom7
                 selector = (container.attr('id') ? '#' + container.attr('id') : '') + (container.attr('class') ? '.' + container.attr('class').replace(/ /g, '.').replace('.active', '') : '');
                 view.selector = selector;
             }
-        
+
             // Is main
             view.main = container.hasClass(app.params.viewMainClass);
-        
+
             // Content cache
             view.contentCache = {};
-        
+
             // Context cache
             view.contextCache = {};
-        
+
             // Pages cache
             view.pagesCache = {};
             view.pageElementsCache = {};
-        
+
             // Store View in element for easy access
             container[0].f7View = view;
-        
+
             // Pages
             view.pagesContainer = container.find('.pages')[0];
             view.initialPages = [];
@@ -836,14 +836,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         view.initialNavbars.push(initialNavbars[i]);
                     }
                 }
-        
+
             }
-        
+
             view.allowPageChange = true;
-        
+
             // Location
             var docLocation = document.location.href;
-        
+
             // History
             view.history = [];
             var viewURL = docLocation;
@@ -856,9 +856,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else {
                     if (pushStateSeparator && viewURL.indexOf(pushStateSeparator) >= 0 && viewURL.indexOf(pushStateSeparator + '#') < 0) viewURL = viewURL.split(pushStateSeparator)[0];
                 }
-        
+
             }
-        
+
             // Active Page
             var currentPage, currentPageData;
             if (!view.activePage) {
@@ -871,14 +871,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     currentPageData = currentPage[0].f7PageData;
                 }
             }
-        
+
             // View startup URL
             if (view.params.domCache && currentPage) {
-                view.url = container.attr('data-url') || view.params.url || '#' + currentPage.attr('data-page');   
+                view.url = container.attr('data-url') || view.params.url || '#' + currentPage.attr('data-page');
                 view.pagesCache[view.url] = currentPage.attr('data-page');
             }
             else view.url = container.attr('data-url') || view.params.url || viewURL;
-        
+
             // Update current page Data
             if (currentPageData) {
                 currentPageData.view = view;
@@ -889,12 +889,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 view.activePage = currentPageData;
                 currentPage[0].f7PageData = currentPageData;
             }
-        
+
             // Store to history main view's url
             if (view.url) {
                 view.history.push(view.url);
             }
-        
+
             // Touch events
             var isTouched = false,
                 isMoved = false,
@@ -915,7 +915,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 dynamicNavbar,
                 pageShadow,
                 el;
-        
+
             view.handleTouchStart = function (e) {
                 if (!allowViewTouchMove || !view.params.swipeBackPage || isTouched || app.swipeoutOpenedEl || !view.allowPageChange) return;
                 isMoved = false;
@@ -926,7 +926,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 touchStartTime = (new Date()).getTime();
                 dynamicNavbar = view.params.dynamicNavbar && container.find('.navbar-inner').length > 1;
             };
-        
+
             view.handleTouchMove = function (e) {
                 if (!isTouched) return;
                 var pageX = e.type === 'touchmove' ? e.targetTouches[0].pageX : e.pageX;
@@ -964,7 +964,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         isTouched = false;
                         return;
                     }
-        
+
                     if (view.params.swipeBackPageAnimateShadow && !app.device.android) {
                         pageShadow = activePage.find('.swipeback-page-shadow');
                         if (pageShadow.length === 0) {
@@ -972,7 +972,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             activePage.append(pageShadow);
                         }
                     }
-        
+
                     if (dynamicNavbar) {
                         activeNavbar = container.find('.navbar-on-center:not(.cached)');
                         previousNavbar = container.find('.navbar-on-left:not(.cached)');
@@ -983,7 +983,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             previousNavBackIcon = previousNavbar.find('.left.sliding .back .icon');
                         }
                     }
-        
+
                     // Close/Hide Any Picker
                     if ($('.picker-modal.modal-in').length > 0) {
                         app.closeModal($('.picker-modal.modal-in'));
@@ -992,15 +992,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 e.f7PreventPanelSwipe = true;
                 isMoved = true;
                 e.preventDefault();
-        
+
                 // RTL inverter
                 var inverter = app.rtl ? -1 : 1;
-        
+
                 // Touches diff
                 touchesDiff = (pageX - touchesStart.x - view.params.swipeBackPageThreshold) * inverter;
                 if (touchesDiff < 0) touchesDiff = 0;
                 var percentage = touchesDiff / viewContainerWidth;
-        
+
                 // Swipe Back Callback
                 var callbackData = {
                     percentage: percentage,
@@ -1013,7 +1013,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     view.params.onSwipeBackMove(callbackData);
                 }
                 container.trigger('swipeBackMove swipeback:move', callbackData);
-        
+
                 // Transform pages
                 var activePageTranslate = touchesDiff * inverter;
                 var previousPageTranslate = (touchesDiff / 5 - viewContainerWidth / 5) * inverter;
@@ -1021,13 +1021,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     activePageTranslate = Math.round(activePageTranslate);
                     previousPageTranslate = Math.round(previousPageTranslate);
                 }
-        
+
                 activePage.transform('translate3d(' + activePageTranslate + 'px,0,0)');
                 if (view.params.swipeBackPageAnimateShadow && !app.device.android) pageShadow[0].style.opacity = 1 - 1 * percentage;
-        
+
                 previousPage.transform('translate3d(' + previousPageTranslate + 'px,0,0)');
                 if (view.params.swipeBackPageAnimateOpacity) previousPage[0].style.opacity = 0.9 + 0.1 * percentage;
-        
+
                 // Dynamic Navbars Animation
                 if (dynamicNavbar) {
                     var i;
@@ -1061,7 +1061,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 }
             };
-        
+
             view.handleTouchEnd = function (e) {
                 if (!isTouched || !isMoved) {
                     isTouched = false;
@@ -1109,9 +1109,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 activeNavBackIcon.addClass('page-transitioning').transform('translate3d(' + -translate + 'px,0,0)');
                             }
                         }
-        
+
                     }).addClass('page-transitioning');
-        
+
                     previousNavElements.transform('').css({opacity: ''}).each(function () {
                         var translate = pageChanged ? 0 : this.f7NavbarLeftOffset;
                         var sliding = $(this);
@@ -1136,11 +1136,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     // Update View's URL
                     var url = view.history[view.history.length - 2];
                     view.url = url;
-        
+
                     // Page before animation callback
                     app.pageBackCallback('before', view, {pageContainer: activePage[0], url: url, position: 'center', newPage: previousPage, oldPage: activePage, swipeBack: true});
                     app.pageAnimCallback('before', view, {pageContainer: previousPage[0], url: url, position: 'left', newPage: previousPage, oldPage: activePage, swipeBack: true});
-        
+
                     if (view.params.onSwipeBackBeforeChange) {
                         view.params.onSwipeBackBeforeChange(callbackData);
                     }
@@ -1152,7 +1152,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     container.trigger('swipeBackBeforeReset swipeback:beforereset', callbackData);
                 }
-        
+
                 activePage.transitionEnd(function () {
                     $([activePage[0], previousPage[0]]).removeClass('page-transitioning');
                     if (dynamicNavbar) {
@@ -1169,7 +1169,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         app.pageBackCallback('after', view, {pageContainer: activePage[0], url: url, position: 'center', newPage: previousPage, oldPage: activePage, swipeBack: true});
                         app.pageAnimCallback('after', view, {pageContainer: previousPage[0], url: url, position: 'left', newPage: previousPage, oldPage: activePage, swipeBack: true});
                         app.router.afterBack(view, activePage, previousPage);
-        
+
                         if (view.params.onSwipeBackAfterChange) {
                             view.params.onSwipeBackAfterChange(callbackData);
                         }
@@ -1195,15 +1195,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             view.detachEvents = function () {
                 view.attachEvents(true);
             };
-        
+
             // Init
             if (view.params.swipeBackPage && !app.params.material) {
                 view.attachEvents();
             }
-        
+
             // Check view name to delete unwanted characters
             if (view.params.name) view.params.name = view.params.name.replace(/[^a-zA-Z]/g, '');
-          
+
             // Add view to app
             app.views.push(view);
             if (view.main) {
@@ -1214,7 +1214,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app[view.params.name + 'View'] = view;
                 app.views[view.params.name] = view;
             }
-        
+
             // Router
             view.router = {
                 load: function (options) {
@@ -1286,7 +1286,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     return app.router.load(view, options);
                 }
             };
-        
+
             // Aliases for temporary backward compatibility
             view.loadPage = view.router.loadPage;
             view.loadContent = view.router.loadContent;
@@ -1297,7 +1297,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             view.refreshPage = view.router.refreshPage;
             view.refreshPreviousPage = view.router.refreshPreviousPage;
             view.back = view.router.back;
-        
+
             // Bars methods
             view.hideNavbar = function (animated) {
                 return app.hideNavbar(container.find('.navbar'), animated);
@@ -1311,7 +1311,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             view.showToolbar = function (animated) {
                 return app.showToolbar(container.find('.toolbar'), animated);
             };
-        
+
             // Push State on load
             if (app.params.pushState && app.params.pushStateOnLoad && view.main) {
                 var pushStateUrl;
@@ -1344,7 +1344,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 }
             }
-        
+
             // Destroy
             view.destroy = function () {
                 view.detachEvents();
@@ -1363,9 +1363,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 container.removeAttr('data-page');
                 container[0].f7View = null;
                 delete container[0].f7View;
-                
+
                 app.views.splice(app.views.indexOf(view), 1);
-        
+
                 // Delete props & methods
                 for (var prop in view) {
                     if (view.hasOwnProperty(prop)) {
@@ -1375,18 +1375,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 view = null;
             };
-        
+
             // Plugin hook
             app.pluginHook('addView', view);
-        
+
             // Return view
             return view;
         };
-        
+
         app.addView = function (selector, params) {
             return new View(selector, params);
         };
-        
+
         app.getCurrentView = function (index) {
             var popoverView = $('.popover.modal-in .view');
             var popupView = $('.popup.modal-in .view');
@@ -1422,7 +1422,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             return undefined;
         };
-        
+
 
         /*======================================================
         ************   Navbars && Toolbars   ************
@@ -1436,19 +1436,19 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 innerContainer: navbarInnerContainer
             };
             var pageData = pageContainer && pageContainer.f7PageData;
-        
+
             var eventData = {
                 page: pageData,
                 navbar: navbarData
             };
-        
+
             if (navbarInnerContainer.f7NavbarInitialized && ((view && view.params.domCache) || (!view && $(navbarContainer).parents('.popup, .popover, .login-screen, .modal, .actions-modal, .picker-modal').length > 0))) {
                 // Reinit Navbar
                 app.reinitNavbar(navbarContainer, navbarInnerContainer);
-        
+
                 // Plugin hook
                 app.pluginHook('navbarReinit', eventData);
-        
+
                 // Event
                 $(navbarInnerContainer).trigger('navbarReinit navbar:reinit', eventData);
                 return;
@@ -1457,10 +1457,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             // Before Init
             app.pluginHook('navbarBeforeInit', navbarData, pageData);
             $(navbarInnerContainer).trigger('navbarBeforeInit navbar:beforeinit', eventData);
-        
+
             // Initialize Navbar
             app.initNavbar(navbarContainer, navbarInnerContainer);
-        
+
             // On init
             app.pluginHook('navbarInit', navbarData, pageData);
             $(navbarInnerContainer).trigger('navbarInit navbar:init', eventData);
@@ -1476,7 +1476,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (pageContainer) {
                 pageData = pageContainer.f7PageData;
             }
-        
+
             var eventData = {
                 page: pageData,
                 navbar: navbarData
@@ -1500,7 +1500,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (viewContainer.length === 0) return;
             if (navbarContainer.parents('.navbar-through').length === 0 && viewContainer.find('.navbar-through').length === 0) return;
             view = viewContainer[0].f7View || undefined;
-        
+
             navbarContainer.find('.navbar-inner').each(function () {
                 var navbarInnerContainer = this;
                 var pageContainer;
@@ -1524,7 +1524,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app.navbarInitCallback(view, pageContainer, navbarContainer[0], navbarInnerContainer);
             });
         };
-        
+
         // Size Navbars
         app.sizeNavbars = function (viewContainer) {
             if (app.params.material) return;
@@ -1545,7 +1545,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     navbarWidth = n[0].offsetWidth - parseInt(navbarStyles.paddingLeft, 10) - parseInt(navbarStyles.paddingRight, 10),
                     onLeft = n.hasClass('navbar-on-left'),
                     currLeft, diff;
-        
+
                 if (noRight) {
                     currLeft = navbarWidth - centerWidth;
                 }
@@ -1570,7 +1570,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 // RTL inverter
                 var inverter = app.rtl ? -1 : 1;
-        
+
                 if (center.hasClass('sliding')) {
                     center[0].f7NavbarLeftOffset = -(currLeft + diff) * inverter;
                     center[0].f7NavbarRightOffset = (navbarWidth - currLeft - diff - centerWidth) * inverter;
@@ -1613,15 +1613,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     subnavbar[0].f7NavbarLeftOffset = app.rtl ? subnavbar[0].offsetWidth : -subnavbar[0].offsetWidth;
                     subnavbar[0].f7NavbarRightOffset = -subnavbar[0].f7NavbarLeftOffset;
                 }
-        
+
                 // Center left
                 var centerLeft = diff;
                 if (app.rtl && noLeft && noRight && center.length > 0) centerLeft = -centerLeft;
                 center.css({left: centerLeft + 'px'});
-                
+
             });
         };
-        
+
         // Hide/Show Navbars/Toolbars
         app.hideNavbar = function (navbarContainer, animated) {
             if (typeof animated === 'undefined') animated = true;
@@ -1659,9 +1659,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             else {
                 toolbar.removeClass('toolbar-hidden toolbar-hiding not-animated');
             }
-                
+
         };
-        
+
 
         /*======================================================
         ************   Searchbar   ************
@@ -1688,7 +1688,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 onDisable
                 onClear
                 */
-        
+
             };
             params = params || {};
             for (var def in defaults) {
@@ -1696,37 +1696,37 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     params[def] = defaults[def];
                 }
             }
-            
+
             // Instance
             var s = this;
-        
+
             // Material
             s.material = app.params.material;
-        
+
             // Params
             s.params = params;
-        
+
             // Container
             container = $(container);
             s.container = container;
-        
+
             // Active
             s.active = false;
-        
+
             // Input
             s.input = s.params.input ? $(s.params.input) : s.container.find('input[type="search"]');
             s.clearButton = s.params.clearButton ? $(s.params.clearButton) : s.container.find('.searchbar-clear');
             s.cancelButton = s.params.cancelButton ? $(s.params.cancelButton) : s.container.find('.searchbar-cancel');
-        
+
             // Search List
             s.searchList = $(s.params.searchList);
-        
+
             // Is Virtual List
             s.isVirtualList = s.searchList.hasClass('virtual-list');
-        
+
             // Is In Page
             s.pageContainer = s.container.parents('.page').eq(0);
-        
+
             // Overlay
             if (!s.params.overlay) {
                 s.overlay = s.pageContainer.length > 0 ? s.pageContainer.find('.searchbar-overlay') : $('.searchbar-overlay');
@@ -1747,7 +1747,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             else {
                 s.notFound = $(s.params.notFound);
             }
-        
+
             // Set Cancel button
             var cancelMarginProp = app.rtl ? 'margin-left' : 'margin-right';
             var cancelButtonHasMargin = false;
@@ -1758,14 +1758,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.cancelButton.transition('');
                 cancelButtonHasMargin = true;
             };
-        
+
             // Trigger
             s.triggerEvent = function (eventName, callbackName, eventData) {
                 s.container.trigger(eventName, eventData);
                 if (s.searchList.length > 0) s.searchList.trigger(eventName, eventData);
                 if (callbackName && s.params[callbackName]) s.params[callbackName](s, eventData);
             };
-        
+
             // Enable/disalbe
             s.enable = function (e) {
                 function _enable() {
@@ -1789,14 +1789,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     _enable();
                 }
             };
-        
+
             s.disable = function () {
                 s.input.val('').trigger('change');
                 s.container.removeClass('searchbar-active searchbar-not-empty');
                 if (s.cancelButton.length > 0 && !s.material) s.cancelButton.css(cancelMarginProp, -s.cancelButton[0].offsetWidth + 'px');
-        
+
                 if (s.searchList.length || s.params.customSearch) s.overlay.removeClass('searchbar-overlay-active');
-        
+
                 s.active = false;
                 function _disable() {
                     s.input.blur();
@@ -1811,7 +1811,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 s.triggerEvent('disableSearch searchbar:disable', 'onDisable');
             };
-        
+
             // Clear
             s.clear = function (e) {
                 if (!s.query && e && $(e.target).hasClass('searchbar-clear')) {
@@ -1822,7 +1822,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.input.val('').trigger('change').focus();
                 s.triggerEvent('clearSearch searchbar:clear', 'onClear', {previousQuery: previousQuery});
             };
-        
+
             // Search
             s.handleInput = function () {
                 setTimeout(function () {
@@ -1830,13 +1830,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if ((s.searchList.length > 0 || s.params.customSearch) && (s.params.searchIn || s.isVirtualList)) s.search(value, true);
                 }, 0);
             };
-        
+
             var previousQuery = '';
             var virtualList;
             s.search = function (query, internal) {
                 if (query.trim() === previousQuery) return;
                 previousQuery = query.trim();
-        
+
                 if (!internal) {
                     if (!s.active) {
                         s.enable();
@@ -1853,12 +1853,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     s.container.addClass('searchbar-not-empty');
                     if (s.searchList.length && s.container.hasClass('searchbar-active')) s.overlay.removeClass('searchbar-overlay-active');
                 }
-        
+
                 if (s.params.customSearch) {
                     s.triggerEvent('search searchbar:search', 'onSearch', {query: query});
                     return;
                 }
-        
+
                 var foundItems = [], _vlQuery;
                 if (s.isVirtualList) {
                     virtualList = s.searchList[0].f7VirtualList;
@@ -1906,7 +1906,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             foundItems.push(el[0]);
                         }
                     });
-        
+
                     if (s.params.hideDividers) {
                         s.searchList.find('.item-divider, .list-group-title').each(function () {
                             var title = $(this);
@@ -1951,12 +1951,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     virtualList.filterItems(foundItems);
                 }
             };
-        
+
             // Events
             function preventSubmit(e) {
                 e.preventDefault();
             }
-        
+
             s.attachEvents = function (destroy) {
                 var method = destroy ? 'off' : 'on';
                 s.container[method]('submit', preventSubmit);
@@ -1965,12 +1965,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.input[method]('focus', s.enable);
                 s.input[method]('change keydown keypress keyup', s.handleInput);
                 s.clearButton[method]('click', s.clear);
-                    
+
             };
             s.detachEvents = function() {
                 s.attachEvents(true);
             };
-        
+
             // Init Destroy
             s.init = function () {
                 s.attachEvents();
@@ -1980,13 +1980,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.detachEvents();
                 s = null;
             };
-        
+
             // Init
             s.init();
-        
+
             s.container[0].f7Searchbar = s;
             return s;
-        
+
         };
         app.searchbar = function (container, params) {
             return new Searchbar(container, params);
@@ -1996,14 +1996,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var searchbar = container.hasClass('searchbar') ? container : container.find('.searchbar');
             if (searchbar.length === 0) return;
             if (!searchbar.hasClass('searchbar-init')) return;
-        
+
             var sb = app.searchbar(searchbar, searchbar.dataset());
-        
+
             function onBeforeRemove() {
                 if (sb) sb.destroy();
             }
             if (container.hasClass('page')) {
-                container.once('pageBeforeRemove', onBeforeRemove);   
+                container.once('pageBeforeRemove', onBeforeRemove);
             }
             else if (container.hasClass('navbar-inner')) {
                 container.once('navbarBeforeRemove', onBeforeRemove);
@@ -2024,39 +2024,39 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     params[def] = defaults[def];
                 }
             }
-            
+
             // Instance
             var m = this;
-        
+
             // Params
             m.params = params;
-        
+
             // Container
             m.container = $(container);
             if (m.container.length === 0) return;
-        
+
             // Textarea
             m.textarea = m.params.textarea ? $(m.params.textarea) : m.container.find('textarea');
-        
+
             // Is In Page
             m.pageContainer = m.container.parents('.page').eq(0);
             m.pageContent = m.pageContainer.find('.page-content');
-        
+
             // Initial Sizes
             m.pageContentPadding = parseInt(m.pageContent.css('padding-bottom'));
             m.initialBarHeight = m.container[0].offsetHeight;
             m.initialAreaHeight = m.textarea[0].offsetHeight;
-            
-        
+
+
             // Resize textarea
             m.sizeTextarea = function () {
                 // Reset
                 m.textarea.css({'height': ''});
-                
+
                 var height = m.textarea[0].offsetHeight;
                 var diff = height - m.textarea[0].clientHeight;
                 var scrollHeight = m.textarea[0].scrollHeight;
-        
+
                 // Update
                 if (scrollHeight + diff > height) {
                     var newAreaHeight = scrollHeight + diff;
@@ -2083,16 +2083,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 }
             };
-            
+
             // Clear
             m.clear = function () {
                 m.textarea.val('').trigger('change');
             };
             m.value = function (value) {
                 if (typeof value === 'undefined') return m.textarea.val();
-                else m.textarea.val(value).trigger('change');  
+                else m.textarea.val(value).trigger('change');
             };
-            
+
             // Handle textarea
             m.textareaTimeout = undefined;
             m.handleTextarea = function (e) {
@@ -2101,12 +2101,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     m.sizeTextarea();
                 }, 0);
             };
-        
+
             //Events
             function preventSubmit(e) {
                 e.preventDefault();
             }
-        
+
             m.attachEvents = function (destroy) {
                 var method = destroy ? 'off' : 'on';
                 m.container[method]('submit', preventSubmit);
@@ -2115,7 +2115,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             m.detachEvents = function () {
                 m.attachEvents(true);
             };
-            
+
             // Init Destroy
             m.init = function () {
                 m.attachEvents();
@@ -2124,10 +2124,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 m.detachEvents();
                 m = null;
             };
-        
+
             // Init
             m.init();
-        
+
             m.container[0].f7Messagebar = m;
             return m;
         };
@@ -2140,7 +2140,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (messagebar.length === 0) return;
             if (!messagebar.hasClass('messagebar-init')) return;
             var mb = app.messagebar(messagebar, messagebar.dataset());
-        
+
             // Destroy on page remove
             function pageBeforeRemove() {
                 mb.destroy();
@@ -2163,7 +2163,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             if (index !== false) app.cache.splice(index, 1);
         };
-        
+
         // XHR
         app.xhr = false;
         app.get = function (url, view, ignoreCache, callback) {
@@ -2185,7 +2185,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 }
             }
-        
+
             app.xhr = $.ajax({
                 url: url,
                 method: 'GET',
@@ -2213,17 +2213,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             });
             if (view) view.xhr = app.xhr;
-        
+
             return app.xhr;
         };
-        
+
 
         /*======================================================
         ************   Pages   ************
         ======================================================*/
         // Page Callbacks API
         app.pageCallbacks = {};
-        
+
         app.onPage = function (callbackName, pageName, callback) {
             if (pageName && pageName.split(' ').length > 1) {
                 var pageNames = pageName.split(' ');
@@ -2261,7 +2261,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 trigger: callback
             };
         };
-        
+
         //Create callbacks methods dynamically
         function createPageCallback(callbackName) {
             var capitalized = callbackName.replace(/^./, function (match) {
@@ -2271,13 +2271,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 return app.onPage(callbackName, pageName, callback);
             };
         }
-        
+
         var pageCallbacksNames = ('beforeInit init reinit beforeAnimation afterAnimation back afterBack beforeRemove').split(' ');
         for (var i = 0; i < pageCallbacksNames.length; i++) {
             app.pageCallbacks[pageCallbacksNames[i]] = {};
             createPageCallback(pageCallbacksNames[i]);
         }
-        
+
         app.triggerPageCallbacks = function (callbackName, pageName, pageData) {
             var allPagesCallbacks = app.pageCallbacks[callbackName]['*'];
             if (allPagesCallbacks) {
@@ -2291,13 +2291,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 callbacks[i](pageData);
             }
         };
-        
+
         // On Page Init Callback
         app.pageInitCallback = function (view, params) {
             var pageContainer = params.pageContainer;
             if (!pageContainer) return;
             if (pageContainer.f7PageInitialized && view && !view.params.domCache) return;
-        
+
             var pageQuery = params.query;
             if (!pageQuery) {
                 if (params.url && params.url.indexOf('?') > 0) {
@@ -2310,7 +2310,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     pageQuery = {};
                 }
             }
-        
+
             // Page Data
             var pageData = {
                 container: pageContainer,
@@ -2326,11 +2326,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (params.fromPage && !params.fromPage.navbarInnerContainer && params.oldNavbarInnerContainer) {
                 params.fromPage.navbarInnerContainer = params.oldNavbarInnerContainer;
             }
-        
+
             if (pageContainer.f7PageInitialized && ((view && view.params.domCache) || (!view && $(pageContainer).parents('.popup, .popover, .login-screen, .modal, .actions-modal, .picker-modal').length > 0))) {
                 // Reinit Page
                 app.reinitPage(pageContainer);
-        
+
                 // Callbacks
                 app.pluginHook('pageReinit', pageData);
                 if (app.params.onPageReinit) app.params.onPageReinit(app, pageData);
@@ -2339,10 +2339,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 return;
             }
             pageContainer.f7PageInitialized = true;
-        
+
             // Store pagedata in page
             pageContainer.f7PageData = pageData;
-        
+
             // Update View's activePage
             if (view && !params.preloadOnly && !params.reloadPrevious) {
                 // Add data-page on view
@@ -2350,16 +2350,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 // Update View active page data
                 view.activePage = pageData;
             }
-        
+
             // Before Init Callbacks
             app.pluginHook('pageBeforeInit', pageData);
             if (app.params.onPageBeforeInit) app.params.onPageBeforeInit(app, pageData);
             app.triggerPageCallbacks('beforeInit', pageData.name, pageData);
             $(pageData.container).trigger('pageBeforeInit page:beforeinit', {page: pageData});
-        
+
             // Init page
             app.initPage(pageContainer);
-        
+
             // Init Callback
             app.pluginHook('pageInit', pageData);
             if (app.params.onPageInit) app.params.onPageInit(app, pageData);
@@ -2394,7 +2394,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var pageContext;
             if (!pageContainer) return;
             if (pageContainer.f7PageData) pageContext = pageContainer.f7PageData.context;
-        
+
             var pageData = {
                 container: pageContainer,
                 name: $(pageContainer).attr('data-page'),
@@ -2406,13 +2406,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 navbarInnerContainer: pageContainer.f7PageData && pageContainer.f7PageData.navbarInnerContainer,
                 swipeBack: params.swipeBack
             };
-        
+
             if (callback === 'after') {
                 app.pluginHook('pageAfterBack', pageData);
                 if (app.params.onPageAfterBack) app.params.onPageAfterBack(app, pageData);
                 app.triggerPageCallbacks('afterBack', pageData.name, pageData);
                 $(pageContainer).trigger('pageAfterBack page:afterback', {page: pageData});
-        
+
             }
             if (callback === 'before') {
                 app.pluginHook('pageBack', pageData);
@@ -2426,7 +2426,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var pageContext;
             if (!pageContainer) return;
             if (pageContainer.f7PageData) pageContext = pageContainer.f7PageData.context;
-        
+
             var pageQuery = params.query;
             if (!pageQuery) {
                 if (params.url && params.url.indexOf('?') > 0) {
@@ -2454,24 +2454,24 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             };
             var oldPage = params.oldPage,
                 newPage = params.newPage;
-        
+
             // Update page date
             pageContainer.f7PageData = pageData;
-        
+
             if (callback === 'after') {
                 app.pluginHook('pageAfterAnimation', pageData);
                 if (app.params.onPageAfterAnimation) app.params.onPageAfterAnimation(app, pageData);
                 app.triggerPageCallbacks('afterAnimation', pageData.name, pageData);
                 $(pageData.container).trigger('pageAfterAnimation page:afteranimation', {page: pageData});
-        
+
             }
             if (callback === 'before') {
                 // Add data-page on view
                 $(view.container).attr('data-page', pageData.name);
-        
+
                 // Update View's activePage
                 if (view) view.activePage = pageData;
-        
+
                 // Hide/show navbar dynamically
                 if (newPage.hasClass('no-navbar') && !oldPage.hasClass('no-navbar')) {
                     view.hideNavbar();
@@ -2498,7 +2498,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (tabBar.length === 0) tabBar = $(view.container).parents('.' + app.params.viewsClass).find('.tabbar');
                     app.showToolbar(tabBar);
                 }
-        
+
                 oldPage.removeClass('no-navbar-by-scroll no-toolbar-by-scroll');
                 // Callbacks
                 app.pluginHook('pageBeforeAnimation', pageData);
@@ -2507,7 +2507,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 $(pageData.container).trigger('pageBeforeAnimation page:beforeanimation', {page: pageData});
             }
         };
-        
+
         // Init Page Events and Manipulations
         app.initPage = function (pageContainer) {
             pageContainer = $(pageContainer);
@@ -2582,7 +2582,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             _modalsSelector: '.popup, .modal, .popover, .actions-modal, .picker-modal, .login-screen',
             // Temporary DOM Element
             temporaryDom: document.createElement('div'),
-        
+
             // Find page or navbar in passed container which are related to View
             findElement: function (selector, container, view, notCached) {
                 container = $(container);
@@ -2609,7 +2609,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else return undefined;
                 }
             },
-        
+
             // Set pages classes for animationEnd
             animatePages: function (leftPage, rightPage, direction) {
                 // Loading new page
@@ -2622,16 +2622,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (direction === 'to-right') {
                     leftPage.removeClass(removeClasses).addClass('page-from-left-to-center');
                     rightPage.removeClass(removeClasses).addClass('page-from-center-to-right');
-        
+
                 }
             },
-        
+
             // Prepare navbar before animarion
             prepareNavbar: function (newNavbarInner, oldNavbarInner, newNavbarPosition) {
                 $(newNavbarInner).find('.sliding').each(function () {
                     var sliding = $(this);
                     var slidingOffset = newNavbarPosition === 'right' ? this.f7NavbarRightOffset : this.f7NavbarLeftOffset;
-        
+
                     if (app.params.animateNavBackIcon) {
                         if (sliding.hasClass('left') && sliding.find('.back .icon').length > 0) {
                             sliding.find('.back .icon').transform('translate3d(' + (-slidingOffset) + 'px,0,0)');
@@ -2640,7 +2640,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     sliding.transform('translate3d(' + slidingOffset + 'px,0,0)');
                 });
             },
-        
+
             // Set navbars classes for animation
             animateNavbars: function (leftNavbarInner, rightNavbarInner, direction) {
                 // Loading new page
@@ -2656,7 +2656,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             }
                         }
                     });
-        
+
                     leftNavbarInner.removeClass(removeClasses).addClass('navbar-from-center-to-left');
                     leftNavbarInner.find('.sliding').each(function () {
                         var sliding = $(this);
@@ -2685,7 +2685,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             }
                         }
                     });
-        
+
                     rightNavbarInner.removeClass(removeClasses).addClass('navbar-from-center-to-right');
                     rightNavbarInner.find('.sliding').each(function () {
                         var sliding = $(this);
@@ -2698,14 +2698,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     });
                 }
             },
-        
+
             preprocess: function(view, content, url, next) {
                 // Plugin hook
                 app.pluginHook('routerPreprocess', view, content, url, next);
-        
+
                 // Preprocess by plugin
                 content = app.pluginProcess('preprocess', content);
-        
+
                 if (view && view.params && view.params.preprocess) {
                     content = view.params.preprocess(content, url, next);
                     if (typeof content !== 'undefined') {
@@ -2732,7 +2732,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     return false;
                 }
             },
-        
+
             template7Render: function (view, options) {
                 var url = options.url,
                     content = options.content, //initial content
@@ -2740,7 +2740,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     context = options.context, // Context data for Template7
                     contextName = options.contextName,
                     template = options.template; // Template 7 compiled template
-        
+
                 var t7_ctx, t7_template;
                 if (typeof content === 'string') {
                     if (url) {
@@ -2755,7 +2755,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else if (template) {
                     t7_template = template;
                 }
-        
+
                 if (context) {
                     t7_ctx = context;
                     if (context && url) {
@@ -2798,7 +2798,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         t7_ctx = {};
                     }
                 }
-        
+
                 if (t7_template && t7_ctx) {
                     if (typeof t7_ctx === 'function') t7_ctx = t7_ctx();
                     if (url) {
@@ -2819,16 +2819,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 }
-        
+
                 return {content: t7_rendered_content, context: t7_ctx};
             }
         };
-        
-        
+
+
         app.router._load = function (view, options) {
             // Plugin hook
             app.pluginHook('routerLoad', view, options);
-        
+
             var url = options.url,
                 content = options.content, //initial content
                 t7_rendered = {content: options.content},
@@ -2841,9 +2841,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 isDynamicPage = typeof url === 'undefined' && content || template,
                 pushState = options.pushState,
                 pageElement = options.pageElement;
-        
+
             if (typeof animatePages === 'undefined') animatePages = view.params.animatePages;
-        
+
             // Render with Template7
             if (app.params.template7Pages && typeof content === 'string' || template) {
                 t7_rendered = app.router.template7Render(view, options);
@@ -2851,9 +2851,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     content = t7_rendered.content;
                 }
             }
-        
+
             app.router.temporaryDom.innerHTML = '';
-        
+
             // Parse DOM
             if (!pageName && !pageElement) {
                 if ((typeof content === 'string') || (url && (typeof content === 'string'))) {
@@ -2868,10 +2868,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 }
             }
-        
+
             // Reload position
             reloadPosition = options.reload && (options.reloadPrevious ? 'left' : 'center');
-        
+
             // Find new page
             if (pageName) newPage = pagesContainer.find('.page[data-page="' + pageName + '"]');
             else {
@@ -2883,9 +2883,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 view.allowPageChange = true;
                 return;
             }
-        
+
             newPage.addClass(options.reload ? 'page-on-' + reloadPosition : 'page-on-right');
-        
+
             // Find old page (should be the last one) and remove older pages
             pagesInView = pagesContainer.children('.page:not(.cached)');
             if (pageElement) {
@@ -2893,12 +2893,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (page !== pageElement) return page;
                 });
             }
-        
+
             if (options.reload && options.reloadPrevious && pagesInView.length === 1)  {
                 view.allowPageChange = true;
                 return;
             }
-        
+
             if (options.reload) {
                 oldPage = pagesInView.eq(pagesInView.length - 1);
             }
@@ -2929,7 +2929,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 });
             }
             if(view.params.domCache || pageElement) newPage.removeClass('cached');
-        
+
             // Dynamic navbar
             if (view.params.dynamicNavbar) {
                 dynamicNavbar = true;
@@ -2964,7 +2964,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 else {
                     oldNavbarInner = navbar.find('.navbar-inner:not(.cached)');
-        
+
                     if (oldNavbarInner.length > 0) {
                         for (i = 0; i < oldNavbarInner.length - 1; i++) {
                             if (!view.params.domCache) {
@@ -2992,7 +2992,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 newPage[0].f7RelatedNavbar = newNavbarInner[0];
                 newNavbarInner[0].f7RelatedPage = newPage[0];
             }
-        
+
             // save content areas into view's cache
             if (!url) {
                 var newPageName = pageName || newPage.attr('data-page');
@@ -3011,7 +3011,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     navbarInner: newNavbarInner
                 };
             }
-        
+
             // Push State
             if (app.params.pushState && !options.reloadPrevious && view.main)  {
                 if (typeof pushState === 'undefined') pushState = true;
@@ -3029,7 +3029,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 }
             }
-        
+
             // Update View history
             view.url = url;
             if (options.reload) {
@@ -3061,7 +3061,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             else {
                 view.history.push(url);
             }
-        
+
             // Unique history
             var historyBecameUnique = false;
             if (view.params.uniqueHistory) {
@@ -3074,7 +3074,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         _history.push(view.history[i].split('?')[0]);
                     }
                 }
-        
+
                 if (_history.indexOf(_url) !== _history.lastIndexOf(_url)) {
                     view.history = view.history.slice(0, _history.indexOf(_url));
                     view.history.push(url);
@@ -3107,7 +3107,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (dynamicNavbar) app.router._remove(oldNavbarInner);
                 }
             }
-        
+
             // Page Init Events
             app.pageInitCallback(view, {
                 pageContainer: newPage[0],
@@ -3121,24 +3121,24 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 reload: options.reload,
                 reloadPrevious: options.reloadPrevious
             });
-        
+
             // Navbar init event
             if (dynamicNavbar) {
                 app.navbarInitCallback(view, newPage[0], navbar[0], newNavbarInner[0], url, options.reload ? reloadPosition : 'right');
             }
-        
+
             if (options.reload) {
                 view.allowPageChange = true;
                 if (historyBecameUnique) view.refreshPreviousPage();
                 return;
             }
-        
+
             if (dynamicNavbar && animatePages) {
                 app.router.prepareNavbar(newNavbarInner, oldNavbarInner, 'right');
             }
             // Force reLayout
             var clientLeft = newPage[0].clientLeft;
-        
+
             // Before Anim Callback
             app.pageAnimCallback('before', view, {
                 pageContainer: newPage[0],
@@ -3149,7 +3149,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 query: options.query,
                 fromPage: oldPage && oldPage.length && oldPage[0].f7PageData
             });
-        
+
             function afterAnimation() {
                 view.allowPageChange = true;
                 newPage.removeClass('page-from-right-to-center page-on-right page-on-left').addClass('page-on-center');
@@ -3196,7 +3196,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else {
                     app.router.animatePages(oldPage, newPage, 'to-left', view);
                 }
-        
+
                 // Dynamic navbar animation
                 if (dynamicNavbar) {
                     setTimeout(function() {
@@ -3211,9 +3211,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (dynamicNavbar) newNavbarInner.find('.sliding, .sliding .back .icon').transform('');
                 afterAnimation();
             }
-        
+
         };
-        
+
         app.router.load = function (view, options) {
             options = options || {};
             if (app.router.preroute(view, options)) {
@@ -3231,7 +3231,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             var template = options.template;
             if (view.params.reloadPages === true) options.reload = true;
-        
+
             if (!view.allowPageChange) return false;
             if (url && view.url === url && !options.reload && !view.params.allowDuplicateUrls) return false;
             view.allowPageChange = false;
@@ -3253,7 +3253,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app.router._load(view, options);
                 return;
             }
-        
+
             if (!options.url || options.url === '#') {
                 view.allowPageChange = true;
                 return;
@@ -3266,12 +3266,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 proceed(content);
             });
         };
-        
+
         app.router._back = function (view, options) {
             options = options || {};
-        
+
             app.pluginHook('routerBack', view, options);
-        
+
             var url = options.url,
                 content = options.content,
                 t7_rendered = {content: options.content}, // will be rendered using Template7
@@ -3283,14 +3283,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 force = options.force,
                 pageName = options.pageName,
                 pageElement = options.pageElement;
-        
+
             var viewContainer = $(view.container),
                 pagesContainer = $(view.pagesContainer),
                 pagesInView = pagesContainer.children('.page:not(.cached)'),
                 oldPage, newPage, oldNavbarInner, newNavbarInner, navbar, navbarInners, dynamicNavbar, manipulateDom = true;
-        
+
             if (typeof animatePages === 'undefined') animatePages = view.params.animatePages;
-        
+
             // Render with Template7
             if (app.params.template7Pages && typeof content === 'string' || template) {
                 t7_rendered = app.router.template7Render(view, options);
@@ -3298,7 +3298,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     content = t7_rendered.content;
                 }
             }
-        
+
             // Animation
             function afterAnimation() {
                 app.pageBackCallback('after', view, {
@@ -3337,18 +3337,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     query: options.query,
                     fromPage: oldPage && oldPage.length && oldPage[0].f7PageData
                 });
-        
+
                 if (animatePages) {
                     // Set pages before animation
                     app.router.animatePages(newPage, oldPage, 'to-right', view);
-        
+
                     // Dynamic navbar animation
                     if (dynamicNavbar) {
                         setTimeout(function () {
                             app.router.animateNavbars(newNavbarInner, oldNavbarInner, 'to-right', view);
                         }, 0);
                     }
-        
+
                     newPage.animationEnd(function () {
                         afterAnimation();
                     });
@@ -3358,7 +3358,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     afterAnimation();
                 }
             }
-        
+
             function parseNewPage() {
                 app.router.temporaryDom.innerHTML = '';
                 // Parse DOM
@@ -3375,7 +3375,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 if (pageElement) newPage = $(pageElement);
                 else newPage = app.router.findElement('.page', app.router.temporaryDom, view);
-        
+
                 if (view.params.dynamicNavbar) {
                     // Find navbar
                     newNavbarInner = app.router.findElement('.navbar-inner', app.router.temporaryDom, view);
@@ -3395,7 +3395,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         dynamicNavbar = true;
                     }
                 }
-        
+
                 newPage.addClass('page-on-left').removeClass('cached');
                 if (dynamicNavbar) {
                     navbar = viewContainer.children('.navbar');
@@ -3406,7 +3406,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (force) {
                     var pageToRemove, navbarToRemove;
                     pageToRemove = $(pagesInView[pagesInView.length - 2]);
-        
+
                     if (dynamicNavbar) navbarToRemove = $(pageToRemove[0] && pageToRemove[0].f7RelatedNavbar || navbarInners[navbarInners.length - 2]);
                     if (view.params.domCache && view.initialPages.indexOf(pageToRemove[0]) >= 0) {
                         if (pageToRemove.length && pageToRemove[0] !== newPage[0]) pageToRemove.addClass('cached');
@@ -3445,7 +3445,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 }
-        
+
                 oldPage = $(pagesInView[pagesInView.length - 1]);
                 if (view.params.domCache) {
                     if (oldPage[0] === newPage[0]) {
@@ -3453,7 +3453,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (oldPage.length === 0 && view.activePage) oldPage = $(view.activePage.container);
                     }
                 }
-        
+
                 if (dynamicNavbar && !oldNavbarInner) {
                     oldNavbarInner = $(navbarInners[navbarInners.length - 1]);
                     if (view.params.domCache) {
@@ -3466,14 +3466,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     if (oldNavbarInner.length === 0 || newNavbarInner[0] === oldNavbarInner[0]) dynamicNavbar = false;
                 }
-        
+
                 if (dynamicNavbar) {
                     if (manipulateDom) newNavbarInner.insertBefore(oldNavbarInner);
                     newNavbarInner[0].f7RelatedPage = newPage[0];
                     newPage[0].f7RelatedNavbar = newNavbarInner[0];
                 }
                 if (manipulateDom) newPage.insertBefore(oldPage);
-        
+
                 // Page Init Events
                 app.pageInitCallback(view, {
                     pageContainer: newPage[0],
@@ -3489,24 +3489,24 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (dynamicNavbar) {
                     app.navbarInitCallback(view, newPage[0], navbar[0], newNavbarInner[0], url, 'right');
                 }
-        
+
                 if (dynamicNavbar && newNavbarInner.hasClass('navbar-on-left') && animatePages) {
                     app.router.prepareNavbar(newNavbarInner,  oldNavbarInner, 'left');
                 }
-        
+
                 if (preloadOnly) {
                     view.allowPageChange = true;
                     return;
                 }
-        
+
                 // Update View's URL
                 view.url = url;
-        
+
                 // Force reLayout
                 var clientLeft = newPage[0].clientLeft;
-        
+
                 animateBack();
-        
+
                 // Push state
                 if (app.params.pushState && view.main)  {
                     if (typeof pushState === 'undefined') pushState = true;
@@ -3516,7 +3516,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 return;
             }
-        
+
             // Simple go back when we have pages on left
             if (pagesInView.length > 1 && !force) {
                 // Exit if only preloadOnly
@@ -3527,11 +3527,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 // Update View's URL
                 view.url = view.history[view.history.length - 2];
                 url = view.url;
-        
+
                 // Define old and new pages
                 newPage = $(pagesInView[pagesInView.length - 2]);
                 oldPage = $(pagesInView[pagesInView.length - 1]);
-        
+
                 // Dynamic navbar
                 if (view.params.dynamicNavbar) {
                     dynamicNavbar = true;
@@ -3547,14 +3547,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 setPages();
                 return;
             }
-        
+
             if (!force) {
                 // Go back when there is no pages on left
                 if (!preloadOnly) {
                     view.url = view.history[view.history.length - 2];
                     url = view.url;
                 }
-        
+
                 if (content) {
                     parseNewPage();
                     setPages();
@@ -3599,7 +3599,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 else if (pageName && view.params.domCache) {
                     if (pageName) url = '#' + pageName;
-        
+
                     newPage = $(viewContainer).find('.page[data-page="' + pageName + '"]');
                     if (newPage[0].f7PageData && newPage[0].f7PageData.url) {
                         url = newPage[0].f7PageData.url;
@@ -3637,7 +3637,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     return;
                 }
             }
-        
+
         };
         app.router.back = function (view, options) {
             options = options || {};
@@ -3662,7 +3662,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app.xhr = false;
             }
             var pagesInView = $(view.pagesContainer).find('.page:not(.cached)');
-        
+
             function proceed(content) {
                 app.router.preprocess(view, content, url, function (content) {
                     options.content = content;
@@ -3734,12 +3734,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             view.allowPageChange = true;
             return;
         };
-        
+
         app.router.afterBack = function (view, oldPage, newPage) {
             // Remove old page and set classes on new one
             oldPage = $(oldPage);
             newPage = $(newPage);
-        
+
             if (view.params.domCache && view.initialPages.indexOf(oldPage[0]) >= 0) {
                 oldPage.removeClass('page-from-center-to-right').addClass('cached');
             }
@@ -3747,15 +3747,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app.pageRemoveCallback(view, oldPage[0], 'right');
                 app.router._remove(oldPage);
             }
-        
+
             newPage.removeClass('page-from-left-to-center page-on-left').addClass('page-on-center');
             view.allowPageChange = true;
-        
+
             // Update View's History
             var previousURL = view.history.pop();
-        
+
             var newNavbar;
-        
+
             // Updated dynamic navbar
             if (view.params.dynamicNavbar) {
                 var inners = $(view.container).children('.navbar').find('.navbar-inner:not(.cached)');
@@ -3769,7 +3769,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 newNavbar = $(inners[0]).removeClass('navbar-on-left navbar-from-left-to-center').addClass('navbar-on-center');
             }
-        
+
             // Remove pages in dom cache
             if (view.params.domCache) {
                 $(view.container).find('.page.cached').each(function () {
@@ -3783,7 +3783,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 });
             }
-        
+
             // Check previous page is content based only and remove it from content cache
             if (!view.params.domCache &&
                 previousURL &&
@@ -3809,9 +3809,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 view.contextCache[previousURL] = null;
                 delete view.contextCache[previousURL];
             }
-        
+
             if (app.params.pushState && view.main) app.pushStateClearQueue();
-        
+
             // Preload previous page
             if (view.params.preloadPreviousPage) {
                 if (view.params.domCache && view.history.length > 1) {
@@ -3841,7 +3841,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         };
-        
+
 
         /*======================================================
         ************   Modals   ************
@@ -3875,13 +3875,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var modalButtonsHTML = params.buttons && params.buttons.length > 0 ? '<div class="modal-buttons modal-buttons-' + params.buttons.length + ' ' + verticalButtons + '">' + buttonsHTML + '</div>' : '';
                 modalHTML = '<div class="modal ' + noButtons + ' ' + (params.cssClass || '') + '"><div class="modal-inner">' + (titleHTML + textHTML + afterTextHTML) + '</div>' + modalButtonsHTML + '</div>';
             }
-        
+
             _modalTemplateTempDiv.innerHTML = modalHTML;
-        
+
             var modal = $(_modalTemplateTempDiv).children();
-        
+
             app.root.append(modal[0]);
-        
+
             // Add events on buttons
             modal.find('.modal-button').each(function (index, el) {
                 $(el).on('click', function (e) {
@@ -4032,9 +4032,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
             if (typeof animated === 'undefined') animated = true;
-        
+
             params = params || [];
-        
+
             if (params.length > 0 && !Array.isArray(params[0])) {
                 params = [params];
             }
@@ -4094,7 +4094,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 groupSelector = '.actions-modal-group';
                 buttonSelector = '.actions-modal-button';
             }
-        
+
             var groups = modal.find(groupSelector);
             groups.each(function (index, el) {
                 var groupIndex = index;
@@ -4104,7 +4104,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     var clickTarget;
                     if (!toPopover && $(el).is(buttonSelector)) clickTarget = $(el);
                     if (toPopover && $(el).find(buttonSelector).length > 0) clickTarget = $(el).find(buttonSelector);
-        
+
                     if (clickTarget) {
                         clickTarget.on('click', function (e) {
                             if (buttonParams.close !== false) app.closeModal(modal);
@@ -4140,9 +4140,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 modal.append('<div class="popover-angle"></div>');
             }
             modal.show();
-        
+
             var material = app.params.material;
-        
+
             function sizePopover() {
                 modal.css({left: '', top: ''});
                 var modalWidth =  modal.width();
@@ -4156,7 +4156,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else {
                     modal.removeClass('popover-on-left popover-on-right popover-on-top popover-on-bottom').css({left: '', top: ''});
                 }
-        
+
                 var targetWidth = target.outerWidth();
                 var targetHeight = target.outerHeight();
                 var targetOffset = target.offset();
@@ -4164,10 +4164,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (targetParentPage.length > 0) {
                     targetOffset.top = targetOffset.top - targetParentPage[0].scrollTop;
                 }
-        
+
                 var windowHeight = $(window).height();
                 var windowWidth = $(window).width();
-        
+
                 var modalTop = 0;
                 var modalLeft = 0;
                 var diff = 0;
@@ -4189,14 +4189,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         modalPosition = 'bottom';
                         modalTop = targetOffset.top;
                     }
-        
+
                     if (modalTop <= 0) {
                         modalTop = 8;
                     }
                     else if (modalTop + modalHeight >= windowHeight) {
                         modalTop = windowHeight - modalHeight - 8;
                     }
-        
+
                     // Horizontal Position
                     modalLeft = targetOffset.left;
                     if (modalLeft + modalWidth >= windowWidth - 8) {
@@ -4224,7 +4224,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                     .addClass('floating-button-to-popover-scale')
                                     .transform('translate3d(' + diffX + 'px, ' + diffY + 'px,0) scale(' + (modalWidth/targetWidth) + ', ' + (modalHeight/targetHeight) + ')');
                             });
-        
+
                         modal.once('popover:close', function () {
                             target
                                 .removeClass('floating-button-to-popover-in floating-button-to-popover-scale')
@@ -4242,7 +4242,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         modalLeft = targetOffset.left;
                         modalTop = targetOffset.top;
                     }
-        
+
                 }
                 else {
                     if ((modalHeight + modalAngleSize) < targetOffset.top) {
@@ -4267,7 +4267,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                         diff = diff - modalTop;
                     }
-        
+
                     // Horizontal Position
                     if (modalPosition === 'top' || modalPosition === 'bottom') {
                         modalLeft = targetWidth / 2 + targetOffset.left - modalWidth / 2;
@@ -4284,7 +4284,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         modalAngleLeft = (modalWidth / 2 - modalAngleSize + diff);
                         modalAngleLeft = Math.max(Math.min(modalAngleLeft, modalWidth - modalAngleSize * 2 - 13), 13);
                         modalAngle.css({left: modalAngleLeft + 'px'});
-        
+
                     }
                     else if (modalPosition === 'middle') {
                         modalLeft = targetOffset.left - modalWidth - modalAngleSize;
@@ -4299,20 +4299,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         modalAngle.css({top: modalAngleTop + 'px'});
                     }
                 }
-        
-        
+
+
                 // Apply Styles
                 modal.css({top: modalTop + 'px', left: modalLeft + 'px'});
             }
-        
+
             sizePopover();
-        
+
             $(window).on('resize', sizePopover);
-        
+
             modal.on('popover:close', function () {
                 $(window).off('resize', sizePopover);
             });
-        
+
             app.openModal(modal, animated);
             return modal[0];
         };
@@ -4336,7 +4336,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app.root.append(modal[0]);
             }
             modal.show();
-        
+
             app.openModal(modal, animated);
             return modal[0];
         };
@@ -4373,7 +4373,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app.closeModal('.login-screen.modal-in:not(.modal-out)');
             }
             modal.show();
-        
+
             app.openModal(modal, animated);
             return modal[0];
         };
@@ -4381,14 +4381,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (typeof animated === 'undefined') animated = true;
             modal = $(modal);
             modal[animated ? 'removeClass' : 'addClass']('not-animated');
-        
+
             var isModal = modal.hasClass('modal');
             var isPopover = modal.hasClass('popover');
             var isPopup = modal.hasClass('popup');
             var isLoginScreen = modal.hasClass('login-screen');
             var isPickerModal = modal.hasClass('picker-modal');
             var isActions = modal.hasClass('actions-modal');
-        
+
             // Modal Event Prefix
             var modalType = 'modal';
             if (isPopover) modalType = 'popover';
@@ -4396,20 +4396,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (isLoginScreen) modalType = 'loginscreen';
             if (isPickerModal) modalType = 'picker';
             if (isActions) modalType = 'actions';
-        
+
             if ($('.modal.modal-in:not(.modal-out)').length && app.params.modalStack && isModal) {
                 app.modalStack.push(function () {
                     app.openModal(modal);
                 });
                 return;
             }
-        
+
             // do nothing if this modal already shown
             if (true === modal.data('f7-modal-shown')) {
                 return;
             }
             modal.data('f7-modal-shown', true);
-        
+
             // Move modal
             var modalParent = modal.parent();
             if (app.params.modalsMoveToRoot && !modalParent.is(app.root)) {
@@ -4418,18 +4418,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                    modalParent.append(modal);
                 });
             }
-        
+
             modal.once(modalType + ':close', function() {
                modal.removeData('f7-modal-shown');
             });
-        
+
             if (isModal) {
                 modal.show();
                 modal.css({
                     marginTop: - Math.round(modal.outerHeight() / 2) + 'px'
                 });
             }
-        
+
             var overlay;
             if (!isLoginScreen && !isPickerModal) {
                 if ($('.modal-overlay').length === 0 && !isPopup) {
@@ -4451,18 +4451,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (overlay) {
                 overlay[animated ? 'removeClass' : 'addClass']('not-animated');
             }
-        
+
             //Make sure that styles are applied, trigger relayout;
             var clientLeft = modal[0].clientLeft;
-        
+
             // Trugger open event
             modal.trigger('open ' + modalType + ':open');
-        
+
             // Picker modal body class
             if (isPickerModal) {
                 $('body').addClass('with-picker-modal');
             }
-        
+
             // Init Pages and Navbars in modal
             if (modal.find('.' + app.params.viewClass).length > 0) {
                 modal.find('.page').each(function () {
@@ -4472,7 +4472,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     app.initNavbarWithCallback(this);
                 });
             }
-        
+
             // Classes for transition in
             if (!isLoginScreen && !isPickerModal) overlay.addClass('modal-overlay-visible');
             if (app.params.material && isPickerModal && overlay) overlay.addClass('modal-overlay-visible');
@@ -4501,7 +4501,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var isLoginScreen = modal.hasClass('login-screen');
             var isPickerModal = modal.hasClass('picker-modal');
             var isActions = modal.hasClass('actions-modal');
-        
+
             // Modal Event Prefix
             var modalType = 'modal';
             if (isPopover) modalType = 'popover';
@@ -4509,20 +4509,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (isLoginScreen) modalType = 'loginscreen';
             if (isPickerModal) modalType = 'picker';
             if (isActions) modalType = 'actions';
-        
+
             var removeOnClose = modal.hasClass('remove-on-close');
-        
+
             // For Actions
             var keepOnClose = modal.hasClass('keep-on-close');
-        
+
             var overlay;
-        
+
             if (isPopup) overlay = $('.popup-overlay');
             else {
                 if (isPickerModal && app.params.material) overlay = $('.picker-modal-overlay');
                 else if (!isPickerModal) overlay = $('.modal-overlay');
             }
-        
+
             if (isPopup){
                 if (modal.length === $('.popup.modal-in').length) {
                     overlay.removeClass('modal-overlay-visible');
@@ -4532,15 +4532,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 overlay.removeClass('modal-overlay-visible');
             }
             if (overlay) overlay[animated ? 'removeClass' : 'addClass']('not-animated');
-        
+
             modal.trigger('close ' + modalType + ':close');
-        
+
             // Picker modal body class
             if (isPickerModal) {
                 $('body').removeClass('with-picker-modal');
                 $('body').addClass('picker-modal-closing');
             }
-        
+
             if (!(isPopover && !app.params.material)) {
                 if (animated) {
                     modal.removeClass('modal-in').addClass('modal-out').transitionEnd(function (e) {
@@ -4549,7 +4549,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             modal.trigger('opened ' + modalType + ':opened');
                             if (isPopover) return;
                         }
-        
+
                         if (isPickerModal) {
                             $('body').removeClass('picker-modal-closing');
                         }
@@ -4592,7 +4592,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             return true;
         };
-        
+
 
         /*===============================================================================
         ************   Progress Bar   ************
@@ -4688,21 +4688,21 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             panel[animated ? 'removeClass' : 'addClass']('not-animated');
             panel.css({display: 'block'}).addClass('active');
             panel.trigger('open panel:open');
-        
+
             var panelOverlay = $('.panel-overlay');
             panelOverlay[animated ? 'removeClass' : 'addClass']('not-animated');
             panelOverlay.show();
-        
+
             if (panel.find('.' + app.params.viewClass).length > 0) {
                 if (app.sizeNavbars) app.sizeNavbars(panel.find('.' + app.params.viewClass)[0]);
             }
-        
+
             // Trigger reLayout
             var clientLeft = panel[0].clientLeft;
-        
+
             // Transition End;
             var transitionEndTarget = effect === 'reveal' ? $('.' + app.params.viewsClass) : panel;
-        
+
             function panelTransitionEnd() {
                 transitionEndTarget.transitionEnd(function (e) {
                     if ($(e.target).is(transitionEndTarget)) {
@@ -4719,14 +4719,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 });
             }
             if (animated) {
-                panelTransitionEnd();    
+                panelTransitionEnd();
             }
             else {
                 panel.trigger('opened panel:opened');
                 panelOverlay.css({display: ''});
                 app.allowPanelOpen = true;
             }
-        
+
             $('body').addClass('with-panel-' + panelPosition + '-' + effect);
             return true;
         };
@@ -4738,10 +4738,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var panelPosition = activePanel.hasClass('panel-left') ? 'left' : 'right';
             activePanel[animated ? 'removeClass' : 'addClass']('not-animated');
             activePanel.removeClass('active');
-        
+
             var panelOverlay = $('.panel-overlay');
             panelOverlay.removeClass('not-animated');
-        
+
             var transitionEndTarget = effect === 'reveal' ? $('.' + app.params.viewsClass) : activePanel;
             activePanel.trigger('close panel:close');
             app.allowPanelOpen = false;
@@ -4773,7 +4773,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var ww, wasVisible;
             function setPanels() {
                 ww = $(window).width();
-        
+
                 // Left Panel
                 if (app.params.panelLeftBreakpoint && panelLeft.length > 0) {
                     wasVisible = panelLeft.hasClass('panel-visible-by-breakpoint');
@@ -4783,7 +4783,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             panelLeft.css('display', '').addClass('panel-visible-by-breakpoint').removeClass('active');
                             panelLeft.trigger('open panel:open opened panel:opened');
                             views.css({
-                                'margin-left': panelLeft.width() + 'px' 
+                                'margin-left': panelLeft.width() + 'px'
                             });
                             app.allowPanelOpen = true;
                         }
@@ -4808,7 +4808,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             panelRight.css('display', '').addClass('panel-visible-by-breakpoint').removeClass('active');
                             panelRight.trigger('open panel:open opened panel:opened');
                             views.css({
-                                'margin-right': panelRight.width() + 'px' 
+                                'margin-right': panelRight.width() + 'px'
                             });
                             app.allowPanelOpen = true;
                         }
@@ -4844,11 +4844,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 else return;
             }
-        
+
             var panelOverlay = $('.panel-overlay');
             var isTouched, isMoved, isScrolling, touchesStart = {}, touchStartTime, touchesDiff, translate, overlayOpacity, opened, panelWidth, effect, direction;
             var views = $('.' + app.params.viewsClass);
-        
+
             function handleTouchStart(e) {
                 if (!app.allowPanelOpen || (!app.params.swipePanel && !app.params.swipePanelOnlyClose) || isTouched) return;
                 if ($('.modal-in, .photo-browser-in').length > 0) return;
@@ -4882,7 +4882,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 isMoved = false;
                 isTouched = true;
                 isScrolling = undefined;
-        
+
                 touchStartTime = (new Date()).getTime();
                 direction = undefined;
             }
@@ -4905,7 +4905,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         direction = 'to-left';
                     }
-        
+
                     if(side === 'both'){
                         if ($('.panel.active').length > 0) {
                             side = $('.panel.active').hasClass('panel-left') ? 'left' : 'right';
@@ -4929,7 +4929,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         isTouched = false;
                         return;
                     }
-        
+
                     if (
                         side === 'left' &&
                         (
@@ -4945,7 +4945,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         return;
                     }
                 }
-        
+
                 if (app.params.swipePanelNoFollow) {
                     var timeDiff = (new Date()).getTime() - touchStartTime;
                     if (timeDiff < 300) {
@@ -4962,7 +4962,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     isMoved = false;
                     return;
                 }
-        
+
                 if (!isMoved) {
                     effect = panel.hasClass('panel-cover') ? 'cover' : 'reveal';
                     if (!opened) {
@@ -4975,15 +4975,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (app.sizeNavbars) app.sizeNavbars(panel.find('.' + app.params.viewClass)[0]);
                     }
                 }
-        
+
                 isMoved = true;
-        
+
                 e.preventDefault();
                 var threshold = opened ? 0 : -app.params.swipePanelThreshold;
                 if (side === 'right') threshold = -threshold;
-        
+
                 touchesDiff = pageX - touchesStart.x + threshold;
-        
+
                 if (side === 'right') {
                     translate = touchesDiff  - (opened ? panelWidth : 0);
                     if (translate > 0) translate = 0;
@@ -5001,17 +5001,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (effect === 'reveal') {
                     views.transform('translate3d(' + translate + 'px,0,0)').transition(0);
                     panelOverlay.transform('translate3d(' + translate + 'px,0,0)').transition(0);
-        
+
                     panel.trigger('panel:swipe', {progress: Math.abs(translate / panelWidth)});
                     app.pluginHook('swipePanelSetTransform', views[0], panel[0], Math.abs(translate / panelWidth));
                 }
                 else {
                     panel.transform('translate3d(' + (translate - panelWidth) + 'px,0,0)').transition(0);
-        
+
                     panelOverlay.transition(0);
                     overlayOpacity = Math.abs(translate/panelWidth);
                     panelOverlay.css({opacity: overlayOpacity});
-        
+
                     panel.trigger('panel:swipe', {progress: Math.abs(translate / panelWidth)});
                     app.pluginHook('swipePanelSetTransform', views[0], panel[0], Math.abs(translate / panelWidth));
                 }
@@ -5027,7 +5027,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var timeDiff = (new Date()).getTime() - touchStartTime;
                 var action;
                 var edge = (translate === 0 || Math.abs(translate) === panelWidth);
-        
+
                 if (!opened) {
                     if (translate === 0) {
                         action = 'reset';
@@ -5108,7 +5108,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             $(document).on(app.touchEvents.move, handleTouchMove, activeListener);
             $(document).on(app.touchEvents.end, handleTouchEnd, passiveListener);
         };
-        
+
 
         /*======================================================
         ************   Image Lazy Loading   ************
@@ -5116,7 +5116,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         ======================================================*/
         app.initImagesLazyLoad = function (pageContainer) {
             pageContainer = $(pageContainer);
-        
+
             // Lazy images
             var lazyLoadImages;
             if (pageContainer.hasClass('lazy')) {
@@ -5127,7 +5127,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 lazyLoadImages = pageContainer.find('.lazy');
             }
             if (lazyLoadImages.length === 0) return;
-        
+
             // Scrollable page content
             var pageContent;
             if (pageContainer.hasClass('page-content'))  {
@@ -5138,7 +5138,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 pageContent = pageContainer.find('.page-content');
             }
             if (pageContent.length === 0) return;
-        
+
             // Placeholder
             var placeholderSrc = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXCwsK592mkAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==';
             if (typeof app.params.imagesLazyLoadPlaceholder === 'string') {
@@ -5147,17 +5147,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (app.params.imagesLazyLoadPlaceholder !== false) lazyLoadImages.each(function(){
                 if ($(this).attr('data-src')) $(this).attr('src', placeholderSrc);
             });
-        
+
             // load image
             var imagesSequence = [];
             var imageIsLoading = false;
             function loadImage(el) {
                 el = $(el);
-        
+
                 var bg = el.attr('data-background');
                 var src = bg ? bg : el.attr('data-src');
                 if (!src) return;
-        
+
                 function onLoad() {
                     el.removeClass('lazy').addClass('lazy-loaded');
                     if (bg) {
@@ -5166,7 +5166,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         el.attr('src', src);
                     }
-        
+
                     if (app.params.imagesLazyLoadSequential) {
                         imageIsLoading = false;
                         if (imagesSequence.length > 0) {
@@ -5174,7 +5174,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 }
-                
+
                 function onError() {
                     el.removeClass('lazy').addClass('lazy-loaded');
                     if (bg) {
@@ -5183,7 +5183,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         el.attr('src', placeholderSrc);
                     }
-        
+
                     if (app.params.imagesLazyLoadSequential) {
                         imageIsLoading = false;
                         if (imagesSequence.length > 0) {
@@ -5191,17 +5191,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 }
-        
+
                 if (app.params.imagesLazyLoadSequential) {
                     if (imageIsLoading) {
                         if (imagesSequence.indexOf(el[0]) < 0) imagesSequence.push(el[0]);
                         return;
                     }
                 }
-        
+
                 // Loading flag
                 imageIsLoading = true;
-                
+
                 var image = new Image();
                 image.onload = onLoad;
                 image.onerror = onError;
@@ -5219,7 +5219,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 });
             }
-        
+
             function isElementInViewport (el) {
                 var rect = el.getBoundingClientRect();
                 var threshold = app.params.imagesLazyLoadThreshold || 0;
@@ -5230,7 +5230,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     rect.left <= (window.innerWidth + threshold)
                 );
             }
-        
+
             function attachEvents(destroy) {
                 var method = destroy ? 'off' : 'on';
                 lazyLoadImages[method]('lazy', lazyHandler);
@@ -5243,21 +5243,21 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             function detachEvents() {
                 attachEvents(true);
             }
-        
+
             // Store detach function
             pageContainer[0].f7DestroyImagesLazyLoad = detachEvents;
-        
+
             // Attach events
             attachEvents();
-        
+
             // Destroy on page remove
             if (pageContainer.hasClass('page')) {
                 pageContainer.once('page:beforeremove', detachEvents);
             }
-        
+
             // Run loader on page load/init
             lazyHandler();
-        
+
             // Run after page animation
             pageContainer.once('page:afteranimation', lazyHandler);
         };
@@ -5273,7 +5273,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 pageContainer.trigger('lazy');
             }
         };
-        
+
 
         /*======================================================
         ************   Material Preloader   ************
@@ -5312,30 +5312,30 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     params[def] = defaults[def];
                 }
             }
-        
+
             // Instance
             var m = this;
-        
+
             // Params
             m.params = params;
-        
+
             // Container
             m.container = $(container);
             if (m.container.length === 0) return;
-        
+
             // Autolayout
             if (m.params.autoLayout) m.container.addClass('messages-auto-layout');
-        
+
             // New messages first
             if (m.params.newMessagesFirst) m.container.addClass('messages-new-first');
-        
+
             // Is In Page
             m.pageContainer = m.container.parents('.page').eq(0);
             m.pageContent = m.pageContainer.find('.page-content');
-        
+
             // Compiled template
             m.template = Template7.compile(m.params.messageTemplate);
-        
+
             // Auto Layout
             m.layout = function () {
                 if (!m.container.hasClass('messages-auto-layout')) m.container.addClass('messages-auto-layout');
@@ -5362,12 +5362,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         message.addClass('message-last message-with-tail');
                     }
                     else message.removeClass('message-last message-with-tail');
-        
+
                     if (prev.length === 0) {
                         message.addClass('message-first');
                     }
                     else message.removeClass('message-first');
-        
+
                     if (prev.length > 0 && prev.find('.message-name').length > 0 && message.find('.message-name').length > 0) {
                         if (prev.find('.message-name').text() !== message.find('.message-name').text()) {
                             prev.addClass('message-last message-with-tail');
@@ -5376,7 +5376,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 });
             };
-        
+
             // Add Message
             m.appendMessage = function (props, animate) {
                 return m.addMessage(props, 'append', animate);
@@ -5402,7 +5402,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     props.hasImage = props.text.indexOf('<img') >= 0;
                     if (props.onlyImage === false) props.hasImage = false;
                     if (animate) props.position = method === 'append' ? 'bottom' : 'top';
-        
+
                     newMessagesHTML += m.template(props);
                 }
                 var scrollHeightBefore = m.pageContent[0].scrollHeight,
@@ -5444,7 +5444,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     return messagesToReturn;
                 }
-        
+
             };
             m.removeMessage = function (message) {
                 message = $(message);
@@ -5463,7 +5463,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             m.clean = function () {
                 m.container.html('');
             };
-        
+
             // Scroll
             m.scrollMessages = function (duration, scrollTop) {
                 if (typeof duration === 'undefined') duration = 400;
@@ -5476,7 +5476,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 m.pageContent.scrollTop(newScroll, duration);
             };
-        
+
             // Init Destroy
             m.init = function () {
                 if (m.params.messages) {
@@ -5486,15 +5486,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (m.params.autoLayout) m.layout();
                     m.scrollMessages(0);
                 }
-        
+
             };
             m.destroy = function () {
                 m = null;
             };
-        
+
             // Init
             m.init();
-        
+
             m.container[0].f7Messages = m;
             return m;
         };
@@ -5509,7 +5509,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 return;
             }
             var m = app.messages(messages, messages.dataset());
-        
+
             // Destroy on page remove
             function pageBeforeRemove() {
                 m.destroy();
@@ -5519,7 +5519,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 pageContainer.on('page:beforeremove', pageBeforeRemove);
             }
         };
-        
+
 
         /*===============================================================================
         ************   Swipeout Actions (Swipe to delete)   ************
@@ -5528,9 +5528,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         app.allowSwipeout = true;
         app.initSwipeout = function (swipeoutEl) {
             var isTouched, isMoved, isScrolling, touchesStart = {}, touchStartTime, touchesDiff, swipeOutEl, swipeOutContent, actionsRight, actionsLeft, actionsLeftWidth, actionsRightWidth, translate, opened, openedActions, buttonsLeft, buttonsRight, direction, overswipeLeftButton, overswipeRightButton, overswipeLeft, overswipeRight, noFoldLeft, noFoldRight;
-        
+
             var activeListener = app.support.passiveListener ? {passive: false, capture: false} : false;
-        
+
             $(document).on(app.touchEvents.start, function (e) {
                 if (app.swipeoutOpenedEl) {
                     var target = $(e.target);
@@ -5539,14 +5539,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         target.parents('.swipeout').is(app.swipeoutOpenedEl) ||
                         target.hasClass('modal-in') ||
                         target.hasClass('modal-overlay') ||
-                        target.hasClass('actions-modal') || 
+                        target.hasClass('actions-modal') ||
                         target.parents('.actions-modal.modal-in, .modal.modal-in').length > 0
                         )) {
                         app.swipeoutClose(app.swipeoutOpenedEl);
                     }
                 }
             }, activeListener);
-        
+
             function handleTouchStart(e) {
                 if (!app.allowSwipeout) return;
                 isMoved = false;
@@ -5567,7 +5567,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     isTouched = false;
                     return;
                 }
-        
+
                 if (!isMoved) {
                     if ($('.list-block.sortable-opened').length > 0) return;
                     /*jshint validthis:true */
@@ -5600,15 +5600,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 isMoved = true;
                 e.preventDefault();
-                
+
                 touchesDiff = pageX - touchesStart.x;
                 translate = touchesDiff;
-        
+
                 if (opened) {
                     if (openedActions === 'right') translate = translate - actionsRightWidth;
                     else translate = translate + actionsLeftWidth;
                 }
-        
+
                 if (translate > 0 && actionsLeft.length === 0 || translate < 0 && actionsRight.length === 0) {
                     if (!opened) {
                         isTouched = isMoved = false;
@@ -5623,15 +5623,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     translate = 0;
                 }
-        
+
                 if (translate < 0) direction = 'to-left';
                 else if (translate > 0) direction = 'to-right';
                 else {
                     if (!direction) direction = 'to-left';
                 }
-                
+
                 var i, buttonOffset, progress;
-                
+
                 e.f7PreventPanelSwipe = true;
                 if (app.params.swipeoutNoFollow) {
                     if (opened) {
@@ -5678,7 +5678,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 $button.addClass('swipeout-overswipe-active');
                             }
                             else {
-                                $button.removeClass('swipeout-overswipe-active');   
+                                $button.removeClass('swipeout-overswipe-active');
                             }
                         }
                         $button.transform('translate3d(' + (translate - buttonOffset * (1 + Math.max(progress, -1))) + 'px,0,0)');
@@ -5705,11 +5705,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 $button.addClass('swipeout-overswipe-active');
                             }
                             else {
-                                $button.removeClass('swipeout-overswipe-active');   
+                                $button.removeClass('swipeout-overswipe-active');
                             }
                         }
                         if (buttonsLeft.length > 1) {
-                            $button.css('z-index', buttonsLeft.length - i); 
+                            $button.css('z-index', buttonsLeft.length - i);
                         }
                         $button.transform('translate3d(' + (translate + buttonOffset * (1 - Math.min(progress, 1))) + 'px,0,0)');
                     }
@@ -5722,15 +5722,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     isMoved = false;
                     return;
                 }
-        
+
                 isTouched = false;
                 isMoved = false;
                 var timeDiff = (new Date()).getTime() - touchStartTime;
                 var action, actionsWidth, actions, buttons, i;
-        
+
                 actions = direction === 'to-left' ? actionsRight : actionsLeft;
                 actionsWidth = direction === 'to-left' ? actionsRightWidth : actionsLeftWidth;
-        
+
                 if (
                     timeDiff < 300 && (touchesDiff < -10 && direction === 'to-left' || touchesDiff > 10 && direction === 'to-right') ||
                     timeDiff >= 300 && Math.abs(translate) > actionsWidth / 2
@@ -5744,7 +5744,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (Math.abs(translate) === 0) action = 'close';
                     if (Math.abs(translate) === actionsWidth) action = 'open';
                 }
-                
+
                 if (action === 'open') {
                     app.swipeoutOpenedEl = swipeOutEl;
                     swipeOutEl.trigger('open swipeout:open');
@@ -5772,7 +5772,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     swipeOutContent.transform('');
                     actions.removeClass('swipeout-actions-opened');
                 }
-                
+
                 var buttonOffset;
                 if (buttonsLeft && buttonsLeft.length > 0 && buttonsLeft !== buttons) {
                     for (i = 0; i < buttonsLeft.length; i++) {
@@ -5815,7 +5815,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 $(document).on(app.touchEvents.move, '.list-block li.swipeout', handleTouchMove, activeListener);
                 $(document).on(app.touchEvents.end, '.list-block li.swipeout', handleTouchEnd, activeListener);
             }
-                
+
         };
         app.swipeoutOpen = function (el, dir, callback) {
             el = $(el);
@@ -5824,7 +5824,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     callback = dir;
                 }
             }
-        
+
             if (el.length === 0) return;
             if (el.length > 1) el = $(el[0]);
             if (!el.hasClass('swipeout') || el.hasClass('swipeout-opened')) return;
@@ -5872,7 +5872,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             app.allowSwipeout = false;
             el.trigger('close swipeout:close');
             el.removeClass('swipeout-opened').addClass('transitioning');
-        
+
             var closeTO;
             function onSwipeoutClose() {
                 app.allowSwipeout = true;
@@ -5885,7 +5885,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             el.find('.swipeout-content').transform('').transitionEnd(onSwipeoutClose);
             closeTO = setTimeout(onSwipeoutClose, 500);
-            
+
             for (var i = 0; i < buttons.length; i++) {
                 if (dir === 'right') {
                     $(buttons[i]).transform('translate3d(' + (-buttons[i].offsetLeft) + 'px,0,0)');
@@ -5925,7 +5925,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var translate = '-100%';
             el.find('.swipeout-content').transform('translate3d(' + translate + ',0,0)');
         };
-        
+
 
         /*===============================================================================
         ************   Sortable   ************
@@ -5958,7 +5958,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         };
         app.initSortable = function () {
             var isTouched, isMoved, touchStartY, touchesDiff, sortingEl, sortingElHeight, sortingItems, minTop, maxTop, insertAfter, insertBefore, sortableContainer, startIndex;
-            
+
             function handleTouchStart(e) {
                 isMoved = false;
                 isTouched = true;
@@ -5983,7 +5983,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     sortingElHeight = sortingEl[0].offsetHeight;
                 }
                 isMoved = true;
-        
+
                 e.preventDefault();
                 e.f7PreventPanelSwipe = true;
                 touchesDiff = pageY - touchStartY;
@@ -5991,16 +5991,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (translate < -minTop) translate = -minTop;
                 if (translate > maxTop) translate = maxTop;
                 sortingEl.transform('translate3d(0,' + translate + 'px,0)');
-        
+
                 insertBefore = insertAfter = undefined;
-        
+
                 sortingItems.each(function () {
                     var currentEl = $(this);
                     if (currentEl[0] === sortingEl[0]) return;
                     var currentElOffset = currentEl[0].offsetTop;
                     var currentElHeight = currentEl.height();
                     var sortingElOffset = sortingEl[0].offsetTop + translate;
-        
+
                     if ((sortingElOffset >= currentElOffset - currentElHeight / 2) && sortingEl.index() < currentEl.index()) {
                         currentEl.transform('translate3d(0, '+(-sortingElHeight)+'px,0)');
                         insertAfter = currentEl;
@@ -6057,7 +6057,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 $(document).on(app.touchEvents.end, handleTouchEnd, activeListener);
             }
         };
-        
+
 
         /*===============================================================================
         ************   Smart Select   ************
@@ -6072,16 +6072,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 selects = pageContainer.find('.smart-select');
             }
             if (selects.length === 0) return;
-        
+
             selects.each(function () {
                 var smartSelect = $(this);
-        
+
                 var $select = smartSelect.find('select');
                 if ($select.length === 0) return;
-        
+
                 var select = $select[0];
                 if (select.length === 0) return;
-        
+
                 var valueText = [];
                 var displayAs;
                 for (var i = 0; i < select.length; i++) {
@@ -6094,7 +6094,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         				}
         			}
                 }
-        
+
                 var itemAfter = smartSelect.find('.item-after');
                 if (itemAfter.length === 0) {
                     smartSelect.find('.item-inner').append('<div class="item-after">' + valueText.join(', ') + '</div>');
@@ -6109,7 +6109,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         itemAfter.text(valueText.join(', '));
                     }
                 }
-        
+
                 $select.on('change', function () {
                     var valueText = [];
                     for (var i = 0; i < select.length; i++) {
@@ -6124,9 +6124,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     smartSelect.find('.item-after').text(valueText.join(', '));
                 });
-        
+
             });
-        
+
         };
         app.smartSelectAddOption = function (select, option, index) {
             select = $(select);
@@ -6147,12 +6147,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         app.smartSelectOpen = function (smartSelect, reLayout) {
             smartSelect = $(smartSelect);
             if (smartSelect.length === 0) return;
-        
+
             // Find related view
             var view = smartSelect.parents('.' + app.params.viewClass);
             if (view.length === 0) return;
             view = view[0].f7View;
-        
+
             // Parameters
             var openIn = smartSelect.attr('data-open-in') || app.params.smartSelectOpenIn;
             if (openIn === 'popup') {
@@ -6167,7 +6167,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             else {
                 if (!view) return;
             }
-        
+
             var smartSelectData = smartSelect.dataset();
             var pageTitle = smartSelectData.pageTitle || smartSelect.find('.item-title').text();
             var backText = smartSelectData.backText || app.params.smartSelectBackText;
@@ -6186,7 +6186,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var virtualListHeight = smartSelectData.virtualListHeight;
             var material = app.params.material;
             var pickerHeight = smartSelectData.pickerHeight || app.params.smartSelectPickerHeight;
-        
+
             // Collect all options/values
             var select = smartSelect.find('select')[0];
             var $select = $(select);
@@ -6243,8 +6243,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     material: app.params.material
                 });
             }
-        
-        
+
+
             // Item template/HTML
             if (!app._compiledTemplates.smartSelectItem) {
                 app._compiledTemplates.smartSelectItem = t7.compile(app.params.smartSelectItemTemplate ||
@@ -6292,18 +6292,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 );
             }
             var smartSelectItemTemplate = app._compiledTemplates.smartSelectItem;
-        
+
             var inputsHTML = '';
             if (!virtualList) {
                 for (var j = 0; j < values.length; j++) {
                     inputsHTML += smartSelectItemTemplate(values[j]);
                 }
             }
-        
+
             // Toolbar / Navbar
             var toolbarHTML = '', navbarHTML;
             var noNavbar = '', noToolbar = '', noTabbar = '', navbarLayout;
-        
+
             if (openIn === 'picker') {
                 if (!app._compiledTemplates.smartSelectToolbar) {
                     app._compiledTemplates.smartSelectToolbar = t7.compile(app.params.smartSelectToolbarTemplate ||
@@ -6315,7 +6315,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                       '</div>'
                     );
                 }
-        
+
                 toolbarHTML = app._compiledTemplates.smartSelectToolbar({
                     pageTitle: pageTitle,
                     closeText: closeText,
@@ -6361,19 +6361,19 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     navbarLayout = 'fixed';
                 }
             }
-        
-        
+
+
             // Page Layout
             var pageName = 'smart-select-' + inputName;
-        
+
             var useSearchbar = typeof smartSelect.data('searchbar') === 'undefined' ? app.params.smartSelectSearchbar : (smartSelect.data('searchbar') === 'true' ? true : false);
             var searchbarPlaceholder, searchbarCancel;
-        
+
             if (useSearchbar) {
                 searchbarPlaceholder = smartSelect.data('searchbar-placeholder') || 'Search';
                 searchbarCancel = smartSelect.data('searchbar-cancel') || 'Cancel';
             }
-        
+
             var searchbarHTML =   '<form class="searchbar searchbar-init" data-search-list=".smart-select-list-' + id + '" data-search-in=".item-title">' +
                                     '<div class="searchbar-input">' +
                                         '<input type="search" placeholder="' + searchbarPlaceholder + '">' +
@@ -6382,7 +6382,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                     (material ? '' : '<a href="#" class="searchbar-cancel">' + searchbarCancel + '</a>') +
                                   '</form>' +
                                   '<div class="searchbar-overlay"></div>';
-        
+
             var pageHTML =
                 (openIn !== 'picker' && navbarLayout === 'through' ? navbarHTML : '') +
                 '<div class="pages">' +
@@ -6399,10 +6399,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 '    </div>' +
                 '  </div>' +
                 '</div>';
-        
+
             // Define popup and picker
             var popup, picker;
-        
+
             // Scroll SS Picker To Input
             function scrollToInput() {
                 var pageContent = smartSelect.parents('.page-content');
@@ -6438,7 +6438,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     app.closeModal('.smart-select-picker.modal-in');
                 }
             }
-        
+
             // Check max length
             function checkMaxLength(container) {
                 if (select.selectedOptions.length >= maxLength) {
@@ -6512,7 +6512,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         optionText = [text];
                         select.value = value;
                     }
-        
+
                     $select.trigger('change');
                     smartSelect.find('.item-after').text(optionText.join(', '));
                     if (backOnSelect && inputType === 'radio') {
@@ -6563,32 +6563,32 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         '</div>'
                         );
                     picker = $(picker);
-        
+
                     // Scroll To Input
                     scrollToInput();
-        
+
                     // Close On Click
                     $('html').on('click', closeOnHTMLClick);
-        
+
                     // On Close
                     picker.once('picker:close', function () {
                         // Reset linked picker
                         smartSelect[0].f7SmartSelectPicker = undefined;
-        
+
                         // Detach html click
                         $('html').off('click', closeOnHTMLClick);
-        
+
                         // Restore page padding bottom
                         smartSelect.parents('.page-content').css({paddingBottom: ''});
                     });
-        
+
                     // Link Picker
                     smartSelect[0].f7SmartSelectPicker = picker[0];
                 }
-        
+
                 // Init Page
                 app.initPage(picker.find('.page'));
-        
+
                 // Attach events
                 handleInputs(picker);
             }
@@ -6600,7 +6600,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 });
             }
         };
-        
+
 
         /*===============================================================================
         ************   Virtual List   ************
@@ -6612,7 +6612,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 cache: true,
                 dynamicHeightBufferSize: 1,
                 showFilteredItemsOnly: false,
-                template: 
+                template:
                     '<li>' +
                         '<div class="item-content">' +
                             '<div class="item-inner">' +
@@ -6627,7 +6627,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     params[def] = defaults[def];
                 }
             }
-        
+
             // Preparation
             var vl = this;
             vl.listBlock = $(listBlock);
@@ -6641,7 +6641,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else if (typeof vl.params.template === 'function') vl.template = vl.params.template;
             }
             vl.pageContent = vl.listBlock.parents('.page-content');
-        
+
             // Bad scroll
             var updatableScroll;
             if (typeof vl.params.updatableScroll !== 'undefined') {
@@ -6654,27 +6654,27 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 vl.params.updatableScroll = updatableScroll;
             }
-        
+
             // Append <ul>
             vl.ul = vl.params.ul ? $(vl.params.ul) : vl.listBlock.children('ul');
             if (vl.ul.length === 0) {
                 vl.listBlock.append('<ul></ul>');
                 vl.ul = vl.listBlock.children('ul');
             }
-        
+
             // DOM cached items
             vl.domCache = {};
             vl.displayDomCache = {};
-        
+
             // Temporary DOM Element
             vl.tempDomElement = document.createElement('ul');
-        
+
             // Last repain position
             vl.lastRepaintY = null;
-        
+
             // Fragment
             vl.fragment = document.createDocumentFragment();
-        
+
             // Filter
             vl.filterItems = function (indexes, resetScrollTop) {
                 vl.filteredItems = [];
@@ -6695,14 +6695,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 else {
                     vl.filteredItems = null;
-                    delete vl.filteredItems;    
+                    delete vl.filteredItems;
                 }
                 vl.update();
             };
-        
+
             var pageHeight, rowsPerScreen, rowsBefore, rowsAfter, rowsToRender, maxBufferHeight = 0, listHeight;
             var dynamicHeight = typeof vl.params.height === 'function';
-        
+
             // Set list size
             vl.setListSize = function () {
                 var items = vl.filteredItems || vl.items;
@@ -6724,40 +6724,40 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     rowsToRender = (rowsPerScreen + rowsBefore + rowsAfter);
                     maxBufferHeight = rowsBefore / 2 * vl.params.height;
                 }
-        
+
                 if (updatableScroll) {
                     vl.ul.css({height: listHeight + 'px'});
                 }
             };
-        
+
             // Render items
             vl.render = function (force, forceScrollTop) {
                 if (force) vl.lastRepaintY = null;
-        
+
                 var scrollTop = -(vl.listBlock[0].getBoundingClientRect().top - vl.pageContent[0].getBoundingClientRect().top);
-        
+
                 if (typeof forceScrollTop !== 'undefined') scrollTop = forceScrollTop;
-        
+
                 if (vl.lastRepaintY === null || Math.abs(scrollTop - vl.lastRepaintY) > maxBufferHeight || (!updatableScroll && (vl.pageContent[0].scrollTop + pageHeight >= vl.pageContent[0].scrollHeight))) {
                     vl.lastRepaintY = scrollTop;
                 }
                 else {
                     return;
                 }
-        
-                var items = vl.filteredItems || vl.items, 
+
+                var items = vl.filteredItems || vl.items,
                     fromIndex, toIndex, heightBeforeFirstItem = 0, heightBeforeLastItem = 0;
                 if (dynamicHeight) {
-                    var itemTop = 0, j, itemHeight; 
+                    var itemTop = 0, j, itemHeight;
                     maxBufferHeight = pageHeight;
-        
+
                     for (j = 0; j < vl.heights.length; j++) {
                         itemHeight = vl.heights[j];
                         if (typeof fromIndex === 'undefined') {
                             if (itemTop + itemHeight >= scrollTop - pageHeight * 2 * vl.params.dynamicHeightBufferSize) fromIndex = j;
                             else heightBeforeFirstItem += itemHeight;
                         }
-        
+
                         if (typeof toIndex === 'undefined') {
                             if (itemTop + itemHeight >= scrollTop + pageHeight * 2 * vl.params.dynamicHeightBufferSize || j === vl.heights.length - 1) toIndex = j + 1;
                             heightBeforeLastItem += itemHeight;
@@ -6773,14 +6773,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     toIndex = Math.min(fromIndex + rowsToRender * vl.params.cols, items.length);
                 }
-        
+
                 var topPosition;
                 vl.reachEnd = false;
                 for (var i = fromIndex; i < toIndex; i++) {
                     var item, index;
                     // Define real item index
                     index = vl.items.indexOf(items[i]);
-        
+
                     if (i === fromIndex) vl.currentFromIndex = index;
                     if (i === toIndex - 1) vl.currentToIndex = index;
                     if (vl.filteredItems) {
@@ -6789,7 +6789,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         if (index === vl.items.length - 1) vl.reachEnd = true;
                     }
-        
+
                     // Find items
                     if (vl.domCache[index]) {
                         item = vl.domCache[index];
@@ -6808,7 +6808,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (vl.params.cache) vl.domCache[index] = item;
                     }
                     item.f7VirtualListIndex = index;
-        
+
                     // Set item top position
                     if (i === fromIndex) {
                         if (dynamicHeight) {
@@ -6819,16 +6819,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                     item.style.top = topPosition + 'px';
-        
+
                     // Before item insert
                     if (vl.params.onItemBeforeInsert) vl.params.onItemBeforeInsert(vl, item);
-        
+
                     // Append item to fragment
                     vl.fragment.appendChild(item);
-        
-        
+
+
                 }
-        
+
                 // Update list height with not updatable scroll
                 if (!updatableScroll) {
                     if (dynamicHeight) {
@@ -6838,11 +6838,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         vl.ul[0].style.height = i * vl.params.height / vl.params.cols + 'px';
                     }
                 }
-        
+
                 // Update list html
                 if (vl.params.onBeforeClear) vl.params.onBeforeClear(vl, vl.fragment);
                 vl.ul[0].innerHTML = '';
-        
+
                 if (vl.params.onItemsBeforeInsert) vl.params.onItemsBeforeInsert(vl, vl.fragment);
                 if (items && items.length === 0) {
                     vl.reachEnd = true;
@@ -6851,17 +6851,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else {
                     vl.ul[0].appendChild(vl.fragment);
                 }
-                
+
                 if (vl.params.onItemsAfterInsert) vl.params.onItemsAfterInsert(vl, vl.fragment);
-        
+
                 if (typeof forceScrollTop !== 'undefined' && force) {
                     vl.pageContent.scrollTop(forceScrollTop, 0);
                 }
             };
-        
+
             vl.scrollToItem = function (index) {
                 if (index > vl.items.length) return false;
-        
+
                 var itemTop = 0, listTop;
                 if (dynamicHeight) {
                     for (var i = 0; i < index; i++) {
@@ -6875,7 +6875,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 vl.render(true, listTop + itemTop - parseInt(vl.pageContent.css('padding-top'), 10));
                 return true;
             };
-        
+
             // Handle scroll event
             vl.handleScroll = function (e) {
                 vl.render();
@@ -6890,7 +6890,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     vl.render(true);
                 }
             };
-        
+
             vl.attachEvents = function (detach) {
                 var action = detach ? 'off' : 'on';
                 vl.pageContent[action]('scroll', vl.handleScroll);
@@ -6899,14 +6899,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 vl.listBlock.parents('.popup').eq(0)[action]('popup:open', vl.handleResize);
                 $(window)[action]('resize', vl.handleResize);
             };
-        
+
             // Init Virtual List
             vl.init = function () {
                 vl.attachEvents();
                 vl.setListSize();
                 vl.render();
             };
-        
+
             // Append
             vl.appendItems = function (items) {
                 for (var i = 0; i < items.length; i++) {
@@ -6946,7 +6946,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             vl.prependItem = function (item) {
                 vl.prependItems([item]);
             };
-        
+
             // Move
             vl.moveItem = function (oldIndex, newIndex) {
                 if (oldIndex === newIndex) return;
@@ -7015,7 +7015,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     prevIndex = indexes[i];
                     // Delete item
                     var deletedItem = vl.items.splice(index, 1)[0];
-        
+
                     // Delete from filtered
                     if (vl.filteredItems && vl.filteredItems.indexOf(deletedItem) >= 0) {
                         vl.filteredItems.splice(vl.filteredItems.indexOf(deletedItem), 1);
@@ -7032,7 +7032,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 newCache[cachedIndex - 1] = vl.domCache[cached];
                             }
                             else {
-                                newCache[cachedIndex] = vl.domCache[cached];   
+                                newCache[cachedIndex] = vl.domCache[cached];
                             }
                         }
                         vl.domCache = newCache;
@@ -7049,38 +7049,38 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             vl.deleteItem = function (index) {
                 vl.deleteItems([index]);
             };
-        
+
             // Clear cache
             vl.clearCache = function () {
                 vl.domCache = {};
             };
-        
+
             // Update Virtual List
             vl.update = function () {
                 vl.setListSize();
                 vl.render(true);
             };
-        
+
             // Destroy
             vl.destroy = function () {
                 vl.attachEvents(true);
                 delete vl.items;
                 delete vl.domCache;
             };
-        
+
             // Init Virtual List
             vl.init();
-        
+
             // Store vl in container
             vl.listBlock[0].f7VirtualList = vl;
             return vl;
         };
-        
+
         // App Method
         app.virtualList = function (listBlock, params) {
             return new VirtualList(listBlock, params);
         };
-        
+
         app.reinitVirtualList = function (pageContainer) {
             var page = $(pageContainer);
             var vlists = page.find('.virtual-list');
@@ -7102,24 +7102,24 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 eventsTarget = eventsTarget.find('.pull-to-refresh-content');
             }
             if (!eventsTarget || eventsTarget.length === 0) return;
-        
+
             var touchId, isTouched, isMoved, touchesStart = {}, isScrolling, touchesDiff, touchStartTime, container, refresh = false, useTranslate = false, startTranslate = 0, translate, scrollTop, wasScrolled, layer, triggerDistance, dynamicTriggerDistance, pullStarted;
             var page = eventsTarget.hasClass('page') ? eventsTarget : eventsTarget.parents('.page');
             var hasNavbar = false;
             if (page.find('.navbar').length > 0 || page.parents('.navbar-fixed, .navbar-through').length > 0 || page.hasClass('navbar-fixed') || page.hasClass('navbar-through')) hasNavbar = true;
             if (page.hasClass('no-navbar')) hasNavbar = false;
             if (!hasNavbar) eventsTarget.addClass('pull-to-refresh-no-navbar');
-        
+
             container = eventsTarget;
-        
+
             // Define trigger distance
             if (container.attr('data-ptr-distance')) {
                 dynamicTriggerDistance = true;
             }
             else {
-                triggerDistance = 44;   
+                triggerDistance = 44;
             }
-            
+
             function handleTouchStart(e) {
                 if (isTouched) {
                     if (app.device.os === 'android') {
@@ -7127,13 +7127,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     else return;
                 }
-                
+
                 /*jshint validthis:true */
                 container = $(this);
                 if (container.hasClass('refreshing')) {
                     return;
                 }
-                
+
                 isMoved = false;
                 pullStarted = false;
                 isTouched = true;
@@ -7143,9 +7143,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 touchesStart.x = e.type === 'touchstart' ? e.targetTouches[0].pageX : e.pageX;
                 touchesStart.y = e.type === 'touchstart' ? e.targetTouches[0].pageY : e.pageY;
                 touchStartTime = (new Date()).getTime();
-                
+
             }
-            
+
             function handleTouchMove(e) {
                 if (!isTouched) return;
                 var pageX, pageY, touch;
@@ -7166,8 +7166,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     pageY = e.pageY;
                 }
                 if (!pageX || !pageY) return;
-                    
-        
+
+
                 if (typeof isScrolling === 'undefined') {
                     isScrolling = !!(isScrolling || Math.abs(pageY - touchesStart.y) > Math.abs(pageX - touchesStart.x));
                 }
@@ -7175,10 +7175,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     isTouched = false;
                     return;
                 }
-        
+
                 scrollTop = container[0].scrollTop;
-                if (typeof wasScrolled === 'undefined' && scrollTop !== 0) wasScrolled = true; 
-        
+                if (typeof wasScrolled === 'undefined' && scrollTop !== 0) wasScrolled = true;
+
                 if (!isMoved) {
                     /*jshint validthis:true */
                     container.removeClass('transitioning');
@@ -7200,11 +7200,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 isMoved = true;
                 touchesDiff = pageY - touchesStart.y;
-                
+
                 if (touchesDiff > 0 && scrollTop <= 0 || scrollTop < 0) {
                     // iOS 8 fix
                     if (app.device.os === 'ios' && parseInt(app.device.osVersion.split('.')[0], 10) > 7 && scrollTop === 0 && !wasScrolled) useTranslate = true;
-        
+
                     if (useTranslate) {
                         e.preventDefault();
                         translate = (Math.pow(touchesDiff, 0.85) + startTranslate);
@@ -7265,14 +7265,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 isMoved = false;
                 if (pullStarted) container.trigger('pullend ptr:pullend');
             }
-        
+
             // Attach Events
             var passiveListener = app.touchEvents.start === 'touchstart' && app.support.passiveListener ? {passive: true, capture: false} : false;
             var activeListener = app.support.passiveListener ? {passive: false, capture: false} : false;
             eventsTarget.on(app.touchEvents.start, handleTouchStart, passiveListener);
             eventsTarget.on(app.touchEvents.move, handleTouchMove, activeListener);
             eventsTarget.on(app.touchEvents.end, handleTouchEnd, passiveListener);
-        
+
             // Detach Events on page remove
             if (page.length === 0) return;
             function destroyPullToRefresh() {
@@ -7286,9 +7286,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 page.off('page:beforeremove', detachEvents);
             }
             page.on('page:beforeremove', detachEvents);
-        
+
         };
-        
+
         app.pullToRefreshDone = function (container) {
             container = $(container);
             if (container.length === 0) container = $('.pull-to-refresh-content.refreshing');
@@ -7309,14 +7309,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             });
         };
-        
+
         app.destroyPullToRefresh = function (pageContainer) {
             pageContainer = $(pageContainer);
             var pullToRefreshContent = pageContainer.hasClass('pull-to-refresh-content') ? pageContainer : pageContainer.find('.pull-to-refresh-content');
             if (pullToRefreshContent.length === 0) return;
             if (pullToRefreshContent[0].f7DestroyPullToRefresh) pullToRefreshContent[0].f7DestroyPullToRefresh();
         };
-        
+
 
         /* ===============================================================================
         ************   Infinite Scroll   ************
@@ -7352,7 +7352,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     inf.trigger('infinite');
                 }
             }
-        
+
         }
         app.attachInfiniteScroll = function (infiniteContent) {
             $(infiniteContent).on('scroll', handleInfiniteScroll);
@@ -7360,7 +7360,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         app.detachInfiniteScroll = function (infiniteContent) {
             $(infiniteContent).off('scroll', handleInfiniteScroll);
         };
-        
+
         app.initPageInfiniteScroll = function (pageContainer) {
             pageContainer = $(pageContainer);
             var infiniteContent = pageContainer.find('.infinite-scroll');
@@ -7383,33 +7383,33 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var hideNavbar = (app.params.hideNavbarOnPageScroll || scrollContent.hasClass('hide-navbar-on-scroll') || scrollContent.hasClass('hide-bars-on-scroll')) && !(scrollContent.hasClass('keep-navbar-on-scroll') || scrollContent.hasClass('keep-bars-on-scroll'));
             var hideToolbar = (app.params.hideToolbarOnPageScroll || scrollContent.hasClass('hide-toolbar-on-scroll') || scrollContent.hasClass('hide-bars-on-scroll')) && !(scrollContent.hasClass('keep-toolbar-on-scroll') || scrollContent.hasClass('keep-bars-on-scroll'));
             var hideTabbar = (app.params.hideTabbarOnPageScroll || scrollContent.hasClass('hide-tabbar-on-scroll')) && !(scrollContent.hasClass('keep-tabbar-on-scroll'));
-        
+
             if (!(hideNavbar || hideToolbar || hideTabbar)) return;
-            
+
             var viewContainer = scrollContent.parents('.' + app.params.viewClass);
             if (viewContainer.length === 0) return;
-        
-            var navbar = viewContainer.find('.navbar'), 
-                toolbar = viewContainer.find('.toolbar'), 
+
+            var navbar = viewContainer.find('.navbar'),
+                toolbar = viewContainer.find('.toolbar'),
                 tabbar;
             if (hideTabbar) {
                 tabbar = viewContainer.find('.tabbar');
                 if (tabbar.length === 0) tabbar = viewContainer.parents('.' + app.params.viewsClass).find('.tabbar');
             }
-        
+
             var hasNavbar = navbar.length > 0,
                 hasToolbar = toolbar.length > 0,
                 hasTabbar = tabbar && tabbar.length > 0;
-        
+
             var previousScroll, currentScroll;
                 previousScroll = currentScroll = scrollContent[0].scrollTop;
-        
+
             var scrollHeight, offsetHeight, reachEnd, action, navbarHidden, toolbarHidden, tabbarHidden;
-        
+
             var toolbarHeight = (hasToolbar && hideToolbar) ? toolbar[0].offsetHeight : 0;
             var tabbarHeight = (hasTabbar && hideTabbar) ? tabbar[0].offsetHeight : 0;
             var bottomBarHeight = tabbarHeight || toolbarHeight;
-        
+
             function handleScroll(e) {
                 if (pageContainer.hasClass('page-on-left')) return;
                 currentScroll = scrollContent[0].scrollTop;
@@ -7419,7 +7419,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 navbarHidden = navbar.hasClass('navbar-hidden');
                 toolbarHidden = toolbar.hasClass('toolbar-hidden');
                 tabbarHidden = tabbar && tabbar.hasClass('toolbar-hidden');
-        
+
                 if (reachEnd) {
                     if (app.params.showBarsOnPageScrollEnd) {
                         action = 'show';
@@ -7441,42 +7441,42 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         action = 'show';
                     }
                 }
-        
+
                 if (action === 'show') {
                     if (hasNavbar && hideNavbar && navbarHidden) {
                         app.showNavbar(navbar);
-                        pageContainer.removeClass('no-navbar-by-scroll'); 
+                        pageContainer.removeClass('no-navbar-by-scroll');
                         navbarHidden = false;
                     }
                     if (hasToolbar && hideToolbar && toolbarHidden) {
                         app.showToolbar(toolbar);
-                        pageContainer.removeClass('no-toolbar-by-scroll'); 
+                        pageContainer.removeClass('no-toolbar-by-scroll');
                         toolbarHidden = false;
                     }
                     if (hasTabbar && hideTabbar && tabbarHidden) {
                         app.showToolbar(tabbar);
-                        pageContainer.removeClass('no-tabbar-by-scroll'); 
+                        pageContainer.removeClass('no-tabbar-by-scroll');
                         tabbarHidden = false;
                     }
                 }
                 else {
                     if (hasNavbar && hideNavbar && !navbarHidden) {
                         app.hideNavbar(navbar);
-                        pageContainer.addClass('no-navbar-by-scroll'); 
+                        pageContainer.addClass('no-navbar-by-scroll');
                         navbarHidden = true;
                     }
                     if (hasToolbar && hideToolbar && !toolbarHidden) {
                         app.hideToolbar(toolbar);
-                        pageContainer.addClass('no-toolbar-by-scroll'); 
+                        pageContainer.addClass('no-toolbar-by-scroll');
                         toolbarHidden = true;
                     }
                     if (hasTabbar && hideTabbar && !tabbarHidden) {
                         app.hideToolbar(tabbar);
-                        pageContainer.addClass('no-tabbar-by-scroll'); 
+                        pageContainer.addClass('no-tabbar-by-scroll');
                         tabbarHidden = true;
                     }
                 }
-                    
+
                 previousScroll = currentScroll;
             }
             scrollContent.on('scroll', handleScroll);
@@ -7498,7 +7498,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             $(tabbar).each(function () {
                 var tabbar = $(this);
                 activeLink = activeLink || tabbar.find('.tab-link.active');
-        
+
                 if (activeLink && activeLink.length > 0) {
                     var tabLinkWidth, highlightTranslate;
                     if (tabbar.hasClass('tabbar-scrollable')) {
@@ -7509,7 +7509,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         tabLinkWidth = 1 / tabbar.find('.tab-link').length * 100 + '%';
                         highlightTranslate = (app.rtl ? - activeLink.index(): activeLink.index()) * 100 + '%';
                     }
-        
+
                     tabbar.find('.tab-link-highlight')
                         .css({width: tabLinkWidth})
                         .transform('translate3d(' + highlightTranslate + ',0,0)');
@@ -7520,7 +7520,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             pageContainer = $(pageContainer);
             var tabbar = pageContainer.find('.tabbar');
             if (tabbar.length === 0 && pageContainer.hasClass('tabbar')) tabbar = pageContainer;
-        
+
             function tabbarSetHighlight() {
                 app.materialTabbarSetHighlight(tabbar);
             }
@@ -7528,7 +7528,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (tabbar.find('.tab-link-highlight').length === 0) {
                     tabbar.find('.toolbar-inner').append('<span class="tab-link-highlight"></span>');
                 }
-        
+
                 tabbarSetHighlight();
                 $(window).on('resize', tabbarSetHighlight);
                 pageContainer.once('page:beforeremove', function () {
@@ -7539,7 +7539,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         app.initMaterialTabbar = function (tabbar) {
             return app.initPageMaterialTabbar(tabbar);
         };
-        
+
 
         /* ===============================================================================
         ************   Tabs   ************
@@ -7563,10 +7563,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             var tabs = newTab.parent('.tabs');
             if (tabs.length === 0) return false;
-        
+
             // Return swipeouts in hidden tabs
             app.allowSwipeout = true;
-        
+
             // Animated tabs
             var isAnimatedTabs = tabs.parent().hasClass('tabs-animated-wrap');
             if (isAnimatedTabs) {
@@ -7574,21 +7574,21 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var tabTranslate = (app.rtl ? newTab.index() : -newTab.index()) * 100;
                 tabs.transform('translate3d(' + tabTranslate + '%,0,0)');
             }
-        
+
             // Swipeable tabs
             var isSwipeableTabs = tabs.parent().hasClass('tabs-swipeable-wrap'), swiper;
             if (isSwipeableTabs) {
                 swiper = tabs.parent()[0].swiper;
                 if (swiper.activeIndex !== newTab.index()) swiper.slideTo(newTab.index(), animated ? undefined : 0, false);
             }
-        
+
             // Remove active class from old tabs
             var oldTab = tabs.children('.tab.active').removeClass('active').trigger('hide tab:hide');
             // Add active class to new tab
             newTab.addClass('active');
             // Trigger 'show' event on new tab
             newTab.trigger('show tab:show');
-        
+
             // Update navbars in new tab
             if (!isAnimatedTabs && !isSwipeableTabs && newTab.find('.navbar').length > 0) {
                 // Find tab's view
@@ -7597,7 +7597,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else viewContainer = newTab.parents('.' + app.params.viewClass)[0];
                 app.sizeNavbars(viewContainer);
             }
-        
+
             // Find related link for new tab
             if (tabLink) tabLink = $(tabLink);
             else {
@@ -7612,7 +7612,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
             if (tabLink.length === 0) return;
-        
+
             // Find related link for old tab
             var oldTabLink;
             if (oldTab && oldTab.length > 0) {
@@ -7626,7 +7626,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     });
                 }
             }
-        
+
             // Update links' classes
             if (tabLink && tabLink.length > 0) {
                 tabLink.addClass('active');
@@ -7642,7 +7642,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
             if (oldTabLink && oldTabLink.length > 0) oldTabLink.removeClass('active');
-        
+
             return true;
         };
 
@@ -7719,7 +7719,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 // Strange hack required for iOS 8 webview to work on inputs
                 window.addEventListener('touchstart', function () {});
             }
-        
+
             var touchStartX, touchStartY, touchStartTime, targetElement, trackClick, activeSelection, scrollParent, lastClickTime, isMoved, tapHoldFired, tapHoldTimeout;
             var activableElement, activeTimeout, needsFastClick, needsFastClickTimeOut;
             var rippleWave, rippleTarget, rippleTransform, rippleTimeout;
@@ -7737,11 +7737,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             function isInsideScrollableView(el) {
                 var pageContent = el.parents('.page-content, .panel');
-        
+
                 if (pageContent.length === 0) {
                     return false;
                 }
-        
+
                 // This event handler covers the "tap to stop scrolling".
                 if (pageContent.prop('scrollHandlerSet') !== 'yes') {
                     pageContent.on('scroll', function() {
@@ -7750,7 +7750,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     });
                     pageContent.prop('scrollHandlerSet', 'yes');
                 }
-        
+
                 return true;
             }
             function addActive() {
@@ -7817,7 +7817,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 return prevent;
             }
-        
+
             // Mouse Handlers
             function handleMouseDown (e) {
                 findActivableElement(e.target).addClass('active-state');
@@ -7844,7 +7844,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     rippleTouchEnd();
                 }
             }
-        
+
             // Material Touch Ripple Effect
             function findRippleElement(el) {
                 var needsRipple = app.params.materialRippleElements;
@@ -7874,7 +7874,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     height = box.height,
                     width = box.width;
                 var diameter = Math.max(Math.pow((Math.pow(height, 2) + Math.pow(width, 2)), 0.5), 48);
-        
+
                 rippleWave = $(
                     '<div class="ripple-wave" style="width: ' + diameter + 'px; height: '+diameter+'px; margin-top:-'+diameter/2+'px; margin-left:-'+diameter/2+'px; left:'+center.x+'px; top:'+center.y+'px;"></div>'
                 );
@@ -7883,29 +7883,29 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 rippleTransform = 'translate3d('+(-center.x + width/2)+'px, '+(-center.y + height/2)+'px, 0) scale(1)';
                 rippleWave.transform(rippleTransform);
             }
-        
+
             function removeRipple() {
                 if (!rippleWave) return;
                 var toRemove = rippleWave;
-        
+
                 var removeTimeout = setTimeout(function () {
                     toRemove.remove();
                 }, 400);
-        
+
                 rippleWave
                     .addClass('ripple-wave-fill')
                     .transform(rippleTransform.replace('scale(1)', 'scale(1.01)'))
                     .transitionEnd(function () {
                         clearTimeout(removeTimeout);
-        
+
                         var rippleWave = $(this)
                             .addClass('ripple-wave-out')
                             .transform(rippleTransform.replace('scale(1)', 'scale(1.01)'));
-        
+
                         removeTimeout = setTimeout(function () {
                             rippleWave.remove();
                         }, 700);
-        
+
                         setTimeout(function () {
                             rippleWave.transitionEnd(function(){
                                 clearTimeout(removeTimeout);
@@ -7913,10 +7913,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             });
                         }, 0);
                     });
-        
+
                 rippleWave = rippleTarget = undefined;
             }
-        
+
             function rippleTouchStart (el, x, y) {
                 rippleTarget = findRippleElement(el);
                 if (!rippleTarget || rippleTarget.length === 0) {
@@ -7949,7 +7949,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     removeRipple();
                 }
             }
-        
+
             // Send Click
             function sendClick(e) {
                 var touch = e.changedTouches[0];
@@ -7962,7 +7962,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 evt.forwardedTouchEvent = true;
                 targetElement.dispatchEvent(evt);
             }
-        
+
             // Touch Handlers
             function handleTouchStart(e) {
                 isMoved = false;
@@ -7985,7 +7985,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 if (needsFastClickTimeOut) clearTimeout(needsFastClickTimeOut);
                 needsFastClick = targetNeedsFastClick(e.target);
-        
+
                 if (!needsFastClick) {
                     trackClick = false;
                     return true;
@@ -8005,13 +8005,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         document.activeElement.blur();
                     }
                 }
-        
+
                 trackClick = true;
                 targetElement = e.target;
                 touchStartTime = (new Date()).getTime();
                 touchStartX = e.targetTouches[0].pageX;
                 touchStartY = e.targetTouches[0].pageY;
-        
+
                 // Detect scroll parent
                 if (app.device.ios) {
                     scrollParent = undefined;
@@ -8026,7 +8026,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if ((e.timeStamp - lastClickTime) < app.params.fastClicksDelayBetweenClicks) {
                     e.preventDefault();
                 }
-        
+
                 if (app.params.activeState) {
                     activableElement = findActivableElement(targetElement);
                     // If it's inside a scrollable view, we don't trigger active-state yet,
@@ -8075,7 +8075,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             function handleTouchEnd(e) {
                 clearTimeout(activeTimeout);
                 clearTimeout(tapHoldTimeout);
-        
+
                 if (!trackClick) {
                     if (!activeSelection && needsFastClick) {
                         if (!(app.device.android && !e.cancelable)) {
@@ -8084,7 +8084,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     return true;
                 }
-        
+
                 if (document.activeElement === e.target) {
                     if (app.params.activeState) removeActive();
                     if (app.params.material && app.params.materialRipple) {
@@ -8092,26 +8092,26 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     return true;
                 }
-        
+
                 if (!activeSelection) {
                     e.preventDefault();
                 }
-        
+
                 if ((e.timeStamp - lastClickTime) < app.params.fastClicksDelayBetweenClicks) {
                     setTimeout(removeActive, 0);
                     return true;
                 }
-        
+
                 lastClickTime = e.timeStamp;
-        
+
                 trackClick = false;
-        
+
                 if (app.device.ios && scrollParent) {
                     if (scrollParent.scrollTop !== scrollParent.f7ScrollTop) {
                         return false;
                     }
                 }
-        
+
                 // Add active-state here because, in a very fast tap, the timeout didn't
                 // have the chance to execute. Removing active-state in a timeout gives
                 // the chance to the animation execute.
@@ -8123,7 +8123,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (app.params.material && app.params.materialRipple) {
                     rippleTouchEnd();
                 }
-        
+
                 // Trigger focus when required
                 if (targetNeedsFocus(targetElement)) {
                     if (app.device.ios && app.device.webView) {
@@ -8138,12 +8138,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         targetElement.focus();
                     }
                 }
-        
+
                 // Blur active elements
                 if (document.activeElement && targetElement !== document.activeElement && document.activeElement !== document.body && targetElement.nodeName.toLowerCase() !== 'label') {
                     document.activeElement.blur();
                 }
-        
+
                 // Send click
                 e.preventDefault();
                 sendClick(e);
@@ -8152,23 +8152,23 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             function handleTouchCancel(e) {
                 trackClick = false;
                 targetElement = null;
-        
+
                 // Remove Active State
                 clearTimeout(activeTimeout);
                 clearTimeout(tapHoldTimeout);
                 if (app.params.activeState) {
                     removeActive();
                 }
-        
+
                 // Remove Ripple
                 if (app.params.material && app.params.materialRipple) {
                     rippleTouchEnd();
                 }
             }
-        
+
             function handleClick(e) {
                 var allowClick = false;
-        
+
                 if (trackClick) {
                     targetElement = null;
                     trackClick = false;
@@ -8213,18 +8213,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 needsFastClickTimeOut = setTimeout(function () {
                     needsFastClick = false;
                 }, (app.device.ios || app.device.androidChrome ? 100 : 400));
-        
+
                 if (app.params.tapHold) {
                     tapHoldTimeout = setTimeout(function () {
                         tapHoldFired = false;
                     }, (app.device.ios || app.device.androidChrome ? 100 : 400));
                 }
-        
+
                 return allowClick;
             }
             if (app.support.touch) {
                 document.addEventListener('click', handleClick, true);
-        
+
                 document.addEventListener('touchstart', handleTouchStart);
                 document.addEventListener('touchmove', handleTouchMove);
                 document.addEventListener('touchend', handleTouchEnd);
@@ -8243,9 +8243,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     rippleTouchEnd();
                 });
             }
-        
+
         };
-        
+
 
         /*===============================================================================
         ************   Handle clicks and make them fast (on tap);   ************
@@ -8259,16 +8259,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                              clicked.parents('a').length > 0 ||
                              target[0].nodeName.toLowerCase() === 'a' ||
                              target.parents('a').length > 0;
-        
+
                 if (isLink) return;
                 var pageContent, page;
                 if (app.params.scrollTopOnNavbarClick && clicked.is('.navbar .center')) {
                     // Find active page
                     var navbar = clicked.parents('.navbar');
-        
+
                     // Static Layout
                     pageContent = navbar.parents('.page-content');
-        
+
                     if (pageContent.length === 0) {
                         // Fixed Layout
                         if (navbar.parents('.page').length > 0) {
@@ -8300,7 +8300,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         pageContent = $('.views').find('.page:not(.page-on-left):not(.page-on-right):not(.cached)').find('.page-content');
                     }
                 }
-        
+
                 if (pageContent && pageContent.length > 0) {
                     // Check for tab
                     if (pageContent.hasClass('tab')) {
@@ -8314,7 +8314,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var clicked = $(this);
                 var url = clicked.attr('href');
                 var isLink = clicked[0].nodeName.toLowerCase() === 'a';
-        
+
                 // Check if link is external
                 if (isLink) {
                     if (clicked.is(app.params.externalLinks) || (url && url.indexOf('javascript:') >= 0)) {
@@ -8325,15 +8325,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         return;
                     }
                 }
-        
+
                 // Collect Clicked data- attributes
                 var clickedData = clicked.dataset();
-        
+
                 // Smart Select
                 if (clicked.hasClass('smart-select')) {
                     if (app.smartSelectOpen) app.smartSelectOpen(clicked);
                 }
-        
+
                 // Open Panel
                 if (clicked.hasClass('open-panel')) {
                     if ($('.panel').length === 1) {
@@ -8345,18 +8345,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         else app.openPanel('left');
                     }
                 }
-                
+
                 // Close Panel
                 if (clicked.hasClass('close-panel')) {
                     app.closePanel();
                 }
-        
+
                 // Panel Overlay
                 if (clicked.hasClass('panel-overlay')) {
                     $('.panel.active').trigger('panel:overlay-click');
                     if (app.params.panelsCloseByOutside) app.closePanel();
                 }
-        
+
                 // Popover
                 if (clicked.hasClass('open-popover')) {
                     var popover;
@@ -8403,7 +8403,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         app.closeModal('.modal.modal-in');
                     if ($('.actions-modal.modal-in').length > 0 && app.params.actionsCloseByOutside)
                         app.closeModal('.actions-modal.modal-in');
-        
+
                     if ($('.popover.modal-in').length > 0) app.closeModal('.popover.modal-in');
                 }
                 if (clicked.hasClass('popup-overlay')) {
@@ -8414,7 +8414,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if ($('.picker-modal.modal-in').length > 0)
                         app.closeModal('.picker-modal.modal-in');
                 }
-        
+
                 // Picker
                 if (clicked.hasClass('close-picker')) {
                     var pickerToClose = $('.picker-modal.modal-in');
@@ -8436,7 +8436,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else pickerToOpen = '.picker-modal';
                     app.pickerModal(pickerToOpen, clicked);
                 }
-        
+
                 // Tabs
                 var isTabLink;
                 if (clicked.hasClass('tab-link')) {
@@ -8470,7 +8470,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         app.swipeoutDelete(clicked.parents('.swipeout'));
                     }
-        
+
                 }
                 // Sortable
                 if (clicked.hasClass('toggle-sortable')) {
@@ -8489,7 +8489,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (accordionItem.length === 0) accordionItem = clicked.parents('li');
                     app.accordionToggle(accordionItem);
                 }
-        
+
                 // Speed Dial
                 if (clicked.hasClass('floating-button') && clicked.parent().hasClass('speed-dial')) {
                     clicked.parent().toggleClass('speed-dial-opened');
@@ -8497,7 +8497,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (clicked.hasClass('close-speed-dial')) {
                     $('.speed-dial-opened').removeClass('speed-dial-opened');
                 }
-        
+
                 // Load Page
                 if (app.params.ajaxLinks && !clicked.is(app.params.ajaxLinks) || !isLink || !app.params.router) {
                     return;
@@ -8505,7 +8505,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (isLink) {
                     e.preventDefault();
                 }
-        
+
                 var validUrl = url && url.length > 0 && url !== '#' && !isTabLink;
                 var template = clickedData.template;
                 if (validUrl || clicked.hasClass('back') || template) {
@@ -8524,7 +8524,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (app.mainView) view = app.mainView;
                     }
                     if (!view) return;
-        
+
                     var pageName;
                     if (!template) {
                         if (url && url.indexOf('#') === 0 && url !== '#')  {
@@ -8538,7 +8538,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         url = undefined;
                     }
-        
+
                     var animatePages;
                     if (typeof clickedData.animatePages !== 'undefined') {
                         animatePages = clickedData.animatePages;
@@ -8547,7 +8547,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (clicked.hasClass('with-animation')) animatePages = true;
                         if (clicked.hasClass('no-animation')) animatePages = false;
                     }
-        
+
                     var options = {
                         animatePages: animatePages,
                         ignoreCache: clickedData.ignoreCache,
@@ -8558,7 +8558,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         pushState: clickedData.pushState,
                         url: url
                     };
-        
+
                     if (app.params.template7Pages) {
                         options.contextName = clickedData.contextName;
                         var context = clickedData.context;
@@ -8569,7 +8569,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (template && template in t7.templates) {
                         options.template = t7.templates[template];
                     }
-        
+
                     if (clicked.hasClass('back')) view.router.back(options);
                     else view.router.load(options);
                 }
@@ -8578,7 +8578,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (app.params.scrollTopOnNavbarClick || app.params.scrollTopOnStatusbarClick) {
                 $(document).on('click', '.statusbar-overlay, .navbar .center', handleScrollTop);
             }
-        
+
             // Prevent scrolling on overlays
             function preventScrolling(e) {
                 e.preventDefault();
@@ -8588,7 +8588,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 $(document).on((app.params.fastClicks ? 'touchstart' : 'touchmove'), '.panel-overlay, .modal-overlay, .preloader-indicator-overlay, .popup-overlay, .searchbar-overlay', preventScrolling, activeListener);
             }
         };
-        
+
 
         /*======================================================
         ************   App Resize Actions   ************
@@ -8609,7 +8609,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         app.resize = function () {
             if (app.sizeNavbars) app.sizeNavbars();
             _fixIpadBodyScrolLeft();
-            
+
         };
         app.orientationchange = function () {
             if (app.device && app.device.minimalUi) {
@@ -8617,7 +8617,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             _fixIpadBodyScrolLeft();
         };
-        
+
 
         /*===============================================================================
         ************   Store and parse forms data   ************
@@ -8626,7 +8626,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         app.formStoreData = function (formId, formJSON) {
             // Store form data in app.formsData
             app.formsData[formId] = formJSON;
-        
+
             // Store form data in local storage also
             app.ls['f7form-' + formId] = JSON.stringify(formJSON);
         };
@@ -8636,7 +8636,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app.formsData[formId] = '';
                 delete app.formsData[formId];
             }
-        
+
             // Delete form data from local storage also
             if (app.ls['f7form-' + formId]) {
                 app.ls['f7form-' + formId] = '';
@@ -8654,10 +8654,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         app.formToData = function (form) {
             form = $(form);
             if (form.length !== 1) return false;
-        
+
             // Form data
             var formData = {};
-        
+
             // Skip input types
             var skipTypes = ['submit', 'image', 'button', 'file'];
             var skipNames = [];
@@ -8697,18 +8697,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             });
             form.trigger('formToJSON formToData form:todata', {formData: formData});
-        
+
             return formData;
         };
         app.formToJSON = app.formToData;
         app.formFromData = function (form, formData) {
             form = $(form);
             if (form.length !== 1) return false;
-        
+
             // Skip input types
             var skipTypes = ['submit', 'image', 'button', 'file'];
             var skipNames = [];
-        
+
             form.find('input, select, textarea').each(function () {
                 var input = $(this);
                 var name = input.attr('name');
@@ -8752,12 +8752,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             form.trigger('formFromJSON formFromData form:fromdata', {formData: formData});
         };
         app.formFromJSON = app.formFromData;
-        
+
         app.initFormsStorage = function (pageContainer) {
             pageContainer = $(pageContainer);
             var forms = pageContainer.find('form.store-data');
             if (forms.length === 0) return;
-        
+
             // Parse forms data and fill form if there is such data
             forms.each(function () {
                 var id = this.getAttribute('id');
@@ -8777,7 +8777,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 form.trigger('store form:storedata', {data: formJSON});
             }
             forms.on('change submit', storeForm);
-        
+
             // Detach Listeners
             function pageBeforeRemove() {
                 forms.off('change submit', storeForm);
@@ -8794,17 +8794,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var form = $(this);
             if (e.type === 'change' && !form.hasClass('ajax-submit-onchange')) return;
             if (e.type === 'submit') e.preventDefault();
-        
+
             var method = (form.attr('method') || 'GET').toUpperCase();
             var contentType = form.prop('enctype') || form.attr('enctype');
-        
+
             var url = form.attr('action');
             if (!url) return;
-        
+
             var data;
             if (method === 'POST') data = new FormData(form[0]);
             else data = $.serializeObject(app.formToJSON(form[0]));
-        
+
             var xhr = $.ajax({
                 method: method,
                 url: url,
@@ -8821,8 +8821,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             });
         });
-        
-        
+
+
 
         /*===============================================================================
         ************   Resizable textarea   ************
@@ -8836,7 +8836,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var height = textarea[0].offsetHeight;
             var diff = height - textarea[0].clientHeight;
             var scrollHeight = textarea[0].scrollHeight;
-        
+
             if (scrollHeight + diff > height) {
                 var newAreaHeight = scrollHeight + diff;
                 textarea.css('height', newAreaHeight + 'px');
@@ -8947,7 +8947,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             $(document).on('focus', 'input, textarea, select', addFocusState, true);
             $(document).on('blur', 'input, textarea, select', removeFocusState, true);
         };
-        
+
 
         /*======================================================
         ************   Handle Browser's History   ************
@@ -8971,7 +8971,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app.router.load(queue.view, {pageName: queue.statePageName, url: queue.stateUrl, animatePages: animatePages, pushState: false});
             }
         };
-        
+
         app.initPushState = function () {
             var blockPopstate = true;
             $(window).on('load', function () {
@@ -8979,11 +8979,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     blockPopstate = false;
                 }, 0);
             });
-        
+
             if (document.readyState && document.readyState === 'complete') {
                 blockPopstate = false;
             }
-        
+
             function handlePopState(e) {
                 if (blockPopstate) return;
                 var mainView = app.mainView;
@@ -9001,9 +9001,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var stateContent = state && state.content || undefined;
                 var statePageName = state && state.pageName || undefined;
                 var animatePages;
-        
+
                 if (app.params.pushStateNoAnimation === true) animatePages = false;
-        
+
                 if (stateUrl !== view.url) {
                     if (view.history.indexOf(stateUrl) >= 0) {
                         // Go Back
@@ -9029,7 +9029,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 view: view
                             });
                         }
-        
+
                     }
                     else if (statePageName) {
                         // Load Page by page name with Dom Cache
@@ -9061,7 +9061,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             $(window).on('popstate', handlePopState);
         };
-        
+
 
         /*===========================
         Framework7 Swiper Additions
@@ -9116,14 +9116,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         };
-        
+
 
         /*======================================================
         ************   Photo Browser   ************
         ======================================================*/
         var PhotoBrowser = function (params) {
             var pb = this, i;
-        
+
             var defaults = {
                 photos : [],
                 initialSlide: 0,
@@ -9164,7 +9164,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 onSwipeToClose(pb)
                 */
             };
-        
+
             params = params || {};
             if (!params.backLinkText && app.params.material) defaults.backLinkText = '';
             for (var def in defaults) {
@@ -9178,11 +9178,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (params.minZoom) {
                 params.zoomMin = params.minZoom;
             }
-        
+
             pb.params = params;
             pb.params.iconsColorClass = pb.params.iconsColor ? 'color-' + pb.params.iconsColor : (pb.params.theme === 'dark' ? 'color-white' : '');
             pb.params.preloaderColorClass = pb.params.theme === 'dark' ? 'preloader-white' : '';
-        
+
             // Templates
             var photoTemplate = pb.params.photoTemplate ||
                 '<div class="photo-browser-slide swiper-slide">' +
@@ -9231,7 +9231,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         '</a>' +
                     '</div>' +
                 '</div>';
-        
+
             var htmlTemplate = t7.compile('<div class="photo-browser photo-browser-{{theme}}">' +
                     '<div class="view navbar-fixed toolbar-fixed">' +
                         '{{#unless material}}{{#if navbar}}' +
@@ -9267,11 +9267,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         '</div>' +
                     '</div>' +
                 '</div>')(pb.params);
-        
+
             pb.activeIndex = pb.params.initialSlide;
             pb.openIndex = pb.activeIndex;
             pb.opened = false;
-        
+
             pb.open = function (index) {
                 if (typeof index === 'undefined') index = pb.activeIndex;
                 index = parseInt(index, 10);
@@ -9299,7 +9299,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (pb.params.onOpen) {
                     pb.params.onOpen(pb);
                 }
-        
+
             };
             pb.close = function () {
                 pb.opened = false;
@@ -9322,7 +9322,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 // Delete references
                 pb.swiper = pb.swiperContainer = pb.swiperWrapper = pb.slides = undefined; //gestureSlide = gestureImg = gestureImgWrap = undefined;
             };
-        
+
             pb.onPopupClose = function (e) {
                 pb.close();
                 $(pb.popup).off('page:beforeinit', pb.onPopupClose);
@@ -9340,10 +9340,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     pb.close();
                 }
             };
-        
+
             pb.onSliderTransitionStart = function (swiper) {
                 pb.activeIndex = swiper.activeIndex;
-        
+
                 var current = swiper.activeIndex + 1;
                 var total = swiper.slides.length;
                 if (pb.params.loop) {
@@ -9354,24 +9354,24 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 pb.container.find('.photo-browser-current').text(current);
                 pb.container.find('.photo-browser-total').text(total);
-        
+
                 $('.photo-browser-prev, .photo-browser-next').removeClass('photo-browser-link-inactive');
-        
+
                 if (swiper.isBeginning && !pb.params.loop) {
                     $('.photo-browser-prev').addClass('photo-browser-link-inactive');
                 }
                 if (swiper.isEnd && !pb.params.loop) {
                     $('.photo-browser-next').addClass('photo-browser-link-inactive');
                 }
-        
+
                 // Update captions
                 if (pb.captions.length > 0) {
                     pb.captionsContainer.find('.photo-browser-caption-active').removeClass('photo-browser-caption-active');
                     var captionIndex = pb.params.loop ? swiper.slides.eq(swiper.activeIndex).attr('data-swiper-slide-index') : pb.activeIndex;
                     pb.captionsContainer.find('[data-caption-index="' + captionIndex + '"]').addClass('photo-browser-caption-active');
                 }
-        
-        
+
+
                 // Stop Video
                 var previousSlideVideo = swiper.slides.eq(swiper.previousIndex).find('video');
                 if (previousSlideVideo.length > 0) {
@@ -9383,7 +9383,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             pb.onSliderTransitionEnd = function (swiper) {
                 if (pb.params.onTransitionEnd) pb.params.onTransitionEnd(swiper);
             };
-        
+
             pb.layout = function (index) {
                 if (pb.params.type === 'page') {
                     pb.container = $('.photo-browser-swiper-container').parents('.view');
@@ -9400,7 +9400,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 pb.slides = pb.container.find('.photo-browser-slide');
                 pb.captionsContainer = pb.container.find('.photo-browser-captions');
                 pb.captions = pb.container.find('.photo-browser-caption');
-        
+
                 var sliderSettings = {
                     nextButton: pb.params.nextButton || '.photo-browser-next',
                     prevButton: pb.params.prevButton || '.photo-browser-prev',
@@ -9443,13 +9443,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (pb.params.onLazyImageReady) pb.params.onLazyImageReady(pb, slide, img);
                     }
                 };
-        
+
                 if (pb.params.swipeToClose && pb.params.type !== 'page') {
                     sliderSettings.onTouchStart = pb.swipeCloseTouchStart;
                     sliderSettings.onTouchMoveOpposite = pb.swipeCloseTouchMove;
                     sliderSettings.onTouchEnd = pb.swipeCloseTouchEnd;
                 }
-        
+
                 pb.swiper = app.swiper(pb.swiperContainer, sliderSettings);
                 if (index === 0) {
                     pb.onSliderTransitionStart(pb.swiper);
@@ -9460,8 +9460,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var action = detach ? 'off' : 'on';
                 pb.container.find('.photo-browser-close-link')[action]('click', pb.close);
             };
-        
-        
+
+
             // Expose
             pb.exposed = false;
             pb.toggleExposition = function () {
@@ -9479,7 +9479,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (pb.params.expositionHideCaptions) pb.captionsContainer.removeClass('photo-browser-captions-exposed');
                 pb.exposed = false;
             };
-        
+
             // Swipe Up To Close
             var swipeToCloseIsTouched = false;
             var allowSwipeToClose = true;
@@ -9540,21 +9540,21 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 pb.swiper.container.css('opacity', '').transition('');
                 swipeToCloseActiveSlide.transform('');
             };
-        
+
             return pb;
         };
-        
+
         app.photoBrowser = function (params) {
             return new PhotoBrowser(params);
         };
-        
+
 
         /*===============================================================================
         ************   Autocomplete   ************
         ===============================================================================*/
         var Autocomplete = function (params) {
             var a = this;
-        
+
             // Params
             var defaults = {
                 // Standalone Options
@@ -9575,7 +9575,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 /*
                 pageTitle: undefined,
                 */
-        
+
                 // Handle Data
                 /*
                 source: undefined,
@@ -9583,20 +9583,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 */
                 valueProperty: 'id',
                 textProperty: 'text',
-        
+
                 // Dropdown Options
                 highlightMatches: true,
-        
+
                 /*
                 dropdownPlaceholderText: 'Type anything...',
                 */
                 updateInputValueOnSelect: true,
                 expandInput: false,
-        
+
                 // Preloader
                 preloaderColor: false,
                 preloader: false,
-        
+
                 // Templates
                 /*
                 itemTemplate: undefined,
@@ -9605,13 +9605,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 dropdownItemTemplate: undefined,
                 dropdownPlaceholderTemplate: undefined
                 */
-        
+
                 // Color themes
                 /*
                 navbarTheme: undefined,
                 formTheme: undefined,
                 */
-        
+
                 // Callbacks
                 /*
                 onChange: function (a, value) - for not dropdown
@@ -9619,7 +9619,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 onClose: function (a)
                 */
             };
-        
+
             params = params || {};
             for (var def in defaults) {
                 if (typeof params[def] === 'undefined') {
@@ -9627,7 +9627,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
             a.params = params;
-        
+
             // Opener Link & View
             if (a.params.opener) {
                 a.opener = $(a.params.opener);
@@ -9639,27 +9639,27 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (view.length === 0) return;
                 view = view[0].f7View;
             }
-        
+
             // Input
             if (a.params.input) {
                 a.input = $(a.params.input);
                 if (a.input.length === 0 && a.params.openIn === 'dropdown') return;
             }
-        
+
             // Array with selected items
             a.value = a.params.value || [];
-        
+
             // ID & Inputs
             a.id = (new Date()).getTime();
             a.inputType = a.params.multiple ? 'checkbox' : 'radio';
             a.inputName = a.inputType + '-' + a.id;
-        
+
             // Is Material
             var material = app.params.material;
-        
+
             // Back On Select
             var backOnSelect = a.params.backOnSelect;
-        
+
             if (a.params.openIn !== 'dropdown') {
                 // Item Template
                 a.itemTemplate = t7.compile(a.params.itemTemplate ||
@@ -9692,14 +9692,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     pageTitle = a.opener.find('.item-title').text();
                 }
                 var pageName = 'autocomplete-' + a.inputName;
-        
+
                 var navbarTheme = a.params.navbarTheme,
                     formTheme = a.params.formTheme;
-        
+
                 // Navbar HTML
                 var navbarHTML;
                 var noNavbar = '', noToolbar = '', navbarLayout;
-        
+
                 a.navbarTemplate = t7.compile(a.params.navbarTemplate ||
                     '<div class="navbar no-shadow {{#if navbarTheme}}theme-{{navbarTheme}}{{/if}}">' +
                         '<div class="navbar-inner">' +
@@ -9739,7 +9739,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     preloaderColor: a.params.preloaderColor,
                     animated: a.params.openWithAnimation
                 });
-        
+
                 // Determine navbar layout type - static/fixed/through
                 if (a.params.openIn === 'page') {
                     navbarLayout = 'static';
@@ -9821,13 +9821,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     '</div>'
                 );
             }
-        
+
             // Define popup
             a.popup = undefined;
-        
+
             // Define Dropdown
             a.dropdown = undefined;
-        
+
             // Handle Input Value Change
             function handleInputValue (e) {
                 var query = a.input.val();
@@ -9841,7 +9841,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             query = query.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
                             regExp = new RegExp('('+query+')', 'i');
                         }
-        
+
                         for (i = 0; i < limit; i++) {
                             var itemValue = typeof items[i] === 'object' ? items[i][a.params.valueProperty] : items[i];
                             var itemText = typeof items[i] !== 'object' ? items[i] : items[i][a.params.textProperty];
@@ -9875,14 +9875,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     a.input.val(typeof clickedItem === 'object' ? clickedItem[a.params.textProperty] : clickedItem);
                     a.input.trigger('input change');
                 }
-        
+
                 if (a.params.onChange) {
                     a.params.onChange(a, clickedItem);
                 }
-        
+
                 a.close();
             }
-        
+
             // Handle HTML Click to close Dropdown
             function closeOnHTMLClick (e) {
                 var target = $(e.target);
@@ -9890,7 +9890,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     a.close();
                 }
             }
-        
+
             a.positionDropDown = function () {
                 var listBlock = a.input.parents('.list-block'),
                     pageContent = a.input.parents('.page-content'),
@@ -9901,7 +9901,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     inputOffsetLeft = a.input.offset().left - (listBlock.length > 0 ? listBlock.offset().left : 0),
                     inputOffsetTop = a.input.offset().top - (pageContent.offset().top - pageContent[0].scrollTop),
                     maxHeight = pageContent[0].scrollHeight - paddingBottom - (inputOffsetTop + pageContent[0].scrollTop) - a.input[0].offsetHeight;
-        
+
                 a.dropdown.css({
                     left: (listBlock.length > 0 ? listBlockOffsetLeft : inputOffsetLeft) + 'px',
                     top: inputOffsetTop + pageContent[0].scrollTop + a.input[0].offsetHeight + 'px',
@@ -9912,7 +9912,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     paddingLeft: listBlock.length > 0 && !a.params.expandInput ? inputOffsetLeft - (material ? 16 : 15) + 'px' : ''
                 });
             };
-        
+
             a.pageInit = function (e) {
                 var page = e.detail.page;
                 a.page = $(page.container);
@@ -9921,12 +9921,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     return;
                 }
                 var container = $(page.container);
-        
+
                 // Source
                 function onSource(query) {
                     if (!a.params.source) return;
                     var i, j, k;
-        
+
                     a.params.source(a, query, function(items) {
                         var itemsHTML = '';
                         var limit = a.params.limit ? Math.min(a.params.limit, items.length) : items.length;
@@ -9966,7 +9966,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     });
                 }
-        
+
                 // Init Search Bar
                 var searchbar = app.searchbar(container.find('.searchbar'), {
                     customSearch: true,
@@ -9977,20 +9977,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         else {
                             searchbar.overlay.removeClass('searchbar-overlay-active');
                         }
-        
+
                         onSource(data.query);
                     }
                 });
-        
+
                 // Save searchbar instance
                 a.searchbar = searchbar;
-        
+
                 // Update values
                 function updateValues() {
                     var valuesHTML = '';
                     var i;
                     for (i = 0; i < a.value.length; i++) {
-        
+
                         valuesHTML += a.itemTemplate({
                             value: typeof a.value[i] === 'object' ? a.value[i][a.params.valueProperty] : a.value[i],
                             text: typeof a.value[i] === 'object' ? a.value[i][a.params.textProperty]: a.value[i],
@@ -10004,7 +10004,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     container.find('.autocomplete-values ul').html(valuesHTML);
                 }
-        
+
                 // Handle Inputs
                 if (!a.params.multiple && a.params.backOnSelect) {
                     container.once('click', '.list-block label', function () {
@@ -10032,7 +10032,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                         return;
                     }
-        
+
                     // Find Related Item
                     for (i = 0; i < a.items.length; i++) {
                         itemValue = typeof a.items[i] === 'string' ? a.items[i] : a.items[i][a.params.valueProperty];
@@ -10055,26 +10055,26 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             }
                         }
                     }
-        
+
                     // Update Values Block
                     updateValues();
-        
+
                     // On Select Callback
                     if ((a.inputType === 'radio' && input.checked || a.inputType === 'checkbox') && a.params.onChange ) {
                         a.params.onChange(a, a.value);
                     }
                 });
-        
+
                 // Update Values On Page Init
                 updateValues();
-        
+
                 // Source on load
                 if (a.params.requestSourceOnOpen) onSource('');
-        
+
                 // On Open Callback
                 if (a.params.onOpen) a.params.onOpen(a);
             };
-        
+
             // Show Hide Preloader
             a.showPreloader = function () {
                 if (a.params.openIn === 'dropdown') {
@@ -10082,14 +10082,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 else $('.autocomplete-preloader').addClass('autocomplete-preloader-visible');
             };
-        
+
             a.hidePreloader = function () {
                 if (a.params.openIn === 'dropdown') {
                     if (a.dropdown) a.dropdown.find('.autocomplete-preloader').removeClass('autocomplete-preloader-visible');
                 }
                 else $('.autocomplete-preloader').removeClass('autocomplete-preloader-visible');
             };
-        
+
             // Autofocus
             a.autoFocus = function (e) {
                 var self = this;
@@ -10097,7 +10097,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     $(self).find('input[type=search]').focus();
                 }, 0);
             };
-        
+
             // Open Autocomplete Page/Popup
             a.open = function () {
                 if (a.opened) return;
@@ -10111,7 +10111,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             materialPreloaderHtml: app.params.materialPreloaderHtml
                         }));
                         a.dropdown.on('click', 'label', handleDropdownClick);
-        
+
                     }
                     var listBlock = a.input.parents('.list-block');
                     if (listBlock.length && a.input.parents('.item-content').length > 0 && a.params.expandInput) {
@@ -10176,7 +10176,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (a.popup) app.closeModal(a.popup);
                 }
             };
-        
+
             // Init Events
             a.initEvents = function (detach) {
                 var method = detach ? 'off' : 'on';
@@ -10197,7 +10197,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     a.dropdown = null;
                 }
             };
-        
+
             // Init/Destroy Methods
             a.init = function () {
                 a.initEvents();
@@ -10206,16 +10206,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 a.initEvents(true);
                 a = null;
             };
-        
+
             // Init
             a.init();
-        
+
             return a;
         };
         app.autocomplete = function (params) {
             return new Autocomplete(params);
         };
-        
+
 
         /*======================================================
         ************   Picker   ************
@@ -10255,13 +10255,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             p.params = params;
             p.cols = [];
             p.initialized = false;
-        
+
             // Inline flag
             p.inline = p.params.container ? true : false;
-        
+
             // 3D Transforms origin bug, only on safari
             var originBug = app.device.ios || (navigator.userAgent.toLowerCase().indexOf('safari') >= 0 && navigator.userAgent.toLowerCase().indexOf('chrome') < 0) && !app.device.android;
-        
+
             // Should be converted to popover
             function isPopover() {
                 var toPopover = false;
@@ -10283,7 +10283,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (p.opened && p.container && p.container.length > 0 && p.container.parents('.popover').length > 0) return true;
                 else return false;
             }
-        
+
             // Value
             p.setValue = function (arrValues, transition) {
                 var valueIndex = 0;
@@ -10321,7 +10321,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 }
-        
+
                 if (newValue.indexOf(undefined) >= 0) {
                     return;
                 }
@@ -10335,7 +10335,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     $(p.input).trigger('change');
                 }
             };
-        
+
             // Columns Handlers
             p.initPickerCol = function (colElement, updateItems) {
                 var colContainer = $(colElement);
@@ -10345,7 +10345,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 col.container = colContainer;
                 col.wrapper = col.container.find('.picker-items-col-wrapper');
                 col.items = col.wrapper.find('.picker-item');
-        
+
                 var i, j;
                 var wrapperHeight, itemHeight, itemsHeight, minTranslate, maxTranslate;
                 col.replaceValues = function (values, displayValues) {
@@ -10390,13 +10390,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 };
                 col.calcSize();
-        
+
                 col.wrapper.transform('translate3d(0,' + maxTranslate + 'px,0)').transition(0);
-        
-        
+
+
                 var activeIndex = 0;
                 var animationFrameId;
-        
+
                 // Set Value Function
                 col.setValue = function (newValue, transition, valueCallbacks) {
                     if (typeof transition === 'undefined') transition = '';
@@ -10408,7 +10408,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     // Update wrapper
                     col.wrapper.transition(transition);
                     col.wrapper.transform('translate3d(0,' + (newTranslate) + 'px,0)');
-        
+
                     // Watch items
                     if (p.params.updateValuesOnMomentum && col.activeIndex && col.activeIndex !== newActiveIndex ) {
                         $.cancelAnimationFrame(animationFrameId);
@@ -10417,11 +10417,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         });
                         updateDuringScroll();
                     }
-        
+
                     // Update items
                     col.updateItems(newActiveIndex, newTranslate, transition, valueCallbacks);
                 };
-        
+
                 col.updateItems = function (activeIndex, translate, transition, valueCallbacks) {
                     if (typeof translate === 'undefined') {
                         translate = $.getTranslate(col.wrapper[0], 'y');
@@ -10432,24 +10432,24 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     var previousActiveIndex = col.activeIndex;
                     col.activeIndex = activeIndex;
                     col.wrapper.find('.picker-selected').removeClass('picker-selected');
-        
+
                     col.items.transition(transition);
-        
+
                     var selectedItem = col.items.eq(activeIndex).addClass('picker-selected').transform('');
-        
+
                     // Set 3D rotate effect
                     if (p.params.rotateEffect) {
                         var percentage = (translate - (Math.floor((translate - maxTranslate)/itemHeight) * itemHeight + maxTranslate)) / itemHeight;
-        
+
                         col.items.each(function () {
                             var item = $(this);
                             var itemOffsetTop = item.index() * itemHeight;
                             var translateOffset = maxTranslate - translate;
                             var itemOffset = itemOffsetTop - translateOffset;
                             var percentage = itemOffset / itemHeight;
-        
+
                             var itemsFit = Math.ceil(col.height / itemHeight / 2) + 1;
-        
+
                             var angle = (-18*percentage);
                             if (angle > 180) angle = 180;
                             if (angle < -180) angle = -180;
@@ -10460,7 +10460,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             item.transform('translate3d(0, ' + (-translate + maxTranslate) + 'px, ' + (originBug ? -110 : 0) + 'px) rotateX(' + angle + 'deg)');
                         });
                     }
-        
+
                     if (valueCallbacks || typeof valueCallbacks === 'undefined') {
                         // Update values
                         col.value = selectedItem.attr('data-picker-value');
@@ -10474,17 +10474,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 };
-        
+
                 function updateDuringScroll() {
                     animationFrameId = $.requestAnimationFrame(function () {
                         col.updateItems(undefined, undefined, 0);
                         updateDuringScroll();
                     });
                 }
-        
+
                 // Update items on init
                 if (updateItems) col.updateItems(0, maxTranslate, 0);
-        
+
                 var allowItemClick = true;
                 var isTouched, isMoved, touchStartY, touchCurrentY, touchStartTime, touchEndTime, startTranslate, returnTo, currentTranslate, prevTranslate, velocityTranslate, velocityTime;
                 function handleTouchStart (e) {
@@ -10493,7 +10493,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     isTouched = true;
                     touchStartY = touchCurrentY = e.type === 'touchstart' ? e.targetTouches[0].pageY : e.pageY;
                     touchStartTime = (new Date()).getTime();
-        
+
                     allowItemClick = true;
                     startTranslate = currentTranslate = $.getTranslate(col.wrapper[0], 'y');
                 }
@@ -10509,11 +10509,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         startTranslate = currentTranslate = $.getTranslate(col.wrapper[0], 'y');
                         col.wrapper.transition(0);
                     }
-        
+
                     var diff = touchCurrentY - touchStartY;
                     currentTranslate = startTranslate + diff;
                     returnTo = undefined;
-        
+
                     // Normalize translate
                     if (currentTranslate < minTranslate) {
                         currentTranslate = minTranslate - Math.pow(minTranslate - currentTranslate, 0.8);
@@ -10525,10 +10525,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     // Transform wrapper
                     col.wrapper.transform('translate3d(0,' + currentTranslate + 'px,0)');
-        
+
                     // Update items
                     col.updateItems(undefined, currentTranslate, 0, p.params.updateValuesOnTouchmove);
-        
+
                     // Calc velocity
                     velocityTranslate = currentTranslate - prevTranslate || currentTranslate;
                     velocityTime = (new Date()).getTime();
@@ -10556,21 +10556,21 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         velocity = Math.abs(velocityTranslate / (touchEndTime - velocityTime));
                         newTranslate = currentTranslate + velocityTranslate * p.params.momentumRatio;
                     }
-        
+
                     newTranslate = Math.max(Math.min(newTranslate, maxTranslate), minTranslate);
-        
+
                     // Active Index
                     var activeIndex = -Math.floor((newTranslate - maxTranslate)/itemHeight);
-        
+
                     // Normalize translate
                     if (!p.params.freeMode) newTranslate = -activeIndex * itemHeight + maxTranslate;
-        
+
                     // Transform wrapper
                     col.wrapper.transform('translate3d(0,' + (parseInt(newTranslate,10)) + 'px,0)');
-        
+
                     // Update items
                     col.updateItems(activeIndex, newTranslate, '', true);
-        
+
                     // Watch items
                     if (p.params.updateValuesOnMomentum) {
                         updateDuringScroll();
@@ -10578,13 +10578,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             $.cancelAnimationFrame(animationFrameId);
                         });
                     }
-        
+
                     // Allow click
                     setTimeout(function () {
                         allowItemClick = true;
                     }, 100);
                 }
-        
+
                 function handleClick(e) {
                     if (!allowItemClick) return;
                     $.cancelAnimationFrame(animationFrameId);
@@ -10592,7 +10592,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     var value = $(this).attr('data-picker-value');
                     col.setValue(value);
                 }
-        
+
                 col.initEvents = function (detach) {
                     var method = detach ? 'off' : 'on';
                     var activeListener = app.support.passiveListener ? {passive: false, capture: false} : false;
@@ -10604,13 +10604,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 col.destroyEvents = function () {
                     col.initEvents(true);
                 };
-        
+
                 col.container[0].f7DestroyPickerCol = function () {
                     col.destroyEvents();
                 };
-        
+
                 col.initEvents();
-        
+
             };
             p.destroyPickerCol = function (colContainer) {
                 colContainer = $(colContainer);
@@ -10627,7 +10627,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
             $(window).on('resize', resizeCols);
-        
+
             // HTML Layout
             p.columnHTML = function (col, onlyItems) {
                 var columnItemsHTML = '';
@@ -10663,10 +10663,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             '<div class="picker-center-highlight"></div>' +
                         '</div>' +
                     '</div>';
-        
+
                 p.pickerHTML = pickerHTML;
             };
-        
+
             // Input Events
             function openOnInput(e) {
                 e.preventDefault();
@@ -10675,7 +10675,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (p.params.scrollToInput && !isPopover()) {
                     var pageContent = p.input.parents('.page-content');
                     if (pageContent.length === 0) return;
-        
+
                     var paddingTop = parseInt(pageContent.css('padding-top'), 10),
                         paddingBottom = parseInt(pageContent.css('padding-bottom'), 10),
                         pageHeight = pageContent[0].offsetHeight - paddingTop - p.container.height(),
@@ -10704,7 +10704,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if ($(e.target).parents('.picker-modal').length === 0) p.close();
                 }
             }
-        
+
             if (p.params.input) {
                 p.input = $(p.params.input);
                 if (p.input.length > 0) {
@@ -10718,11 +10718,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         });
                     }
                 }
-        
+
             }
-        
+
             if (!p.inline && p.params.closeByOutsideClick) $('html').on('click', closeOnHTMLClick);
-        
+
             // Open
             function onPickerClose() {
                 p.opened = false;
@@ -10731,22 +10731,22 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (app.params.material) p.input.trigger('blur');
                 }
                 if (p.params.onClose) p.params.onClose(p);
-        
+
                 // Destroy events
                 p.container.find('.picker-items-col').each(function () {
                     p.destroyPickerCol(this);
                 });
             }
-        
+
             p.opened = false;
             p.open = function () {
                 var toPopover = isPopover();
-        
+
                 if (!p.opened) {
-        
+
                     // Layout
                     p.layout();
-        
+
                     // Append
                     if (toPopover) {
                         p.pickerHTML = '<div class="popover popover-picker-columns"><div class="popover-inner">' + p.pickerHTML + '</div></div>';
@@ -10768,17 +10768,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             onPickerClose();
                         });
                     }
-        
+
                     // Store picker instance
                     p.container[0].f7Picker = p;
-        
+
                     // Init Events
                     p.container.find('.picker-items-col').each(function () {
                         var updateItems = true;
                         if ((!p.initialized && p.params.value) || (p.initialized && p.value)) updateItems = false;
                         p.initPickerCol(this, updateItems);
                     });
-        
+
                     // Set value
                     if (!p.initialized) {
                         if (p.value) p.setValue(p.value, 0);
@@ -10789,20 +10789,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         if (p.value) p.setValue(p.value, 0);
                     }
-        
+
                     // Material Focus
                     if (p.input && p.input.length > 0 && app.params.material) {
                         p.input.trigger('focus');
                     }
                 }
-        
+
                 // Set flag
                 p.opened = true;
                 p.initialized = true;
-        
+
                 if (p.params.onOpen) p.params.onOpen(p);
             };
-        
+
             // Close
             p.close = function () {
                 if (!p.opened || p.inline) return;
@@ -10815,7 +10815,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     return;
                 }
             };
-        
+
             // Destroy
             p.destroy = function () {
                 p.close();
@@ -10825,20 +10825,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 $('html').off('click', closeOnHTMLClick);
                 $(window).off('resize', resizeCols);
             };
-        
+
             if (p.inline) {
                 p.open();
             }
             else {
                 if (!p.initialized && p.params.value) p.setValue(p.params.value);
             }
-        
+
             return p;
         };
         app.picker = function (params) {
             return new Picker(params);
         };
-        
+
 
         /*======================================================
         ************   Calendar   ************
@@ -10905,7 +10905,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     '<div class="picker-footer">' +
                         '<a href="#" class="button close-picker">{{closeText}}</a>' +
                     '</div>',
-        
+
                 /* Callbacks
                 onMonthAdd
                 onChange
@@ -10924,19 +10924,19 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             p.params = params;
             p.initialized = false;
-        
+
             // Inline flag
             p.inline = p.params.container ? true : false;
-        
+
             // Is horizontal
             p.isH = p.params.direction === 'horizontal';
-        
+
             // RTL inverter
             var inverter = p.isH ? (app.rtl ? -1 : 1) : 1;
-        
+
             // Animating flag
             p.animating = false;
-        
+
             // Should be converted to popover
             function isPopover() {
                 var toPopover = false;
@@ -10958,7 +10958,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (p.opened && p.container && p.container.length > 0 && p.container.parents('.popover').length > 0) return true;
                 else return false;
             }
-        
+
             // Format date
             function formatDate(date) {
                 date = new Date(date);
@@ -10967,7 +10967,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var month1 = month + 1;
                 var day = date.getDate();
                 var weekDay = date.getDay();
-        
+
                 return p.params.dateFormat
                     .replace(/yyyy/g, year)
                     .replace(/yy/g, (year + '').substring(2))
@@ -10980,8 +10980,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     .replace(/DD/g, p.params.dayNames[weekDay])
                     .replace(/D(\W+)/g, p.params.dayNamesShort[weekDay] + '$1');
             }
-        
-        
+
+
             // Value
             p.addValue = function (value) {
                 if (p.params.multiple) {
@@ -11039,7 +11039,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 }
-        
+
                 if (p.params.onChange) {
                     p.params.onChange(p, p.value);
                 }
@@ -11059,10 +11059,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         $(p.input).val(inputValue);
                         $(p.input).trigger('change');
                     }
-        
+
                 }
             };
-        
+
             // Columns Handlers
             p.initCalendarEvents = function () {
                 var col;
@@ -11082,7 +11082,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 function handleTouchMove (e) {
                     if (!isTouched) return;
-        
+
                     touchCurrentX = e.type === 'touchmove' ? e.targetTouches[0].pageX : e.pageX;
                     touchCurrentY = e.type === 'touchmove' ? e.targetTouches[0].pageY : e.pageY;
                     if (typeof isScrolling === 'undefined') {
@@ -11105,14 +11105,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         wrapperHeight = p.wrapper[0].offsetHeight;
                         p.wrapper.transition(0);
                     }
-        
+
                     touchesDiff = p.isH ? touchCurrentX - touchStartX : touchCurrentY - touchStartY;
                     percentage = touchesDiff/(p.isH ? wrapperWidth : wrapperHeight);
                     currentTranslate = (p.monthsTranslate * inverter + percentage) * 100;
-        
+
                     // Transform wrapper
                     p.wrapper.transform('translate3d(' + (p.isH ? currentTranslate : 0) + '%, ' + (p.isH ? 0 : currentTranslate) + '%, 0)');
-        
+
                 }
                 function handleTouchEnd (e) {
                     if (!isTouched || !isMoved) {
@@ -11120,7 +11120,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         return;
                     }
                     isTouched = isMoved = false;
-        
+
                     touchEndTime = new Date().getTime();
                     if (touchEndTime - touchStartTime < 300) {
                         if (Math.abs(touchesDiff) < 10) {
@@ -11148,13 +11148,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             p.resetMonth();
                         }
                     }
-        
+
                     // Allow click
                     setTimeout(function () {
                         allowItemClick = true;
                     }, 100);
                 }
-        
+
                 function handleDayClick(e) {
                     if (!allowItemClick) return;
                     var day = $(e.target).parents('.picker-calendar-day');
@@ -11180,7 +11180,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (p.params.rangePicker && p.value.length === 2 || !p.params.rangePicker) p.close();
                     }
                 }
-        
+
                 p.container.find('.picker-calendar-prev-month').on('click', p.prevMonth);
                 p.container.find('.picker-calendar-next-month').on('click', p.nextMonth);
                 p.container.find('.picker-calendar-prev-year').on('click', p.prevYear);
@@ -11193,7 +11193,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     p.wrapper.on(app.touchEvents.move, handleTouchMove, activeListener);
                     p.wrapper.on(app.touchEvents.end, handleTouchEnd, passiveListener);
                 }
-        
+
                 p.container[0].f7DestroyCalendarEvents = function () {
                     p.container.find('.picker-calendar-prev-month').off('click', p.prevMonth);
                     p.container.find('.picker-calendar-next-month').off('click', p.nextMonth);
@@ -11206,13 +11206,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         p.wrapper.off(app.touchEvents.end, handleTouchEnd, passiveListener);
                     }
                 };
-        
-        
+
+
             };
             p.destroyCalendarEvents = function (colContainer) {
                 if ('f7DestroyCalendarEvents' in p.container[0]) p.container[0].f7DestroyCalendarEvents();
             };
-        
+
             // Scan Dates Range
             p.dateInRange = function (dayDate, range) {
                 var match = false;
@@ -11289,7 +11289,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     daysInMonth = p.daysInMonth(date),
                     firstDayOfMonthIndex = new Date(date.getFullYear(), date.getMonth()).getDay();
                 if (firstDayOfMonthIndex === 0) firstDayOfMonthIndex = 7;
-        
+
                 var dayDate, currentValues = [], i, j, k,
                     rows = 6, cols = 7,
                     monthHTML = '',
@@ -11299,13 +11299,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     maxDate = p.params.maxDate ? new Date(p.params.maxDate).getTime() : null,
                     disabled,
                     hasEvent;
-        
+
                 if (p.value && p.value.length) {
                     for (i = 0; i < p.value.length; i++) {
                         currentValues.push(new Date(p.value[i]).setHours(0,0,0,0));
                     }
                 }
-        
+
                 for (i = 1; i <= rows; i++) {
                     var rowHTML = '';
                     var row = i;
@@ -11375,8 +11375,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (disabled) {
                             addClass += ' picker-calendar-day-disabled';
                         }
-        
-        
+
+
                         dayDate = new Date(dayDate);
                         var dayYear = dayDate.getFullYear();
                         var dayMonth = dayDate.getMonth();
@@ -11399,16 +11399,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 p.container.find('.current-month-value').text(p.params.monthNames[p.currentMonth]);
                 p.container.find('.current-year-value').text(p.currentYear);
-        
+
             };
             p.onMonthChangeStart = function (dir) {
                 p.updateCurrentMonthYear(dir);
                 p.months.removeClass('picker-calendar-month-current picker-calendar-month-prev picker-calendar-month-next');
                 var currentIndex = dir === 'next' ? p.months.length - 1 : 0;
-        
+
                 p.months.eq(currentIndex).addClass('picker-calendar-month-current');
                 p.months.eq(dir === 'next' ? currentIndex - 1 : currentIndex + 1).addClass(dir === 'next' ? 'picker-calendar-month-prev' : 'picker-calendar-month-next');
-        
+
                 if (p.params.onMonthYearChangeStart) {
                     p.params.onMonthYearChangeStart(p, p.currentYear, p.currentMonth);
                 }
@@ -11417,7 +11417,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 p.animating = false;
                 var nextMonthHTML, prevMonthHTML, newMonthHTML;
                 p.wrapper.find('.picker-calendar-month:not(.picker-calendar-month-prev):not(.picker-calendar-month-current):not(.picker-calendar-month-next)').remove();
-        
+
                 if (typeof dir === 'undefined') {
                     dir = 'next';
                     rebuildBoth = true;
@@ -11484,7 +11484,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 p.animating = true;
                 p.onMonthChangeStart('next');
                 var translate = (p.monthsTranslate * 100) * inverter;
-        
+
                 p.wrapper.transition(transition).transform('translate3d(' + (p.isH ? translate : 0) + '%, ' + (p.isH ? 0 : translate) + '%, 0)');
                 if (transitionEndCallback) {
                     p.wrapper.transitionEnd(function () {
@@ -11605,14 +11605,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             p.prevYear = function () {
                 p.setYearMonth(p.currentYear - 1);
             };
-        
-        
+
+
             // HTML Layout
             p.layout = function () {
                 var pickerHTML = '';
                 var pickerClass = '';
                 var i;
-        
+
                 var layoutDate = p.value && p.value.length ? p.value[0] : new Date().setHours(0,0,0,0);
                 var prevMonthHTML = p.monthHTML(layoutDate, 'prev');
                 var currentMonthHTML = p.monthHTML(layoutDate);
@@ -11625,7 +11625,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         var weekDayIndex = (i + p.params.firstDay > 6) ? (i - 7 + p.params.firstDay) : (i + p.params.firstDay);
                         var dayName = p.params.dayNamesShort[weekDayIndex];
                         weekHeaderHTML += '<div class="picker-calendar-week-day ' + ((p.params.weekendDays.indexOf(weekDayIndex) >= 0) ? 'picker-calendar-week-day-weekend' : '') + '"> ' + dayName + '</div>';
-        
+
                     }
                     weekHeaderHTML = '<div class="picker-calendar-week-days">' + weekHeaderHTML + '</div>';
                 }
@@ -11641,7 +11641,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 var headerHTML = p.params.header ? p.params.headerTemplate.replace(/{{closeText}}/g, p.params.toolbarCloseText).replace(/{{placeholder}}/g, p.params.headerPlaceholder) : '';
                 var footerHTML = p.params.footer ? p.params.footerTemplate.replace(/{{closeText}}/g, p.params.toolbarCloseText) : '';
-        
+
                 pickerHTML =
                     '<div class="' + (pickerClass) + '">' +
                         headerHTML +
@@ -11652,11 +11652,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             monthsHTML +
                         '</div>' +
                     '</div>';
-        
-        
+
+
                 p.pickerHTML = pickerHTML;
             };
-        
+
             // Input Events
             function openOnInput(e) {
                 e.preventDefault();
@@ -11665,13 +11665,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (p.params.scrollToInput && !isPopover() && !app.params.material) {
                     var pageContent = p.input.parents('.page-content');
                     if (pageContent.length === 0) return;
-        
+
                     var paddingTop = parseInt(pageContent.css('padding-top'), 10),
                         paddingBottom = parseInt(pageContent.css('padding-bottom'), 10),
                         pageHeight = pageContent[0].offsetHeight - paddingTop - p.container.height(),
                         pageScrollHeight = pageContent[0].scrollHeight - paddingTop - p.container.height(),
                         newPaddingBottom;
-        
+
                     var inputTop = p.input.offset().top - paddingTop + p.input[0].offsetHeight;
                     if (inputTop > pageHeight) {
                         var scrollTop = pageContent.scrollTop() + inputTop - pageHeight;
@@ -11695,7 +11695,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if ($(e.target).parents('.picker-modal').length === 0) p.close();
                 }
             }
-        
+
             if (p.params.input) {
                 p.input = $(p.params.input);
                 if (p.input.length > 0) {
@@ -11709,11 +11709,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         });
                     }
                 }
-        
+
             }
-        
+
             if (!p.inline && p.params.closeByOutsideClick) $('html').on('click', closeOnHTMLClick);
-        
+
             // Open
             function onPickerClose() {
                 p.opened = false;
@@ -11722,11 +11722,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (app.params.material) p.input.trigger('blur');
                 }
                 if (p.params.onClose) p.params.onClose(p);
-        
+
                 // Destroy events
                 p.destroyCalendarEvents();
             }
-        
+
             p.opened = false;
             p.open = function () {
                 var toPopover = isPopover();
@@ -11739,10 +11739,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             updateValue = true;
                         }
                     }
-        
+
                     // Layout
                     p.layout();
-        
+
                     // Append
                     if (toPopover) {
                         p.pickerHTML = '<div class="popover popover-picker-calendar"><div class="popover-inner">' + p.pickerHTML + '</div></div>';
@@ -11764,35 +11764,35 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             onPickerClose();
                         });
                     }
-        
+
                     // Store calendar instance
                     p.container[0].f7Calendar = p;
                     p.wrapper = p.container.find('.picker-calendar-months-wrapper');
-        
+
                     // Months
                     p.months = p.wrapper.find('.picker-calendar-month');
-        
+
                     // Update current month and year
                     p.updateCurrentMonthYear();
-        
+
                     // Set initial translate
                     p.monthsTranslate = 0;
                     p.setMonthsTranslate();
-        
+
                     // Init events
                     p.initCalendarEvents();
-        
+
                     // Update input value
                     if (updateValue) p.updateValue();
                     else if (app.params.material && p.value) p.updateValue(true);
-        
+
                     // Material Focus
                     if (p.input && p.input.length > 0 && app.params.material) {
                         p.input.trigger('focus');
                     }
-        
+
                 }
-        
+
                 // Set flag
                 p.opened = true;
                 p.initialized = true;
@@ -11803,7 +11803,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 if (p.params.onOpen) p.params.onOpen(p);
             };
-        
+
             // Close
             p.close = function () {
                 if (!p.opened || p.inline) return;
@@ -11816,7 +11816,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     return;
                 }
             };
-        
+
             // Destroy
             p.destroy = function () {
                 p.close();
@@ -11825,20 +11825,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 $('html').off('click', closeOnHTMLClick);
             };
-        
+
             if (p.inline) {
                 p.open();
             }
             else {
                 if (!p.initialized && p.params.value) p.setValue(p.params.value);
             }
-        
+
             return p;
         };
         app.calendar = function (params) {
             return new Calendar(params);
         };
-        
+
 
         /*======================================================
         ************   Notifications   ************
@@ -11846,7 +11846,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         var _tempNotificationElement;
         app.addNotification = function (params) {
             if (!params) return;
-            
+
             if (typeof params.media === 'undefined') params.media = app.params.notificationMedia;
             if (typeof params.title === 'undefined') params.title = app.params.notificationTitle;
             if (typeof params.subtitle === 'undefined') params.subtitle = app.params.notificationSubtitle;
@@ -11857,19 +11857,19 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 text: app.params.notificationCloseButtonText,
                 close: true
             };
-        
+
             if (!_tempNotificationElement) _tempNotificationElement = document.createElement('div');
-        
+
             params.material = app.params.material;
-        
+
             var container = $('.notifications');
             if (container.length === 0) {
                 app.root.append('<div class="notifications list-block' + (params.material ? '' : ' media-list') + '"><ul></ul></div>');
                 container = $('.notifications');
             }
             var list = container.children('ul');
-            
-            var notificationTemplate = app.params.notificationTemplate || 
+
+            var notificationTemplate = app.params.notificationTemplate ||
                 '{{#if custom}}' +
                 '<li>{{custom}}</li>' +
                 '{{else}}' +
@@ -11912,9 +11912,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 app._compiledTemplates.notification = t7.compile(notificationTemplate);
             }
             _tempNotificationElement.innerHTML = app._compiledTemplates.notification(params);
-        
+
             var item = $(_tempNotificationElement).children();
-        
+
             item.on('click', function (e) {
                 var close = false;
                 var target = $(e.target);
@@ -11943,36 +11943,36 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (item.length > 0) app.closeNotification(item[0]);
                 }, params.hold);
             }
-        
+
             if (!app.params.material) {
                 app.closeNotification(list.children('li.notification-item:last-child'));
             }
             list.append(item[0]);
             container.show();
-        
+
             var itemHeight = item.outerHeight(), clientLeft;
             if (params.material) {
                 container.transform('translate3d(0, '+itemHeight+'px, 0)');
                 container.transition(0);
-        
+
                 clientLeft = item[0].clientLeft;
-        
+
                 container.transform('translate3d(0, 0, 0)');
                 container.transition('');
             }
             else {
                 item.transform('translate3d(0,' + (-itemHeight) + 'px,0)');
                 item.transition(0);
-        
+
                 clientLeft = item[0].clientLeft;
-        
+
                 item.transition('');
                 item.transform('translate3d(0,0px,0)');
             }
-        
+
             container.transform('translate3d(0, 0,0)');
             item.removeClass('notification-hidden');
-        
+
             return item[0];
         };
         app.closeNotification = function (item, event) {
@@ -11980,22 +11980,22 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (item.length === 0) return;
             if (item.hasClass('notification-item-removing')) return;
             var container = $('.notifications');
-        
+
             var itemHeight = item.outerHeight();
             item.css('height', itemHeight + 'px').transition(0).addClass('notification-item-removing');
             var clientLeft = item[0].clientLeft;
-        
+
             item.css({
                 height: '0px',
                 marginBottom: '0px'
             }).transition('');
-        
+
             if (item.data('f7NotificationOnClose')) item.data('f7NotificationOnClose')(event);
-        
+
             if (container.find('.notification-item:not(.notification-item-removing)').length === 0) {
                 container.transform('');
             }
-        
+
             item.addClass('notification-hidden').transitionEnd(function () {
                 item.remove();
                 if (container.find('.notification-item').length === 0) {
@@ -12012,11 +12012,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             Template7.templates = Template7.templates || app.params.templates || {};
             Template7.data = Template7.data || app.params.template7Data || {};
             Template7.cache = Template7.cache || {};
-        
+
             app.templates = Template7.templates;
             app.template7Data = Template7.data;
             app.template7Cache = Template7.cache;
-        
+
             // Precompile templates on app init
             if (!app.params.precompileTemplates) return;
             $('script[type="text/template7"]').each(function () {
@@ -12025,7 +12025,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 Template7.templates[id] = Template7.compile($(this).html());
             });
         };
-        
+
 
         /*=======================================
         ************   Plugins API   ************
@@ -12066,8 +12066,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             return processed;
         };
-        
-        
+
+
 
         /*======================================================
         ************   App Init   ************
@@ -12075,48 +12075,48 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         app.init = function () {
             // Compile Template7 templates on app load
             if (app.initTemplate7Templates) app.initTemplate7Templates();
-        
+
             // Init Plugins
             if (app.initPlugins) app.initPlugins();
-        
+
             // Init Device
             if (app.getDeviceInfo) app.getDeviceInfo();
-        
+
             // Init Panels Breakpoints
             if (app.initPanelsBreakpoints && (app.params.panelLeftBreakpoint || app.params.panelRightBreakpoint)) app.initPanelsBreakpoints();
-        
+
             // Init Click events
             if (app.initFastClicks && app.params.fastClicks) app.initFastClicks();
             if (app.initClickEvents) app.initClickEvents();
-        
+
             // Init each page callbacks
             $('.page:not(.cached)').each(function () {
                 app.initPageWithCallback(this);
             });
-        
+
             // Init each navbar callbacks
             $('.navbar:not(.cached)').each(function () {
                 app.initNavbarWithCallback(this);
             });
-        
+
             // Init resize events
             if (app.initResize) app.initResize();
-        
+
             // Init push state
             if (app.initPushState && app.params.pushState) app.initPushState();
-        
+
             // Init Live Swipeouts events
             if (app.initSwipeout && app.params.swipeout) app.initSwipeout();
-        
+
             // Init Live Sortable events
             if (app.initSortable && app.params.sortable) app.initSortable();
-        
+
             // Init Live Swipe Panels
             if (app.initSwipePanels && (app.params.swipePanel || app.params.swipePanelOnlyClose)) app.initSwipePanels();
-        
+
             // Init Material Inputs
             if (app.params.material && app.initMaterialWatchInputs) app.initMaterialWatchInputs();
-        
+
             // Init Material Tabbar
             if (app.params.material) {
                 $('.tabbar').each(function (index, el) {
@@ -12125,20 +12125,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 });
             }
-        
+
             // App Init callback
             if (app.params.onAppInit) app.params.onAppInit();
-        
+
             // Plugin app init hook
             app.pluginHook('appInit');
         };
         if (app.params.init) app.init();
-        
 
-        //Return instance        
+
+        //Return instance
         return app;
     };
-    
+
 
     /*===========================
     Dom7 Library
@@ -12431,7 +12431,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 }
-        
+
                 return this;
             },
             off: function (eventName, targetSelector, listener, capture) {
@@ -12630,7 +12630,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 return this;
             },
-        
+
             //Dom manipulation
             // Iterate over the collection passing elements to `callback`
             each: function (callback) {
@@ -12707,7 +12707,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     return false;
                 }
-        
+
             },
             indexOf: function (el) {
                 for (var i = 0; i < this.length; i++) {
@@ -12740,10 +12740,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             },
             append: function () {
                 var i, j, k, newChild;
-        
+
                 for (k = 0; k < arguments.length; k++) {
                   newChild = arguments[k];
-        
+
                   for (i = 0; i < this.length; i++) {
                       if (typeof newChild === 'string') {
                           var tempDiv = document.createElement('div');
@@ -12762,7 +12762,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                       }
                   }
                 }
-        
+
                 return this;
             },
             appendTo: function (parent) {
@@ -12933,7 +12933,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var children = [];
                 for (var i = 0; i < this.length; i++) {
                     var childNodes = this[i].childNodes;
-        
+
                     for (var j = 0; j < childNodes.length; j++) {
                         if (!selector) {
                             if (childNodes[j].nodeType === 1) children.push(childNodes[j]);
@@ -12979,7 +12979,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 return this;
             }
         };
-        
+
         // Shortcuts
         (function () {
             var shortcuts = ('click blur focus focusin focusout keyup keydown keypress submit change mousedown mousemove mouseup mouseenter mouseleave mouseout mouseover touchstart touchend touchmove resize scroll').split(' ');
@@ -13007,7 +13007,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 createMethod(shortcuts[i]);
             }
         })();
-        
+
 
         // Global Ajax Setup
         var globalAjaxOptions = {};
@@ -13017,7 +13017,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 globalAjaxOptions[optionName]  = optionValue;
             });
         };
-        
+
         // Ajax
         var _jsonpRequests = 0;
         $.ajax = function (options) {
@@ -13037,16 +13037,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 timeout: 0
             };
             var callbacks = ['beforeSend', 'error', 'complete', 'success', 'statusCode'];
-        
-        
+
+
             //For jQuery guys
             if (options.type) options.method = options.type;
-        
+
             // Merge global and defaults
             $.each(globalAjaxOptions, function (globalOptionName, globalOptionValue) {
                 if (callbacks.indexOf(globalOptionName) < 0) defaults[globalOptionName] = globalOptionValue;
             });
-        
+
             // Function to run XHR callbacks and events
             function fireAjaxCallback (eventName, eventData, callbackName) {
                 var a = arguments;
@@ -13058,19 +13058,19 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (options[callbackName]) options[callbackName](a[3], a[4], a[5], a[6]);
                 }
             }
-        
+
             // Merge options and defaults
             $.each(defaults, function (prop, defaultValue) {
                 if (!(prop in options)) options[prop] = defaultValue;
             });
-        
+
             // Default URL
             if (!options.url) {
                 options.url = window.location.toString();
             }
             // Parameters Prefix
             var paramsPrefix = options.url.indexOf('?') >= 0 ? '&' : '?';
-        
+
             // UC method
             var _method = options.method.toUpperCase();
             // Data to modify GET URL
@@ -13092,7 +13092,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             // JSONP
             if (options.dataType === 'json' && options.url.indexOf('callback=') >= 0) {
-        
+
                 var callbackName = 'f7jsonp_' + Date.now() + (_jsonpRequests++);
                 var abortTimeout;
                 var callbackSplit = options.url.split('callback=');
@@ -13101,7 +13101,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     var addVars = callbackSplit[1].split('&').filter(function (el) { return el.indexOf('=') > 0; }).join('&');
                     if (addVars.length > 0) requestUrl += '&' + addVars;
                 }
-        
+
                 // Create script
                 var script = document.createElement('script');
                 script.type = 'text/javascript';
@@ -13111,7 +13111,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     fireAjaxCallback('ajaxComplete ajax:complete', {scripterror: true}, 'complete', null, 'scripterror');
                 };
                 script.src = requestUrl;
-        
+
                 // Handler
                 window[callbackName] = function (data) {
                     clearTimeout(abortTimeout);
@@ -13121,7 +13121,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     delete window[callbackName];
                 };
                 document.querySelector('head').appendChild(script);
-        
+
                 if (options.timeout > 0) {
                     abortTimeout = setTimeout(function () {
                         script.parentNode.removeChild(script);
@@ -13129,30 +13129,30 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         fireAjaxCallback(undefined, undefined, 'error', null, 'timeout');
                     }, options.timeout);
                 }
-        
+
                 return;
             }
-        
+
             // Cache for GET/HEAD requests
             if (_method === 'GET' || _method === 'HEAD' || _method === 'OPTIONS' || _method === 'DELETE') {
                 if (options.cache === false) {
                     options.url += (paramsPrefix + '_nocache=' + Date.now());
                 }
             }
-        
+
             // Create XHR
             var xhr = new XMLHttpRequest();
-        
+
             // Save Request URL
             xhr.requestUrl = options.url;
             xhr.requestParameters = options;
-        
+
             // Open XHR
             xhr.open(_method, options.url, options.async, options.user, options.password);
-        
+
             // Create POST Data
             var postData = null;
-        
+
             if ((_method === 'POST' || _method === 'PUT' || _method === 'PATCH') && options.data) {
                 if (options.processData) {
                     var postDataInstances = [ArrayBuffer, Blob, Document, FormData];
@@ -13163,7 +13163,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         // POST Headers
                         var boundary = '---------------------------' + Date.now().toString(16);
-        
+
                         if (options.contentType === 'multipart\/form-data') {
                             xhr.setRequestHeader('Content-Type', 'multipart\/form-data; boundary=' + boundary);
                         }
@@ -13189,31 +13189,31 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else {
                     postData = options.data;
                 }
-        
+
             }
-        
+
             // Additional headers
             if (options.headers) {
                 $.each(options.headers, function (headerName, headerCallback) {
                     xhr.setRequestHeader(headerName, headerCallback);
                 });
             }
-        
+
             // Check for crossDomain
             if (typeof options.crossDomain === 'undefined') {
                 options.crossDomain = /^([\w-]+:)?\/\/([^\/]+)/.test(options.url) && RegExp.$2 !== window.location.host;
             }
-        
+
             if (!options.crossDomain) {
                 xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
             }
-        
+
             if (options.xhrFields) {
                 $.each(options.xhrFields, function (fieldName, fieldValue) {
                     xhr[fieldName] = fieldValue;
                 });
             }
-        
+
             var xhrTimeout;
             // Handle XHR
             xhr.onload = function (e) {
@@ -13243,17 +13243,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 fireAjaxCallback('ajaxComplete ajax:complete', {xhr: xhr}, 'complete', xhr, xhr.status);
             };
-        
+
             xhr.onerror = function (e) {
                 if (xhrTimeout) clearTimeout(xhrTimeout);
                 fireAjaxCallback('ajaxError ajax:error', {xhr: xhr}, 'error', xhr, xhr.status);
                 fireAjaxCallback('ajaxComplete ajax:complete', {xhr: xhr}, 'complete', xhr, xhr.status);
             };
-        
+
             // Ajax start callback
             fireAjaxCallback('ajaxStart ajax:start', {xhr: xhr}, 'start', xhr);
             fireAjaxCallback(undefined, undefined, 'beforeSend', xhr);
-        
+
             // Timeout
             if (options.timeout > 0) {
                 xhr.onabort = function () {
@@ -13265,10 +13265,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     fireAjaxCallback('ajaxComplete ajax:complete', {xhr: xhr, timeout: true}, 'complete', xhr, 'timeout');
                 }, options.timeout);
             }
-        
+
             // Send XHR
             xhr.send(postData);
-        
+
             // Return XHR object
             return xhr;
         };
@@ -13291,7 +13291,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 createMethod(methods[i]);
             }
         })();
-        
+
 
         // DOM Library Utilities
         $.parseUrlQuery= function (url) {
@@ -13300,13 +13300,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (typeof url === 'string' && url.length)  {
                 url = url.indexOf('?')>-1 ? url.replace(/\S*\?/,'') : '';
                 params = url.split('&'), length = params.length;
-        
+
                 for (i = 0; i < length; i++) {
                     param = params[i].replace(/#\S+/g,'').split('=');
                     query[decodeURIComponent(param[0])] = decodeURIComponent(param[1]) || '';
                 }
             }
-        
+
             return query;
         };
         $.isArray = function (arr) {
@@ -13389,7 +13389,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             else {
                                 toPush.push(var_name(prop) + '[]=' + var_value(obj[prop][i]));
                             }
-        
+
                         }
                         if (toPush.length > 0) resultArray.push(toPush.join(separator));
                     }
@@ -13422,12 +13422,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         };
         $.getTranslate = function (el, axis) {
             var matrix, curTransform, curStyle, transformMatrix;
-        
+
             // automatic axis detection
             if (typeof axis === 'undefined') {
                 axis = 'x';
             }
-        
+
             curStyle = window.getComputedStyle(el, null);
             if (window.WebKitCSSMatrix) {
                 curTransform = curStyle.transform || curStyle.webkitTransform;
@@ -13444,7 +13444,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 transformMatrix = curStyle.transform || curStyle.getPropertyValue('transform').replace('translate(', 'matrix(1, 0, 0, 1,');
                 matrix = transformMatrix.toString().split(',');
             }
-        
+
             if (axis === 'x') {
                 //Latest Chrome and webkits Fix
                 if (window.WebKitCSSMatrix)
@@ -13467,10 +13467,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else
                     curTransform = parseFloat(matrix[5]);
             }
-        
+
             return curTransform || 0;
         };
-        
+
         $.requestAnimationFrame = function (callback) {
             if (window.requestAnimationFrame) return window.requestAnimationFrame(callback);
             else if (window.webkitRequestAnimationFrame) return window.webkitRequestAnimationFrame(callback);
@@ -13486,7 +13486,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
         };
         $.supportTouch = !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
-        
+
         // Remove Diacritics
         var defaultDiacriticsRemovalap = [
             {base:'A', letters:'\u0041\u24B6\uFF21\u00C0\u00C1\u00C2\u1EA6\u1EA4\u1EAA\u1EA8\u00C3\u0100\u0102\u1EB0\u1EAE\u1EB4\u1EB2\u0226\u01E0\u00C4\u01DE\u1EA2\u00C5\u01FA\u01CD\u0200\u0202\u1EA0\u1EAC\u1EB6\u1E00\u0104\u023A\u2C6F'},
@@ -13576,7 +13576,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             {base:'y',letters:'\u0079\u24E8\uFF59\u1EF3\u00FD\u0177\u1EF9\u0233\u1E8F\u00FF\u1EF7\u1E99\u1EF5\u01B4\u024F\u1EFF'},
             {base:'z',letters:'\u007A\u24E9\uFF5A\u017A\u1E91\u017C\u017E\u1E93\u1E95\u01B6\u0225\u0240\u2C6C\uA763'}
         ];
-        
+
         var diacriticsMap = {};
         for (var i=0; i < defaultDiacriticsRemovalap.length; i++){
             var letters = defaultDiacriticsRemovalap[i].letters;
@@ -13584,7 +13584,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 diacriticsMap[letters[j]] = defaultDiacriticsRemovalap[i].base;
             }
         }
-        
+
         $.removeDiacritics = function (str) {
             return str.replace(/[^\u0000-\u007E]/g, function(a){
                return diacriticsMap[a] || a;
@@ -13592,7 +13592,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         };
         // Link to prototype
         $.fn = Dom7.prototype;
-        
+
         // Plugins
         $.fn.scrollTo = function (left, top, duration, easing, callback) {
             if (arguments.length === 4 && typeof easing === 'function') {
@@ -13651,7 +13651,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         el.scrollTop = newTop;
                         done = true;
                     }
-        
+
                     if (animateLeft && newLeft > currentLeft && scrollLeft >= newLeft)  {
                         el.scrollLeft = newLeft;
                         done = true;
@@ -13660,7 +13660,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         el.scrollLeft = newLeft;
                         done = true;
                     }
-        
+
                     if (done) {
                         if (callback) callback();
                         return;
@@ -13696,20 +13696,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             return dom.scrollTo(left, undefined, duration, easing, callback);
         };
-        
+
 
         return $;
     })();
-    
+
     // Export Dom7 to Framework7
     Framework7.$ = Dom7;
-    
+
     // Export to local scope
     var $ = Dom7;
-    
+
     // Export to Window
     window.Dom7 = Dom7;
-    
+
 
     /*========================
     Animate7 Animate Engine
@@ -13726,13 +13726,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             progress(elements, complete, remaining, start, tweenValue)
             */
         };
-    
+
         for (var def in defaults) {
             if (typeof params[def] === 'undefined') {
                 params[def] = defaults[def];
             }
         }
-    
+
         var a = this;
         a.params = params;
         a.props = props;
@@ -13740,7 +13740,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         if (a.elements.length === 0) {
             return a;
         }
-    
+
         a.easingProgress = function (easing, progress) {
             if (easing === 'swing') {
                 return 0.5 - Math.cos( progress * Math.PI ) / 2;
@@ -13750,7 +13750,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             return progress;
         };
-    
+
         a.stop = function () {
             if (a.frameId) {
                 $.cancelAnimationFrame(a.frameId);
@@ -13780,17 +13780,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 return a;
             }
             a.params = params;
-    
+
             var _elements = [];
-    
+
             // Define & Cache Initials & Units
             a.elements.each(function (index, el) {
                 var initialFullValue, initialValue, unit, finalValue, finalFullValue;
-    
+
                 _elements[index] = {
                     _container: el
                 };
-    
+
                 for (var prop in props) {
                     initialFullValue = window.getComputedStyle(el, null).getPropertyValue(prop).replace(',', '.');
                     initialValue = parseFloat(initialFullValue);
@@ -13805,19 +13805,19 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         finalFullValue: finalFullValue,
                         currentValue: initialValue
                     };
-    
+
                 }
             });
-    
+
             var startTime = null,
                 time,
                 elementsDone = 0,
                 propsDone = 0,
                 done,
                 began = false;
-    
+
             a.animating = true;
-    
+
             function render() {
                 time = new Date().getTime();
                 var progress, easeProgress, el;
@@ -13836,18 +13836,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         startTime
                     );
                 }
-    
+
                 for (var i = 0; i < _elements.length; i++) {
                     if (done) continue;
                     el = _elements[i];
                     if (el.done) continue;
-    
+
                     for (var prop in props) {
                         progress = Math.max(Math.min((time - startTime) / params.duration, 1), 0);
                         easeProgress = a.easingProgress(params.easing, progress);
-    
+
                         el[prop].currentValue = el[prop].initialValue + easeProgress * (el[prop].finalValue - el[prop].initialValue);
-    
+
                         if (el[prop].finalValue > el[prop].initialValue && el[prop].currentValue >= el[prop].finalValue || el[prop].finalValue < el[prop].initialValue && el[prop].currentValue <= el[prop].finalValue)  {
                             el._container.style[prop] = el[prop].finalValue + el[prop].unit;
                             propsDone ++;
@@ -13866,7 +13866,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         el._container.style[prop] = el[prop].currentValue + el[prop].unit;
                     }
                 }
-    
+
                 // Then call
                 a.frameId = $.requestAnimationFrame(render);
             }
@@ -13913,11 +13913,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 return supportsPassive;
             })()
         };
-    
+
         // Export object
         return support;
     })();
-    
+
 
     /*===========================
     Device/OS Detection
@@ -13926,15 +13926,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         var device = {};
         var ua = navigator.userAgent;
         var $ = Dom7;
-    
+
         var windows = /windows phone/i.test(ua);
         var android = ua.match(/(Android);?[\s\/]+([\d.]+)?/);
         var ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
         var ipod = ua.match(/(iPod)(.*OS\s([\d_]+))?/);
         var iphone = !ipad && ua.match(/(iPhone\sOS|iOS)\s([\d_]+)/);
-    
+
         device.ios = device.android = device.windows = device.iphone = device.ipod = device.ipad = device.androidChrome = false;
-    
+
         // Windows
         if (windows) {
             device.os = 'windows';
@@ -13970,10 +13970,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 device.osVersion = ua.toLowerCase().split('version/')[1].split(' ')[0];
             }
         }
-    
+
         // Webview
         device.webView = (iphone || ipad || ipod) && ua.match(/.*AppleWebKit(?!.*Safari)/i);
-    
+
         // Minimal UI
         if (device.os && device.os === 'ios') {
             var osVersionArr = device.osVersion.split('.');
@@ -13982,11 +13982,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 (osVersionArr[0] * 1 === 7 ? osVersionArr[1] * 1 >= 1 : osVersionArr[0] * 1 > 7) &&
                                 $('meta[name="viewport"]').length > 0 && $('meta[name="viewport"]').attr('content').indexOf('minimal-ui') >= 0;
         }
-    
+
         // Check for status bar and fullscreen app mode
         var windowWidth = $(window).width();
         var windowHeight = $(window).height();
-    
+
         device.needsStatusBar = function () {
             if (device.webView && (windowWidth * windowHeight === screen.width * screen.height)) {
                 return true;
@@ -13994,17 +13994,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             return false;
         };
         device.statusBar = device.needsStatusBar();
-    
+
         // Classes
         var classNames = [];
-    
+
         // Pixel Ratio
         device.pixelRatio = window.devicePixelRatio || 1;
         classNames.push('pixel-ratio-' + Math.floor(device.pixelRatio));
         if (device.pixelRatio >= 2) {
             classNames.push('retina');
         }
-    
+
         // OS classes
         if (device.os) {
             classNames.push(device.os, device.os + '-' + device.osVersion.split('.')[0], device.os + '-' + device.osVersion.replace(/\./g, '-'));
@@ -14014,7 +14014,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     classNames.push('ios-gt-' + i);
                 }
             }
-    
+
         }
         // Status bar classes
         if (device.statusBar) {
@@ -14023,20 +14023,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         else {
             $('html').removeClass('with-statusbar-overlay');
         }
-    
+
         // Add html classes
         if (classNames.length > 0) $('html').addClass(classNames.join(' '));
-    
+
         // Export object
         return device;
     })();
-    
+
 
     /*===========================
     Plugins prototype
     ===========================*/
     Framework7.prototype.plugins = {};
-    
+
 
     /*===========================
     Template7 Template engine
@@ -14166,7 +14166,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             helperContext.push(slice);
                         }
                     }
-    
+
                     if (block.indexOf('{#') >= 0) {
                         // Condition/Helper
                         var helperStartIndex = i;
@@ -14206,7 +14206,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 if (!foundElse) helperContent += _blocks[j];
                                 if (foundElse) elseContent += _blocks[j];
                             }
-    
+
                         }
                         if (foundClosed) {
                             if (shiftIndex) i = shiftIndex;
@@ -14239,7 +14239,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         var Template7 = function (template, options) {
             var t = this;
             t.template = template;
-    
+
             function getCompileFn(block, depth) {
                 if (block.content) return compile(block.content, depth);
                 else return function () {return ''; };
@@ -14292,7 +14292,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     }
                 }
-    
+
                 return variable;
             }
             function getCompiledArguments(contextArray, ctx) {
@@ -14304,7 +14304,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         arr.push(getCompileVar(contextArray[i], ctx));
                     }
                 }
-    
+
                 return arr.join(', ');
             }
             function compile(template, depth) {
@@ -14350,9 +14350,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (block.type === 'helper') {
                         if (block.helperName in t.helpers) {
                             compiledArguments = getCompiledArguments(block.contextName, ctx);
-    
+
                             resultString += 'r += (Template7.helpers.' + block.helperName + ').call(' + ctx + ', ' + (compiledArguments && (compiledArguments + ', ')) +'{hash:' + JSON.stringify(block.hash) + ', data: data || {}, fn: ' + getCompileFn(block, depth + 1) + ', inverse: ' + getCompileInverse(block, depth + 1) + ', root: root});';
-    
+
                         }
                         else {
                             if (block.contextName.length > 0) {
@@ -14508,20 +14508,20 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var instance = new Template7(template, options);
             return instance.compile();
         };
-    
+
         t7.options = Template7.prototype.options;
         t7.helpers = Template7.prototype.helpers;
         t7.partials = Template7.prototype.partials;
         return t7;
     })();
-    
+
 
     /*===========================
     Swiper
     ===========================*/
     window.Swiper = function (container, params) {
         if (!(this instanceof Swiper)) return new Swiper(container, params);
-    
+
         var defaults = {
             direction: 'horizontal',
             touchEventsTarget: 'container',
@@ -14704,7 +14704,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             notificationClass: 'swiper-notification',
             preloaderClass: 'preloader',
             zoomContainerClass: 'swiper-zoom-container',
-    
+
             // Observer
             observer: false,
             observeParents: false,
@@ -14747,10 +14747,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             onLazyImageReady: function (swiper, slide, image)
             onKeyPress: function (swiper, keyCode)
             */
-    
+
         };
         var initialVirtualTranslate = params && params.virtualTranslate;
-    
+
         params = params || {};
         var originalParams = {};
         for (var param in params) {
@@ -14776,14 +14776,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         }
-    
+
         // Swiper
         var s = this;
-    
+
         // Params
         s.params = params;
         s.originalParams = originalParams;
-    
+
         // Classname
         s.classNames = [];
         /*=========================
@@ -14803,7 +14803,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         }
         // Export it to Swiper instance
         s.$ = $;
-    
+
         /*=========================
           Breakpoints
           ===========================*/
@@ -14848,7 +14848,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         if (s.params.breakpoints) {
             s.setBreakpoint();
         }
-    
+
         /*=========================
           Preparation - Define Container, Wrapper and Pagination
           ===========================*/
@@ -14862,13 +14862,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             });
             return swipers;
         }
-    
+
         // Save instance in container HTML Element and in data
         s.container[0].swiper = s;
         s.container.data('swiper', s);
-    
+
         s.classNames.push(s.params.containerModifierClass + s.params.direction);
-    
+
         if (s.params.freeMode) {
             s.classNames.push(s.params.containerModifierClass + 'free-mode');
         }
@@ -14919,22 +14919,22 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.params.virtualTranslate = true;
             }
         }
-    
+
         // Grab Cursor
         if (s.params.grabCursor && s.support.touch) {
             s.params.grabCursor = false;
         }
-    
+
         // Wrapper
         s.wrapper = s.container.children('.' + s.params.wrapperClass);
-    
+
         // Pagination
         if (s.params.pagination) {
             s.paginationContainer = $(s.params.pagination);
             if (s.params.uniqueNavElements && typeof s.params.pagination === 'string' && s.paginationContainer.length > 1 && s.container.find(s.params.pagination).length === 1) {
                 s.paginationContainer = s.container.find(s.params.pagination);
             }
-    
+
             if (s.params.paginationType === 'bullets' && s.params.paginationClickable) {
                 s.paginationContainer.addClass(s.params.paginationModifierClass + 'clickable');
             }
@@ -14958,46 +14958,46 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         }
-    
+
         // Is Horizontal
         s.isHorizontal = function () {
             return s.params.direction === 'horizontal';
         };
         // s.isH = isH;
-    
+
         // RTL
         s.rtl = s.isHorizontal() && (s.container[0].dir.toLowerCase() === 'rtl' || s.container.css('direction') === 'rtl');
         if (s.rtl) {
             s.classNames.push(s.params.containerModifierClass + 'rtl');
         }
-    
+
         // Wrong RTL support
         if (s.rtl) {
             s.wrongRTL = s.wrapper.css('display') === '-webkit-box';
         }
-    
+
         // Columns
         if (s.params.slidesPerColumn > 1) {
             s.classNames.push(s.params.containerModifierClass + 'multirow');
         }
-    
+
         // Check for Android
         if (s.device.android) {
             s.classNames.push(s.params.containerModifierClass + 'android');
         }
-    
+
         // Add classes
         s.container.addClass(s.classNames.join(' '));
-    
+
         // Translate
         s.translate = 0;
-    
+
         // Progress
         s.progress = 0;
-    
+
         // Velocity
         s.velocity = 0;
-    
+
         /*=========================
           Locks, unlocks
           ===========================*/
@@ -15033,7 +15033,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             s.params.allowSwipeToNext = s.params.allowSwipeToPrev = true;
             if (s.params.grabCursor) s.setGrabCursor();
         };
-    
+
         /*=========================
           Round helper
           ===========================*/
@@ -15060,7 +15060,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
           ===========================*/
         s.imagesToLoad = [];
         s.imagesLoaded = 0;
-    
+
         s.loadImage = function (imgElement, src, srcset, sizes, checkForComplete, callback) {
             var image;
             function onReady () {
@@ -15083,7 +15083,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 } else {
                     onReady();
                 }
-    
+
             } else {//image already loaded...
                 onReady();
             }
@@ -15102,7 +15102,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.loadImage(s.imagesToLoad[i], (s.imagesToLoad[i].currentSrc || s.imagesToLoad[i].getAttribute('src')), (s.imagesToLoad[i].srcset || s.imagesToLoad[i].getAttribute('srcset')), s.imagesToLoad[i].sizes || s.imagesToLoad[i].getAttribute('sizes'), true, _onReady);
             }
         };
-    
+
         /*=========================
           Autoplay
           ===========================*/
@@ -15190,7 +15190,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             var activeSlides = [];
             var newHeight = 0;
             var i;
-    
+
             // Find slides currently in view
             if(s.params.slidesPerView !== 'auto' && s.params.slidesPerView > 1) {
                 for (i = 0; i < Math.ceil(s.params.slidesPerView); i++) {
@@ -15201,7 +15201,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             } else {
                 activeSlides.push(s.slides.eq(s.activeIndex)[0]);
             }
-    
+
             // Find new height from heighest slide in view
             for (i = 0; i < activeSlides.length; i++) {
                 if (typeof activeSlides[i] !== 'undefined') {
@@ -15209,7 +15209,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     newHeight = height > newHeight ? height : newHeight;
                 }
             }
-    
+
             // Update Height
             if (newHeight) s.wrapper.css('height', newHeight + 'px');
         };
@@ -15230,23 +15230,23 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (width === 0 && s.isHorizontal() || height === 0 && !s.isHorizontal()) {
                 return;
             }
-    
+
             //Subtract paddings
             width = width - parseInt(s.container.css('padding-left'), 10) - parseInt(s.container.css('padding-right'), 10);
             height = height - parseInt(s.container.css('padding-top'), 10) - parseInt(s.container.css('padding-bottom'), 10);
-    
+
             // Store values
             s.width = width;
             s.height = height;
             s.size = s.isHorizontal() ? s.width : s.height;
         };
-    
+
         s.updateSlidesSize = function () {
             s.slides = s.wrapper.children('.' + s.params.slideClass);
             s.snapGrid = [];
             s.slidesGrid = [];
             s.slidesSizesGrid = [];
-    
+
             var spaceBetween = s.params.spaceBetween,
                 slidePosition = -s.params.slidesOffsetBefore,
                 i,
@@ -15256,12 +15256,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (typeof spaceBetween === 'string' && spaceBetween.indexOf('%') >= 0) {
                 spaceBetween = parseFloat(spaceBetween.replace('%', '')) / 100 * s.size;
             }
-    
+
             s.virtualSize = -spaceBetween;
             // reset margins
             if (s.rtl) s.slides.css({marginLeft: '', marginTop: ''});
             else s.slides.css({marginRight: '', marginBottom: ''});
-    
+
             var slidesNumberEvenToRows;
             if (s.params.slidesPerColumn > 1) {
                 if (Math.floor(s.slides.length / s.params.slidesPerColumn) === s.slides.length / s.params.slidesPerColumn) {
@@ -15274,7 +15274,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     slidesNumberEvenToRows = Math.max(slidesNumberEvenToRows, s.params.slidesPerView * s.params.slidesPerColumn);
                 }
             }
-    
+
             // Calc slides
             var slideSize;
             var slidesPerColumn = s.params.slidesPerColumn;
@@ -15317,7 +15317,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         )
                         .attr('data-swiper-column', column)
                         .attr('data-swiper-row', row);
-    
+
                 }
                 if (slide.css('display') === 'none') continue;
                 if (s.params.slidesPerView === 'auto') {
@@ -15327,7 +15327,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 else {
                     slideSize = (s.size - (s.params.slidesPerView - 1) * spaceBetween) / s.params.slidesPerView;
                     if (s.params.roundLengths) slideSize = round(slideSize);
-    
+
                     if (s.isHorizontal()) {
                         s.slides[i].style.width = slideSize + 'px';
                     }
@@ -15337,8 +15337,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 s.slides[i].swiperSlideSize = slideSize;
                 s.slidesSizesGrid.push(slideSize);
-    
-    
+
+
                 if (s.params.centeredSlides) {
                     slidePosition = slidePosition + slideSize / 2 + prevSlideSize / 2 + spaceBetween;
                     if(prevSlideSize === 0 && i !== 0) slidePosition = slidePosition - s.size / 2 - spaceBetween;
@@ -15352,16 +15352,16 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     s.slidesGrid.push(slidePosition);
                     slidePosition = slidePosition + slideSize + spaceBetween;
                 }
-    
+
                 s.virtualSize += slideSize + spaceBetween;
-    
+
                 prevSlideSize = slideSize;
-    
+
                 index ++;
             }
             s.virtualSize = Math.max(s.virtualSize, s.size) + s.params.slidesOffsetAfter;
             var newSlidesGrid;
-    
+
             if (
                 s.rtl && s.wrongRTL && (s.params.effect === 'slide' || s.params.effect === 'coverflow')) {
                 s.wrapper.css({width: s.virtualSize + s.params.spaceBetween + 'px'});
@@ -15370,7 +15370,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (s.isHorizontal()) s.wrapper.css({width: s.virtualSize + s.params.spaceBetween + 'px'});
                 else s.wrapper.css({height: s.virtualSize + s.params.spaceBetween + 'px'});
             }
-    
+
             if (s.params.slidesPerColumn > 1) {
                 s.virtualSize = (slideSize + s.params.spaceBetween) * slidesNumberEvenToRows;
                 s.virtualSize = Math.ceil(s.virtualSize / s.params.slidesPerColumn) - s.params.spaceBetween;
@@ -15384,7 +15384,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     s.snapGrid = newSlidesGrid;
                 }
             }
-    
+
             // Remove last grid elements depending on width
             if (!s.params.centeredSlides) {
                 newSlidesGrid = [];
@@ -15399,7 +15399,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
             if (s.snapGrid.length === 0) s.snapGrid = [0];
-    
+
             if (s.params.spaceBetween !== 0) {
                 if (s.isHorizontal()) {
                     if (s.rtl) s.slides.css({marginLeft: spaceBetween + 'px'});
@@ -15416,7 +15416,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.slides[i].swiperSlideOffset = s.isHorizontal() ? s.slides[i].offsetLeft : s.slides[i].offsetTop;
             }
         };
-    
+
         /*=========================
           Dynamic Slides Per View
           ===========================*/
@@ -15458,10 +15458,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             if (s.slides.length === 0) return;
             if (typeof s.slides[0].swiperSlideOffset === 'undefined') s.updateSlidesOffset();
-    
+
             var offsetCenter = -translate;
             if (s.rtl) offsetCenter = translate;
-    
+
             // Visible Slides
             s.slides.removeClass(s.params.slideVisibleClass);
             for (var i = 0; i < s.slides.length; i++) {
@@ -15499,7 +15499,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             if (s.isBeginning && !wasBeginning) s.emit('onReachBeginning', s);
             if (s.isEnd && !wasEnd) s.emit('onReachEnd', s);
-    
+
             if (s.params.watchSlidesProgress) s.updateSlidesProgress(translate);
             s.emit('onProgress', s, s.progress);
         };
@@ -15532,7 +15532,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             // }
             snapIndex = Math.floor(newActiveIndex / s.params.slidesPerGroup);
             if (snapIndex >= s.snapGrid.length) snapIndex = s.snapGrid.length - 1;
-    
+
             if (newActiveIndex === s.activeIndex) {
                 return;
             }
@@ -15545,7 +15545,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         s.updateRealIndex = function(){
             s.realIndex = parseInt(s.slides.eq(s.activeIndex).attr('data-swiper-slide-index') || s.activeIndex, 10);
         };
-    
+
         /*=========================
           Classes
           ===========================*/
@@ -15590,7 +15590,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     s.wrapper.children('.' + s.params.slideClass + '.' + s.params.slideDuplicateClass + '[data-swiper-slide-index="' + prevSlide.attr('data-swiper-slide-index') + '"]').addClass(s.params.slideDuplicatePrevClass);
                 }
             }
-    
+
             // Pagination
             if (s.paginationContainer && s.paginationContainer.length > 0) {
                 // Current/Total
@@ -15643,7 +15643,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     s.emit('onPaginationRendered', s, s.paginationContainer[0]);
                 }
             }
-    
+
             // Next/active buttons
             if (!s.params.loop) {
                 if (s.params.prevButton && s.prevButton && s.prevButton.length > 0) {
@@ -15668,7 +15668,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         };
-    
+
         /*=========================
           Pagination
           ===========================*/
@@ -15766,7 +15766,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.updateAutoHeight();
             }
         };
-    
+
         /*=========================
           Resize Handler
           ===========================*/
@@ -15776,12 +15776,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (s.params.breakpoints) {
                 s.setBreakpoint();
             }
-    
+
             // Disable locks on resize
             var allowSwipeToPrev = s.params.allowSwipeToPrev;
             var allowSwipeToNext = s.params.allowSwipeToNext;
             s.params.allowSwipeToPrev = s.params.allowSwipeToNext = true;
-    
+
             s.updateContainerSize();
             s.updateSlidesSize();
             if (s.params.slidesPerView === 'auto' || s.params.freeMode || forceUpdatePagination) s.updatePagination();
@@ -15797,7 +15797,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.setWrapperTranslate(newTranslate);
                 s.updateActiveIndex();
                 s.updateClasses();
-    
+
                 if (s.params.autoHeight) {
                     s.updateAutoHeight();
                 }
@@ -15819,11 +15819,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             s.params.allowSwipeToNext = allowSwipeToNext;
             if (s.params.onAfterResize) s.params.onAfterResize(s);
         };
-    
+
         /*=========================
           Events
           ===========================*/
-    
+
         //Define Touch Events
         s.touchEventsDesktop = {start: 'mousedown', move: 'mousemove', end: 'mouseup'};
         if (window.navigator.pointerEnabled) s.touchEventsDesktop = {start: 'pointerdown', move: 'pointermove', end: 'pointerup'};
@@ -15833,22 +15833,22 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             move : s.support.touch || !s.params.simulateTouch ? 'touchmove' : s.touchEventsDesktop.move,
             end : s.support.touch || !s.params.simulateTouch ? 'touchend' : s.touchEventsDesktop.end
         };
-    
-    
+
+
         // WP8 Touch Events Fix
         if (window.navigator.pointerEnabled || window.navigator.msPointerEnabled) {
             (s.params.touchEventsTarget === 'container' ? s.container : s.wrapper).addClass('swiper-wp8-' + s.params.direction);
         }
-    
+
         // Attach/detach events
         s.initEvents = function (detach) {
             var actionDom = detach ? 'off' : 'on';
             var action = detach ? 'removeEventListener' : 'addEventListener';
             var touchEventsTarget = s.params.touchEventsTarget === 'container' ? s.container[0] : s.wrapper[0];
             var target = s.support.touch ? touchEventsTarget : document;
-    
+
             var moveCapture = s.params.nested ? true : false;
-    
+
             //Touch Events
             if (s.browser.ie) {
                 touchEventsTarget[action](s.touchEvents.start, s.onTouchStart, false);
@@ -15869,7 +15869,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
             window[action]('resize', s.onResize);
-    
+
             // Next, Prev, Index
             if (s.params.nextButton && s.nextButton && s.nextButton.length > 0) {
                 s.nextButton[actionDom]('click', s.onClickNext);
@@ -15883,7 +15883,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.paginationContainer[actionDom]('click', '.' + s.params.bulletClass, s.onClickIndex);
                 if (s.params.a11y && s.a11y) s.paginationContainer[actionDom]('keydown', '.' + s.params.bulletClass, s.a11y.onEnterKey);
             }
-    
+
             // Prevent Links Clicks
             if (s.params.preventClicks || s.params.preventClicksPropagation) touchEventsTarget[action]('click', s.preventClicks, true);
         };
@@ -15893,7 +15893,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         s.detachEvents = function () {
             s.initEvents(true);
         };
-    
+
         /*=========================
           Handle Clicks
           ===========================*/
@@ -15925,7 +15925,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (s.params.loop) index = index + s.loopedSlides;
             s.slideTo(index);
         };
-    
+
         /*=========================
           Handle Touches
           ===========================*/
@@ -15957,7 +15957,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (s.slides[i] === slide) slideFound = true;
                 }
             }
-    
+
             if (slide && slideFound) {
                 s.clickedSlide = slide;
                 s.clickedIndex = $(slide).index();
@@ -16005,7 +16005,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         };
-    
+
         var isTouched,
             isMoved,
             allowTouchCallbacks,
@@ -16021,10 +16021,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             //Velocities
             velocities = [],
             allowMomentumBounce;
-    
+
         // Animating Flag
         s.animating = false;
-    
+
         // Touches information
         s.touches = {
             startX: 0,
@@ -16033,7 +16033,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             currentY: 0,
             diff: 0
         };
-    
+
         // Touch handlers
         var isTouchEvent, startMoving;
         s.onTouchStart = function (e) {
@@ -16047,15 +16047,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (s.params.swipeHandler) {
                 if (!findElementInEvent(e, s.params.swipeHandler)) return;
             }
-    
+
             var startX = s.touches.currentX = e.type === 'touchstart' ? e.targetTouches[0].pageX : e.pageX;
             var startY = s.touches.currentY = e.type === 'touchstart' ? e.targetTouches[0].pageY : e.pageY;
-    
+
             // Do NOT start if iOS edge swipe is detected. Otherwise iOS app (UIWebView) cannot swipe-to-go-back anymore
             if(s.device.ios && s.params.iOSEdgeSwipeDetection && startX <= s.params.iOSEdgeSwipeThreshold) {
                 return;
             }
-    
+
             isTouched = true;
             isMoved = false;
             allowTouchCallbacks = true;
@@ -16080,7 +16080,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             s.emit('onTouchStart', s, e);
         };
-    
+
         s.onTouchMove = function (e) {
             if (e.originalEvent) e = e.originalEvent;
             if (isTouchEvent && e.type === 'mousemove') return;
@@ -16129,10 +16129,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.emit('onTouchMove', s, e);
             }
             if (e.targetTouches && e.targetTouches.length > 1) return;
-    
+
             s.touches.currentX = e.type === 'touchmove' ? e.targetTouches[0].pageX : e.pageX;
             s.touches.currentY = e.type === 'touchmove' ? e.targetTouches[0].pageY : e.pageY;
-    
+
             if (typeof isScrolling === 'undefined') {
                 var touchAngle;
                 if (s.isHorizontal() && s.touches.currentY === s.touches.startY || !s.isHorizontal() && s.touches.currentX === s.touches.startX) {
@@ -16165,7 +16165,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (s.params.touchMoveStopPropagation && !s.params.nested) {
                 e.stopPropagation();
             }
-    
+
             if (!isMoved) {
                 if (params.loop) {
                     s.fixLoop();
@@ -16190,15 +16190,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
             isMoved = true;
-    
+
             var diff = s.touches.diff = s.isHorizontal() ? s.touches.currentX - s.touches.startX : s.touches.currentY - s.touches.startY;
-    
+
             diff = diff * s.params.touchRatio;
             if (s.rtl) diff = -diff;
-    
+
             s.swipeDirection = diff > 0 ? 'prev' : 'next';
             currentTranslate = diff + startTranslate;
-    
+
             var disableParentSwiper = true;
             if ((diff > 0 && currentTranslate > s.minTranslate())) {
                 disableParentSwiper = false;
@@ -16208,11 +16208,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 disableParentSwiper = false;
                 if (s.params.resistance) currentTranslate = s.maxTranslate() + 1 - Math.pow(s.maxTranslate() - startTranslate - diff, s.params.resistanceRatio);
             }
-    
+
             if (disableParentSwiper) {
                 e.preventedByNestedSwiper = true;
             }
-    
+
             // Directions locks
             if (!s.params.allowSwipeToNext && s.swipeDirection === 'next' && currentTranslate < startTranslate) {
                 currentTranslate = startTranslate;
@@ -16220,8 +16220,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (!s.params.allowSwipeToPrev && s.swipeDirection === 'prev' && currentTranslate > startTranslate) {
                 currentTranslate = startTranslate;
             }
-    
-    
+
+
             // Threshold
             if (s.params.threshold > 0) {
                 if (Math.abs(diff) > s.params.threshold || allowThresholdMove) {
@@ -16239,9 +16239,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     return;
                 }
             }
-    
+
             if (!s.params.followFinger) return;
-    
+
             // Update active index in free mode
             if (s.params.freeMode || s.params.watchSlidesProgress) {
                 s.updateActiveIndex();
@@ -16275,11 +16275,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (s.params.grabCursor && isMoved && isTouched  && (s.params.allowSwipeToNext === true || s.params.allowSwipeToPrev === true)) {
                 s.setGrabCursor(false);
             }
-    
+
             // Time diff
             var touchEndTime = Date.now();
             var timeDiff = touchEndTime - touchStartTime;
-    
+
             // Tap, doubleTap, Click
             if (s.allowClick) {
                 s.updateClickedSlide(e);
@@ -16293,25 +16293,25 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                         s.emit('onClick', s, e);
                     }, 300);
-    
+
                 }
                 if (timeDiff < 300 && (touchEndTime - lastClickTime) < 300) {
                     if (clickTimeout) clearTimeout(clickTimeout);
                     s.emit('onDoubleTap', s, e);
                 }
             }
-    
+
             lastClickTime = Date.now();
             setTimeout(function () {
                 if (s) s.allowClick = true;
             }, 0);
-    
+
             if (!isTouched || !isMoved || !s.swipeDirection || s.touches.diff === 0 || currentTranslate === startTranslate) {
                 isTouched = isMoved = false;
                 return;
             }
             isTouched = isMoved = false;
-    
+
             var currentPos;
             if (s.params.followFinger) {
                 currentPos = s.rtl ? s.translate : -s.translate;
@@ -16333,11 +16333,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                     return;
                 }
-    
+
                 if (s.params.freeModeMomentum) {
                     if (velocities.length > 1) {
                         var lastMoveEvent = velocities.pop(), velocityEvent = velocities.pop();
-    
+
                         var distance = lastMoveEvent.position - velocityEvent.position;
                         var time = lastMoveEvent.time - velocityEvent.time;
                         s.velocity = distance / time;
@@ -16354,11 +16354,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         s.velocity = 0;
                     }
                     s.velocity = s.velocity * s.params.freeModeMomentumVelocityRatio;
-    
+
                     velocities.length = 0;
                     var momentumDuration = 1000 * s.params.freeModeMomentumRatio;
                     var momentumDistance = s.velocity * momentumDuration;
-    
+
                     var newPosition = s.translate + momentumDistance;
                     if (s.rtl) newPosition = - newPosition;
                     var doBounce = false;
@@ -16398,7 +16398,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 nextSlide = j;
                                 break;
                             }
-    
+
                         }
                         if (Math.abs(s.snapGrid[nextSlide] - newPosition) < Math.abs(s.snapGrid[nextSlide - 1] - newPosition) || s.swipeDirection === 'next') {
                             newPosition = s.snapGrid[nextSlide];
@@ -16420,7 +16420,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         s.slideReset();
                         return;
                     }
-    
+
                     if (s.params.freeModeMomentumBounce && doBounce) {
                         s.updateProgress(afterBouncePosition);
                         s.setWrapperTransition(momentumDuration);
@@ -16430,7 +16430,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         s.wrapper.transitionEnd(function () {
                             if (!s || !allowMomentumBounce) return;
                             s.emit('onMomentumBounce', s);
-    
+
                             s.setWrapperTransition(s.params.speed);
                             s.setWrapperTranslate(afterBouncePosition);
                             s.wrapper.transitionEnd(function () {
@@ -16450,11 +16450,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 s.onTransitionEnd();
                             });
                         }
-    
+
                     } else {
                         s.updateProgress(newPosition);
                     }
-    
+
                     s.updateActiveIndex();
                 }
                 if (!s.params.freeModeMomentum || timeDiff >= s.params.longSwipesMs) {
@@ -16463,7 +16463,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 return;
             }
-    
+
             // Find current slide
             var i, stopIndex = 0, groupSize = s.slidesSizesGrid[0];
             for (i = 0; i < s.slidesGrid.length; i += s.params.slidesPerGroup) {
@@ -16480,10 +16480,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 }
             }
-    
+
             // Find current slide size
             var ratio = (currentPos - s.slidesGrid[stopIndex]) / groupSize;
-    
+
             if (timeDiff > s.params.longSwipesMs) {
                 // Long touches
                 if (!s.params.longSwipes) {
@@ -16493,7 +16493,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (s.swipeDirection === 'next') {
                     if (ratio >= s.params.longSwipesRatio) s.slideTo(stopIndex + s.params.slidesPerGroup);
                     else s.slideTo(stopIndex);
-    
+
                 }
                 if (s.swipeDirection === 'prev') {
                     if (ratio > (1 - s.params.longSwipesRatio)) s.slideTo(stopIndex + s.params.slidesPerGroup);
@@ -16508,7 +16508,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 if (s.swipeDirection === 'next') {
                     s.slideTo(stopIndex + s.params.slidesPerGroup);
-    
+
                 }
                 if (s.swipeDirection === 'prev') {
                     s.slideTo(stopIndex);
@@ -16527,7 +16527,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (slideIndex < 0) slideIndex = 0;
             s.snapIndex = Math.floor(slideIndex / s.params.slidesPerGroup);
             if (s.snapIndex >= s.snapGrid.length) s.snapIndex = s.snapGrid.length - 1;
-    
+
             var translate = - s.snapGrid[s.snapIndex];
             // Stop autoplay
             if (s.params.autoplay && s.autoplaying) {
@@ -16540,7 +16540,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             // Update progress
             s.updateProgress(translate);
-    
+
             // Normalize slideIndex
             if(s.params.normalizeSlideIndex){
                 for (var i = 0; i < s.slidesGrid.length; i++) {
@@ -16549,7 +16549,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     }
                 }
             }
-    
+
             // Directions locks
             if (!s.params.allowSwipeToNext && translate < s.translate && translate < s.minTranslate()) {
                 return false;
@@ -16557,7 +16557,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (!s.params.allowSwipeToPrev && translate > s.translate && translate > s.maxTranslate()) {
                 if ((s.activeIndex || 0) !== slideIndex ) return false;
             }
-    
+
             // Update Index
             if (typeof speed === 'undefined') speed = s.params.speed;
             s.previousIndex = s.activeIndex || 0;
@@ -16576,7 +16576,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             s.updateClasses();
             s.onTransitionStart(runCallbacks);
-    
+
             if (speed === 0 || s.browser.lteIE9) {
                 s.setWrapperTranslate(translate);
                 s.setWrapperTransition(0);
@@ -16592,12 +16592,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         s.onTransitionEnd(runCallbacks);
                     });
                 }
-    
+
             }
-    
+
             return true;
         };
-    
+
         s.onTransitionStart = function (runCallbacks) {
             if (typeof runCallbacks === 'undefined') runCallbacks = true;
             if (s.params.autoHeight) {
@@ -16615,7 +16615,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         s.emit('onSlidePrevStart', s);
                     }
                 }
-    
+
             }
         };
         s.onTransitionEnd = function (runCallbacks) {
@@ -16641,7 +16641,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (s.params.hashnav && s.hashnav) {
                 s.hashnav.setHash();
             }
-    
+
         };
         s.slideNext = function (runCallbacks, speed, internal) {
             if (s.params.loop) {
@@ -16670,7 +16670,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         s.slideReset = function (runCallbacks, speed, internal) {
             return s.slideTo(s.activeIndex, speed, runCallbacks);
         };
-    
+
         s.disableTouchControl = function () {
             s.params.onlyExternal = true;
             return true;
@@ -16679,7 +16679,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             s.params.onlyExternal = false;
             return true;
         };
-    
+
         /*=========================
           Translate/transition helpers
           ===========================*/
@@ -16707,19 +16707,19 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             else {
                 y = translate;
             }
-    
+
             if (s.params.roundLengths) {
                 x = round(x);
                 y = round(y);
             }
-    
+
             if (!s.params.virtualTranslate) {
                 if (s.support.transforms3d) s.wrapper.transform('translate3d(' + x + 'px, ' + y + 'px, ' + z + 'px)');
                 else s.wrapper.transform('translate(' + x + 'px, ' + y + 'px)');
             }
-    
+
             s.translate = s.isHorizontal() ? x : y;
-    
+
             // Check if we need to update progress
             var progress;
             var translatesDiff = s.maxTranslate() - s.minTranslate();
@@ -16732,7 +16732,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (progress !== s.progress) {
                 s.updateProgress(translate);
             }
-    
+
             if (updateActiveIndex) s.updateActiveIndex();
             if (s.params.effect !== 'slide' && s.effects[s.params.effect]) {
                 s.effects[s.params.effect].setTranslate(s.translate);
@@ -16748,19 +16748,19 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             s.emit('onSetTranslate', s, s.translate);
         };
-    
+
         s.getTranslate = function (el, axis) {
             var matrix, curTransform, curStyle, transformMatrix;
-    
+
             // automatic axis detection
             if (typeof axis === 'undefined') {
                 axis = 'x';
             }
-    
+
             if (s.params.virtualTranslate) {
                 return s.rtl ? -s.translate : s.translate;
             }
-    
+
             curStyle = window.getComputedStyle(el, null);
             if (window.WebKitCSSMatrix) {
                 curTransform = curStyle.transform || curStyle.webkitTransform;
@@ -16777,7 +16777,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 transformMatrix = curStyle.MozTransform || curStyle.OTransform || curStyle.MsTransform || curStyle.msTransform  || curStyle.transform || curStyle.getPropertyValue('transform').replace('translate(', 'matrix(1, 0, 0, 1,');
                 matrix = transformMatrix.toString().split(',');
             }
-    
+
             if (axis === 'x') {
                 //Latest Chrome and webkits Fix
                 if (window.WebKitCSSMatrix)
@@ -16809,7 +16809,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             return s.getTranslate(s.wrapper[0], axis);
         };
-    
+
         /*=========================
           Observer
           ===========================*/
@@ -16824,13 +16824,13 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     s.emit('onObserverUpdate', s, mutation);
                 });
             });
-    
+
             observer.observe(target, {
                 attributes: typeof options.attributes === 'undefined' ? true : options.attributes,
                 childList: typeof options.childList === 'undefined' ? true : options.childList,
                 characterData: typeof options.characterData === 'undefined' ? true : options.characterData
             });
-    
+
             s.observers.push(observer);
         }
         s.initObservers = function () {
@@ -16840,10 +16840,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     initObserver(containerParents[i]);
                 }
             }
-    
+
             // Observe container
             initObserver(s.container[0], {childList: false});
-    
+
             // Observe wrapper
             initObserver(s.wrapper[0], {attributes: false});
         };
@@ -16860,17 +16860,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         s.createLoop = function () {
             // Remove duplicated slides
             s.wrapper.children('.' + s.params.slideClass + '.' + s.params.slideDuplicateClass).remove();
-    
+
             var slides = s.wrapper.children('.' + s.params.slideClass);
-    
+
             if(s.params.slidesPerView === 'auto' && !s.params.loopedSlides) s.params.loopedSlides = slides.length;
-    
+
             s.loopedSlides = parseInt(s.params.loopedSlides || s.params.slidesPerView, 10);
             s.loopedSlides = s.loopedSlides + s.params.loopAdditionalSlides;
             if (s.loopedSlides > slides.length) {
                 s.loopedSlides = slides.length;
             }
-    
+
             var prependSlides = [], appendSlides = [], i;
             slides.each(function (index, el) {
                 var slide = $(this);
@@ -16897,7 +16897,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (updatePosition) {
                 s.slideTo(oldIndex + s.loopedSlides, 0, false);
             }
-    
+
         };
         s.fixLoop = function () {
             var newIndex;
@@ -16979,11 +16979,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (indexToRemove < newActiveIndex) newActiveIndex--;
                 newActiveIndex = Math.max(newActiveIndex, 0);
             }
-    
+
             if (s.params.loop) {
                 s.createLoop();
             }
-    
+
             if (!(s.params.observer && s.support.observer)) {
                 s.update(true);
             }
@@ -16993,7 +16993,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             else {
                 s.slideTo(newActiveIndex, 0, false);
             }
-    
+
         };
         s.removeAllSlides = function () {
             var slidesIndexes = [];
@@ -17002,8 +17002,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             s.removeSlide(slidesIndexes);
         };
-    
-    
+
+
         /*=========================
           Effects
           ===========================*/
@@ -17028,9 +17028,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 opacity: slideOpacity
                             })
                             .transform('translate3d(' + tx + 'px, ' + ty + 'px, 0px)');
-    
+
                     }
-    
+
                 },
                 setTransition: function (duration) {
                     s.slides.transition(duration);
@@ -17072,9 +17072,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         else if (s.rtl) {
                             rotateY = -rotateY;
                         }
-    
+
                         slide[0].style.zIndex = -Math.abs(Math.round(progress)) + s.slides.length;
-    
+
                         if (s.params.flip.slideShadows) {
                             //Set shadows
                             var shadowBefore = s.isHorizontal() ? slide.find('.swiper-slide-shadow-left') : slide.find('.swiper-slide-shadow-top');
@@ -17090,7 +17090,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             if (shadowBefore.length) shadowBefore[0].style.opacity = Math.max(-progress, 0);
                             if (shadowAfter.length) shadowAfter[0].style.opacity = Math.max(progress, 0);
                         }
-    
+
                         slide
                             .transform('translate3d(' + tx + 'px, ' + ty + 'px, 0px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)');
                     }
@@ -17162,12 +17162,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         if (s.rtl) {
                             tx = -tx;
                         }
-    
+
                         if (!s.isHorizontal()) {
                             ty = tx;
                             tx = 0;
                         }
-    
+
                         var transform = 'rotateX(' + (s.isHorizontal() ? 0 : -slideAngle) + 'deg) rotateY(' + (s.isHorizontal() ? slideAngle : 0) + 'deg) translate3d(' + tx + 'px, ' + ty + 'px, ' + tz + 'px)';
                         if (progress <= 1 && progress > -1) {
                             wrapperRotate = i * 90 + progress * 90;
@@ -17196,7 +17196,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         '-ms-transform-origin': '50% 50% -' + (s.size / 2) + 'px',
                         'transform-origin': '50% 50% -' + (s.size / 2) + 'px'
                     });
-    
+
                     if (s.params.cube.shadow) {
                         if (s.isHorizontal()) {
                             cubeShadow.transform('translate3d(0px, ' + (s.width / 2 + s.params.cube.shadowOffset) + 'px, ' + (-s.width / 2) + 'px) rotateX(90deg) rotateZ(0deg) scale(' + (s.params.cube.shadowScale) + ')');
@@ -17232,24 +17232,24 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         var slideSize = s.slidesSizesGrid[i];
                         var slideOffset = slide[0].swiperSlideOffset;
                         var offsetMultiplier = (center - slideOffset - slideSize / 2) / slideSize * s.params.coverflow.modifier;
-    
+
                         var rotateY = s.isHorizontal() ? rotate * offsetMultiplier : 0;
                         var rotateX = s.isHorizontal() ? 0 : rotate * offsetMultiplier;
                         // var rotateZ = 0
                         var translateZ = -translate * Math.abs(offsetMultiplier);
-    
+
                         var translateY = s.isHorizontal() ? 0 : s.params.coverflow.stretch * (offsetMultiplier);
                         var translateX = s.isHorizontal() ? s.params.coverflow.stretch * (offsetMultiplier) : 0;
-    
+
                         //Fix for ultra small values
                         if (Math.abs(translateX) < 0.001) translateX = 0;
                         if (Math.abs(translateY) < 0.001) translateY = 0;
                         if (Math.abs(translateZ) < 0.001) translateZ = 0;
                         if (Math.abs(rotateY) < 0.001) rotateY = 0;
                         if (Math.abs(rotateX) < 0.001) rotateX = 0;
-    
+
                         var slideTransform = 'translate3d(' + translateX + 'px,' + translateY + 'px,' + translateZ + 'px)  rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
-    
+
                         slide.transform(slideTransform);
                         slide[0].style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;
                         if (s.params.coverflow.slideShadows) {
@@ -17268,7 +17268,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                             if (shadowAfter.length) shadowAfter[0].style.opacity = (-offsetMultiplier) > 0 ? -offsetMultiplier : 0;
                         }
                     }
-    
+
                     //Set correct perspective for IE10
                     if (s.browser.ie) {
                         var ws = s.wrapper[0].style;
@@ -17280,8 +17280,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         };
-    
-    
+
+
         /*=========================
           Images Lazy Loading
           ===========================*/
@@ -17291,14 +17291,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (typeof index === 'undefined') return;
                 if (typeof loadInDuplicate === 'undefined') loadInDuplicate = true;
                 if (s.slides.length === 0) return;
-    
+
                 var slide = s.slides.eq(index);
                 var img = slide.find('.' + s.params.lazyLoadingClass + ':not(.' + s.params.lazyStatusLoadedClass + '):not(.' + s.params.lazyStatusLoadingClass + ')');
                 if (slide.hasClass(s.params.lazyLoadingClass) && !slide.hasClass(s.params.lazyStatusLoadedClass) && !slide.hasClass(s.params.lazyStatusLoadingClass)) {
                     img = img.add(slide[0]);
                 }
                 if (img.length === 0) return;
-    
+
                 img.each(function () {
                     var _img = $(this);
                     _img.addClass(s.params.lazyStatusLoadingClass);
@@ -17325,9 +17325,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 _img.attr('src', src);
                                 _img.removeAttr('data-src');
                             }
-    
+
                         }
-    
+
                         _img.addClass(s.params.lazyStatusLoadedClass).removeClass(s.params.lazyStatusLoadingClass);
                         slide.find('.' + s.params.lazyPreloaderClass + ', .' + s.params.preloaderClass).remove();
                         if (s.params.loop && loadInDuplicate) {
@@ -17343,10 +17343,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                         s.emit('onLazyImageReady', s, slide[0], _img[0]);
                     });
-    
+
                     s.emit('onLazyImageLoad', s, slide[0], _img[0]);
                 });
-    
+
             },
             load: function () {
                 var i;
@@ -17388,7 +17388,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     else {
                         var nextSlide = s.wrapper.children('.' + s.params.slideNextClass);
                         if (nextSlide.length > 0) s.lazy.loadImageInSlide(nextSlide.index());
-    
+
                         var prevSlide = s.wrapper.children('.' + s.params.slidePrevClass);
                         if (prevSlide.length > 0) s.lazy.loadImageInSlide(prevSlide.index());
                     }
@@ -17407,8 +17407,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         };
-    
-    
+
+
         /*=========================
           Scrollbar
           ===========================*/
@@ -17439,10 +17439,10 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 sb.isTouched = true;
                 e.preventDefault();
                 e.stopPropagation();
-    
+
                 sb.setDragPosition(e);
                 clearTimeout(sb.dragTimeout);
-    
+
                 sb.track.transition(0);
                 if (s.params.scrollbarHide) {
                     sb.track.css('opacity', 1);
@@ -17472,7 +17472,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         sb.track.css('opacity', 0);
                         sb.track.transition(400);
                     }, 1000);
-    
+
                 }
                 s.emit('onScrollbarDragEnd', s);
                 if (s.params.scrollbarSnapOnRelease) {
@@ -17512,18 +17512,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 sb.drag[0].style.width = '';
                 sb.drag[0].style.height = '';
                 sb.trackSize = s.isHorizontal() ? sb.track[0].offsetWidth : sb.track[0].offsetHeight;
-    
+
                 sb.divider = s.size / s.virtualSize;
                 sb.moveDivider = sb.divider * (sb.trackSize / s.size);
                 sb.dragSize = sb.trackSize * sb.divider;
-    
+
                 if (s.isHorizontal()) {
                     sb.drag[0].style.width = sb.dragSize + 'px';
                 }
                 else {
                     sb.drag[0].style.height = sb.dragSize + 'px';
                 }
-    
+
                 if (sb.divider >= 1) {
                     sb.track[0].style.display = 'none';
                 }
@@ -17540,7 +17540,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var sb = s.scrollbar;
                 var translate = s.translate || 0;
                 var newPos;
-    
+
                 var newSize = sb.dragSize;
                 newPos = (sb.trackSize - sb.dragSize) * s.progress;
                 if (s.rtl && s.isHorizontal()) {
@@ -17594,8 +17594,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.scrollbar.drag.transition(duration);
             }
         };
-    
-    
+
+
         /*=========================
           Controller
           ===========================*/
@@ -17623,14 +17623,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 // (x3,y3) is the known point after given value.
                 var i1, i3;
                 var l = this.x.length;
-    
+
                 this.interpolate = function (x2) {
                     if (!x2) return 0;
-    
+
                     // Get the indexes of x1 and x3 (the array indexes before and after given x2):
                     i3 = binarySearch(this.x, x2);
                     i1 = i3 - 1;
-    
+
                     // We have our indexes i1 & i3, so we can calculate already:
                     // y2 := ((x2−x1) × (y3−y1)) ÷ (x3−x1) + y1
                     return ((x2 - this.x[i1]) * (this.y[i3] - this.y[i1])) / (this.x[i3] - this.x[i1]) + this.y[i1];
@@ -17657,12 +17657,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         // but it did not work out
                         controlledTranslate = -s.controller.spline.interpolate(-translate);
                     }
-    
+
                     if(!controlledTranslate || s.params.controlBy === 'container'){
                         multiplier = (c.maxTranslate() - c.minTranslate()) / (s.maxTranslate() - s.minTranslate());
                         controlledTranslate = (translate - s.minTranslate()) * multiplier + c.minTranslate();
                     }
-    
+
                     if (s.params.controlInverse) {
                         controlledTranslate = c.maxTranslate() - controlledTranslate;
                     }
@@ -17678,7 +17678,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                    }
                }
                else if (controlled instanceof Swiper && byController !== controlled) {
-    
+
                    setControlledTranslate(controlled);
                }
             },
@@ -17695,7 +17695,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                                 c.fixLoop();
                             }
                             c.onTransitionEnd();
-    
+
                         });
                     }
                 }
@@ -17711,8 +17711,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         };
-    
-    
+
+
         /*=========================
           Parallax
           ===========================*/
@@ -17720,7 +17720,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             el = $(el);
             var p, pX, pY;
             var rtlFactor = s.rtl ? -1 : 1;
-    
+
             p = el.attr('data-swiper-parallax') || '0';
             pX = el.attr('data-swiper-parallax-x');
             pY = el.attr('data-swiper-parallax-y');
@@ -17738,7 +17738,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     pX = '0';
                 }
             }
-    
+
             if ((pX).indexOf('%') >= 0) {
                 pX = parseInt(pX, 10) * progress * rtlFactor + '%';
             }
@@ -17751,14 +17751,14 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             else {
                 pY = pY * progress + 'px' ;
             }
-    
+
             el.transform('translate3d(' + pX + ', ' + pY + ',0px)');
         }
         s.parallax = {
             setTranslate: function () {
                 s.container.children('[data-swiper-parallax], [data-swiper-parallax-x], [data-swiper-parallax-y]').each(function(){
                     setParallaxTransform(this, s.progress);
-    
+
                 });
                 s.slides.each(function () {
                     var slide = $(this);
@@ -17778,8 +17778,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 });
             }
         };
-    
-    
+
+
         /*=========================
           Zoom
           ===========================*/
@@ -17903,7 +17903,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (!z.gesture.image || z.gesture.image.length === 0) return;
                 s.allowClick = false;
                 if (!z.image.isTouched || !z.gesture.slide) return;
-    
+
                 if (!z.image.isMoved) {
                     z.image.width = z.gesture.image[0].offsetWidth;
                     z.image.height = z.gesture.image[0].offsetHeight;
@@ -17918,17 +17918,17 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 // Define if we need image drag
                 var scaledWidth = z.image.width * z.scale;
                 var scaledHeight = z.image.height * z.scale;
-    
+
                 if (scaledWidth < z.gesture.slideWidth && scaledHeight < z.gesture.slideHeight) return;
-    
+
                 z.image.minX = Math.min((z.gesture.slideWidth / 2 - scaledWidth / 2), 0);
                 z.image.maxX = -z.image.minX;
                 z.image.minY = Math.min((z.gesture.slideHeight / 2 - scaledHeight / 2), 0);
                 z.image.maxY = -z.image.minY;
-    
+
                 z.image.touchesCurrent.x = e.type === 'touchmove' ? e.targetTouches[0].pageX : e.pageX;
                 z.image.touchesCurrent.y = e.type === 'touchmove' ? e.targetTouches[0].pageY : e.pageY;
-    
+
                 if (!z.image.isMoved && !z.isScaling) {
                     if (s.isHorizontal() &&
                         (Math.floor(z.image.minX) === Math.floor(z.image.startX) && z.image.touchesCurrent.x < z.image.touchesStart.x) ||
@@ -17947,25 +17947,25 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
                 e.preventDefault();
                 e.stopPropagation();
-    
+
                 z.image.isMoved = true;
                 z.image.currentX = z.image.touchesCurrent.x - z.image.touchesStart.x + z.image.startX;
                 z.image.currentY = z.image.touchesCurrent.y - z.image.touchesStart.y + z.image.startY;
-    
+
                 if (z.image.currentX < z.image.minX) {
                     z.image.currentX =  z.image.minX + 1 - Math.pow((z.image.minX - z.image.currentX + 1), 0.8);
                 }
                 if (z.image.currentX > z.image.maxX) {
                     z.image.currentX = z.image.maxX - 1 + Math.pow((z.image.currentX - z.image.maxX + 1), 0.8);
                 }
-    
+
                 if (z.image.currentY < z.image.minY) {
                     z.image.currentY =  z.image.minY + 1 - Math.pow((z.image.minY - z.image.currentY + 1), 0.8);
                 }
                 if (z.image.currentY > z.image.maxY) {
                     z.image.currentY = z.image.maxY - 1 + Math.pow((z.image.currentY - z.image.maxY + 1), 0.8);
                 }
-    
+
                 //Velocity
                 if (!z.velocity.prevPositionX) z.velocity.prevPositionX = z.image.touchesCurrent.x;
                 if (!z.velocity.prevPositionY) z.velocity.prevPositionY = z.image.touchesCurrent.y;
@@ -17977,7 +17977,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 z.velocity.prevPositionX = z.image.touchesCurrent.x;
                 z.velocity.prevPositionY = z.image.touchesCurrent.y;
                 z.velocity.prevTime = Date.now();
-    
+
                 z.gesture.imageWrap.transform('translate3d(' + z.image.currentX + 'px, ' + z.image.currentY + 'px,0)');
             },
             onTouchEnd: function (s, e) {
@@ -17996,15 +17996,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 var newPositionX = z.image.currentX + momentumDistanceX;
                 var momentumDistanceY = z.velocity.y * momentumDurationY;
                 var newPositionY = z.image.currentY + momentumDistanceY;
-    
+
                 //Fix duration
                 if (z.velocity.x !== 0) momentumDurationX = Math.abs((newPositionX - z.image.currentX) / z.velocity.x);
                 if (z.velocity.y !== 0) momentumDurationY = Math.abs((newPositionY - z.image.currentY) / z.velocity.y);
                 var momentumDuration = Math.max(momentumDurationX, momentumDurationY);
-    
+
                 z.image.currentX = newPositionX;
                 z.image.currentY = newPositionY;
-    
+
                 // Define if we need image drag
                 var scaledWidth = z.image.width * z.scale;
                 var scaledHeight = z.image.height * z.scale;
@@ -18014,7 +18014,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 z.image.maxY = -z.image.minY;
                 z.image.currentX = Math.max(Math.min(z.image.currentX, z.image.maxX), z.image.minX);
                 z.image.currentY = Math.max(Math.min(z.image.currentY, z.image.maxY), z.image.minY);
-    
+
                 z.gesture.imageWrap.transition(momentumDuration).transform('translate3d(' + z.image.currentX + 'px, ' + z.image.currentY + 'px,0)');
             },
             onTransitionEnd: function (s) {
@@ -18035,9 +18035,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     z.gesture.imageWrap = z.gesture.image.parent('.' + s.params.zoomContainerClass);
                 }
                 if (!z.gesture.image || z.gesture.image.length === 0) return;
-    
+
                 var touchX, touchY, offsetX, offsetY, diffX, diffY, translateX, translateY, imageWidth, imageHeight, scaledWidth, scaledHeight, translateMinX, translateMinY, translateMaxX, translateMaxY, slideWidth, slideHeight;
-    
+
                 if (typeof z.image.touchesStart.x === 'undefined' && e) {
                     touchX = e.type === 'touchend' ? e.changedTouches[0].pageX : e.pageX;
                     touchY = e.type === 'touchend' ? e.changedTouches[0].pageY : e.pageY;
@@ -18046,7 +18046,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     touchX = z.image.touchesStart.x;
                     touchY = z.image.touchesStart.y;
                 }
-    
+
                 if (z.scale && z.scale !== 1) {
                     // Zoom Out
                     z.scale = z.currentScale = 1;
@@ -18064,27 +18064,27 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         offsetY = z.gesture.slide.offset().top;
                         diffX = offsetX + slideWidth/2 - touchX;
                         diffY = offsetY + slideHeight/2 - touchY;
-    
+
                         imageWidth = z.gesture.image[0].offsetWidth;
                         imageHeight = z.gesture.image[0].offsetHeight;
                         scaledWidth = imageWidth * z.scale;
                         scaledHeight = imageHeight * z.scale;
-    
+
                         translateMinX = Math.min((slideWidth / 2 - scaledWidth / 2), 0);
                         translateMinY = Math.min((slideHeight / 2 - scaledHeight / 2), 0);
                         translateMaxX = -translateMinX;
                         translateMaxY = -translateMinY;
-    
+
                         translateX = diffX * z.scale;
                         translateY = diffY * z.scale;
-    
+
                         if (translateX < translateMinX) {
                             translateX =  translateMinX;
                         }
                         if (translateX > translateMaxX) {
                             translateX = translateMaxX;
                         }
-    
+
                         if (translateY < translateMinY) {
                             translateY =  translateMinY;
                         }
@@ -18103,7 +18103,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             // Attach/Detach Events
             attachEvents: function (detach) {
                 var action = detach ? 'off' : 'on';
-    
+
                 if (s.params.zoom) {
                     var target = s.slides;
                     var passiveListener = s.touchEvents.start === 'touchstart' && s.support.passiveListener && s.params.passiveListeners ? {passive: true, capture: false} : false;
@@ -18118,7 +18118,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         s.slides[action](s.touchEvents.move, s.zoom.onGestureChange, passiveListener);
                         s.slides[action](s.touchEvents.end, s.zoom.onGestureEnd, passiveListener);
                     }
-    
+
                     // Move image
                     s[action]('touchStart', s.zoom.onTouchStart);
                     s.slides.each(function (index, slide){
@@ -18127,7 +18127,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                         }
                     });
                     s[action]('touchEnd', s.zoom.onTouchEnd);
-    
+
                     // Scale Out
                     s[action]('transitionEnd', s.zoom.onTransitionEnd);
                     if (s.params.zoomToggle) {
@@ -18142,8 +18142,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 s.zoom.attachEvents(true);
             }
         };
-    
-    
+
+
         /*=========================
           Plugins API. Collect all and init all plugins
           ===========================*/
@@ -18160,8 +18160,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 }
             }
         };
-    
-    
+
+
         /*=========================
           Events/Callbacks/Plugins Emitter
           ===========================*/
@@ -18177,7 +18177,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             return eventName;
         }
         s.emitterEventListeners = {
-    
+
         };
         s.emit = function (eventName) {
             // Trigger callbacks
@@ -18223,8 +18223,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             s.on(eventName, _handler);
             return s;
         };
-    
-    
+
+
         // Accessibility tools
         s.a11y = {
             makeFocusable: function ($el) {
@@ -18235,22 +18235,22 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 $el.attr('role', role);
                 return $el;
             },
-    
+
             addLabel: function ($el, label) {
                 $el.attr('aria-label', label);
                 return $el;
             },
-    
+
             disable: function ($el) {
                 $el.attr('aria-disabled', true);
                 return $el;
             },
-    
+
             enable: function ($el) {
                 $el.attr('aria-disabled', false);
                 return $el;
             },
-    
+
             onEnterKey: function (event) {
                 if (event.keyCode !== 13) return;
                 if ($(event.target).is(s.params.nextButton)) {
@@ -18275,9 +18275,9 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     $(event.target)[0].click();
                 }
             },
-    
+
             liveRegion: $('<span class="' + s.params.notificationClass + '" aria-live="assertive" aria-atomic="true"></span>'),
-    
+
             notify: function (message) {
                 var notification = s.a11y.liveRegion;
                 if (notification.length === 0) return;
@@ -18296,7 +18296,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     s.a11y.addRole(s.prevButton, 'button');
                     s.a11y.addLabel(s.prevButton, s.params.prevSlideMessage);
                 }
-    
+
                 $(s.container).append(s.a11y.liveRegion);
             },
             initPagination: function () {
@@ -18313,8 +18313,8 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 if (s.a11y.liveRegion && s.a11y.liveRegion.length > 0) s.a11y.liveRegion.remove();
             }
         };
-    
-    
+
+
         /*=========================
           Init/Destroy
           ===========================*/
@@ -18378,15 +18378,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (s.params.a11y && s.a11y) s.a11y.init();
             s.emit('onInit', s);
         };
-    
+
         // Cleanup dynamic styles
         s.cleanupStyles = function () {
             // Container
             s.container.removeClass(s.classNames.join(' ')).removeAttr('style');
-    
+
             // Wrapper
             s.wrapper.removeAttr('style');
-    
+
             // Slides
             if (s.slides && s.slides.length) {
                 s.slides
@@ -18400,7 +18400,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     .removeAttr('data-swiper-column')
                     .removeAttr('data-swiper-row');
             }
-    
+
             // Pagination/Bullets
             if (s.paginationContainer && s.paginationContainer.length) {
                 s.paginationContainer.removeClass(s.params.paginationHiddenClass);
@@ -18408,18 +18408,18 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             if (s.bullets && s.bullets.length) {
                 s.bullets.removeClass(s.params.bulletActiveClass);
             }
-    
+
             // Buttons
             if (s.params.prevButton) $(s.params.prevButton).removeClass(s.params.buttonDisabledClass);
             if (s.params.nextButton) $(s.params.nextButton).removeClass(s.params.buttonDisabledClass);
-    
+
             // Scrollbar
             if (s.params.scrollbar && s.scrollbar) {
                 if (s.scrollbar.track && s.scrollbar.track.length) s.scrollbar.track.removeAttr('style');
                 if (s.scrollbar.drag && s.scrollbar.drag.length) s.scrollbar.drag.removeAttr('style');
             }
         };
-    
+
         // Destroy
         s.destroy = function (deleteInstance, cleanupStyles) {
             // Detach evebts
@@ -18442,7 +18442,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             }
             // Disconnect observer
             s.disconnectObservers();
-    
+
             // Destroy zoom
             if (s.params.zoom && s.zoom) {
                 s.zoom.destroy();
@@ -18468,15 +18468,15 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             // Delete instance
             if (deleteInstance !== false) s = null;
         };
-    
+
         s.init();
-    
-    
-    
+
+
+
         // Return swiper instance
         return s;
     };
-    
+
     /*==================================================
         Prototype
     ====================================================*/
@@ -18525,12 +18525,12 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
             touch : (window.Modernizr && Modernizr.touch === true) || (function () {
                 return !!(('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch);
             })(),
-    
+
             transforms3d : (window.Modernizr && Modernizr.csstransforms3d === true) || (function () {
                 var div = document.createElement('div').style;
                 return ('webkitPerspective' in div || 'MozPerspective' in div || 'OPerspective' in div || 'MsPerspective' in div || 'perspective' in div);
             })(),
-    
+
             flexbox: (function () {
                 var div = document.createElement('div').style;
                 var styles = ('alignItems webkitAlignItems webkitBoxAlign msFlexAlign mozBoxAlign webkitFlexDirection msFlexDirection mozBoxDirection mozBoxOrient webkitBoxDirection webkitBoxOrient').split(' ');
@@ -18538,11 +18538,11 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                     if (styles[i] in div) return true;
                 }
             })(),
-    
+
             observer: (function () {
                 return ('MutationObserver' in window || 'WebkitMutationObserver' in window);
             })(),
-    
+
             passiveListener: (function () {
                 var supportsPassive = false;
                 try {
@@ -18555,7 +18555,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
                 } catch (e) {}
                 return supportsPassive;
             })(),
-    
+
             gestures: (function () {
                 return 'ongesturestart' in window;
             })()
@@ -18565,7 +18565,7 @@ B&&"after-start"===B&&g.push(p.$slots.default[S]),B&&"after"===B&&v.push(p.$slot
         ====================================================*/
         plugins: {}
     };
-    
+
 
 })();
 
@@ -31623,7 +31623,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-  
+
 	/* harmony default export */ __webpack_exports__["default"] = ({
     mixins: [__WEBPACK_IMPORTED_MODULE_0__backMixin__["a" /* default */]],
 		mounted: () => {
@@ -31730,7 +31730,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-    
+
 
 	/* harmony default export */ __webpack_exports__["default"] = ({
         created: function() {
@@ -31897,7 +31897,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-  
+
 	/* harmony default export */ __webpack_exports__["default"] = ({
     mixins: [__WEBPACK_IMPORTED_MODULE_0__backMixin__["a" /* default */]],
 		mounted: () => {
@@ -31960,7 +31960,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           canvas.width = video.videoWidth * scale;
           canvas.height = video.videoHeight * scale;
           canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-  
+
           window.img = document.createElement("img");
           img.src = canvas.toDataURL();
 					camera.stop({});
@@ -31974,9 +31974,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				if(err){
 					console.log(err);
 				}else{
-					var calleesIds = [27647374]; // User's ids 
+					var calleesIds = [27677547]; // User's ids
 					var sessionType = QB.webrtc.CallType.VIDEO; // AUDIO is also possible
-					
+
 					navigator.mediaDevices.enumerateDevices()
 							.then(function(devices) {
 									console.log(JSON.stringify(devices));
@@ -32660,7 +32660,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-    
+
 	/* harmony default export */ __webpack_exports__["default"] = ({
         mixins: [__WEBPACK_IMPORTED_MODULE_0__backMixin__["a" /* default */]],
         methods: {
@@ -32733,7 +32733,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-    
+
 	/* harmony default export */ __webpack_exports__["default"] = ({
         mixins: [__WEBPACK_IMPORTED_MODULE_0__backMixin__["a" /* default */]]
     });
@@ -32795,9 +32795,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}else{
 					console.log('CONNECTED');
 					console.log(QB.webrtc.CallType);
-					var calleesIds = [27647374]; // User's ids 
+					var calleesIds = [27677547]; // User's ids
 					var sessionType = QB.webrtc.CallType.VIDEO; // AUDIO is also possible
-					
+
 					window.session = QB.webrtc.createNewSession(calleesIds, sessionType);
 					console.log(session);
 					var mediaParams = {
@@ -32818,8 +32818,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 							setTimeout(() => {
 								$('#myVideo').addClass('show');
 							}, 1000);
-							
-							
+
+
 							var extension = {};
 							window.session.call(extension, function(error) {
 								console.log(error);
@@ -32923,7 +32923,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-    
+
 
 	/* harmony default export */ __webpack_exports__["default"] = ({
         created: function() {
@@ -33203,9 +33203,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}else{
 					console.log('CONNECTED');
 					console.log(QB.webrtc.CallType);
-					var calleesIds = [27647374]; // User's ids 
+					var calleesIds = [27677547]; // User's ids
 					var sessionType = QB.webrtc.CallType.VIDEO; // AUDIO is also possible
-					
+
 					window.session = QB.webrtc.createNewSession(calleesIds, sessionType);
 					console.log(session);
 					var mediaParams = {
@@ -33226,8 +33226,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 							setTimeout(() => {
 								$('#myVideo').addClass('show');
 							}, 1000);
-							
-							
+
+
 							var extension = {};
 							window.session.call(extension, function(error) {
 								console.log(error);
@@ -33681,7 +33681,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   document.addEventListener("deviceready", function(){
 		/*console.log('device ready');
-		
+
 		let options = {
 			x: 10,
 			y: 10,
@@ -33702,7 +33702,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		}
 
 		// Load JavaScript files async
-		// 
+		//
 		var loadScriptAsync = function(path){
 				var jsScript = document.createElement("script");
 				jsScript.type = "text/javascript";
